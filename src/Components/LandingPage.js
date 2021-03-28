@@ -1,15 +1,16 @@
 import React, { Fragment } from "react"; 
 
 import OffersPanel from "./OffersPanel";
-import CitationCarousel from "./CitationCarousel"
+import Testimonials from "./Testimonials";
+import SearchForm from "./SearchForm"
 
 export default ()=>{
-    return <Fragment>   
-                <h1>
-                    THis will be the LandingPage
-                </h1>
-                <OffersPanel/>
-                <CitationCarousel/>
+    return     <Fragment>   
+       
+        <h1>THis will be the LandingPage</h1>
+        <SearchForm/>
+        <OffersPanel/>
+        <Testimonials/>
 
-            </Fragment>
+        </Fragment>
 }

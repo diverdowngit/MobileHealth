@@ -19,6 +19,8 @@ import TherapistList from "./Components/TherapistList";
 import Login from "./Components/Login";
 import RegisterPage from "./Components/RegisterPage";
 
+
+
 export default function App() {
   return (
     <>
@@ -27,7 +29,7 @@ export default function App() {
       <h1 style={{textAlign: "center"}}>Mobile Health</h1>
       <h3 style={{textAlign: "center"}}>Physical Therapy | Massage | Speech Therapist</h3>
     </div>
-    <div style={{height: 800}} >
+    <div >
     <Switch>
           <Route path="/TherapistList">
             <TherapistList/>
