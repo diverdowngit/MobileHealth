@@ -10,7 +10,7 @@ const FooterPage = () => {
             <h5 className="title">Footer Content</h5>
             <p>
               Here you can use rows and columns here to organize your footer
-              content.
+              content. sooo my work already done ?? :)
             </p>
           </MDBCol>
           <MDBCol md="6">
