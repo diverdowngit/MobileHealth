@@ -4,7 +4,7 @@ import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBCard
 const PanelPage = () => {
 return (
 <MDBContainer>
-<h1>This will be the Offer Panel.</h1>
+<h3>This will be the Offer Panel.</h3>
   <MDBCardGroup deck>
     <MDBCard>
       <MDBCardBody>
