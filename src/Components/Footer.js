@@ -16,16 +16,16 @@ const FooterPage = () => {
             <h5 className="title">Links</h5>
             <ul>
               <li className="list-unstyled">
-                <a href="#!">Link 1</a>
+                <a href="#!">original</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 2</a>
+                <a href="#!">tims</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 3</a>
+                <a href="#!">futter</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 4</a>
+                <a href="#!">skills</a>
               </li>
             </ul>
           </MDBCol>
