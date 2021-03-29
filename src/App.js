@@ -6,46 +6,38 @@ import 'mdbreact/dist/css/mdb.css';
 import {
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 
-//Import all Componentes
-import TeamPage from "./Components/Team";
-import NavBarPage from "./Components/NavbarPage";
-import Footer from "./Components/Footer";
+// Import all Componentes
+// import TeamPage from "./Components/Team";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 import LandingPage from "./Components/LandingPage";
 import TherapistList from "./Components/TherapistList";
 import Login from "./Components/Login";
 import RegisterPage from "./Components/RegisterPage";
 
 
-
 export default function App() {
   return (
     <>
-    <NavBarPage />
-    <div>
-      <h1 style={{textAlign: "center"}}>Mobile Health</h1>
-      <h3 style={{textAlign: "center"}}>Physical Therapy | Massage | Speech Therapist</h3>
-    </div>
-    <div >
-    <Switch>
-          <Route path="/TherapistList">
-            <TherapistList/>
-          </Route>
-          <Route path="/Login">
-            <Login/>
-          </Route>
-          <Route path="/Registration">
-            <RegisterPage/>
-          </Route>
-          <Route exact path="/">
-            <LandingPage/>
-          </Route>
-        </Switch>
-      </div>
-    <Footer />
-      </>
+      <Navbar />
+      <Switch>
+        <Route path="/therapistList">
+          <TherapistList/>
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/registration">
+          <RegisterPage/>
+        </Route>
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
+      </Switch>
+      <Footer />
+    </>
   );
 }

@@ -1,16 +1,19 @@
-import React, { Fragment } from "react"; 
+import React, { Fragment } from "react";
 
 import OffersPanel from "./OffersPanel";
 import Testimonials from "./Testimonials";
-import SearchForm from "./SearchForm"
+import SearchForm from "./SearchForm";
+import Header from "./Header/Header";
 
-export default ()=>{
-    return     <Fragment>   
-       
-        <h1>THis will be the LandingPage</h1>
-        <SearchForm/>
-        <OffersPanel/>
-        <Testimonials/>
+const LandingPage = () => {
+  return (
+    <Fragment>
+      <Header />
+      <SearchForm />
+      <OffersPanel />
+      <Testimonials />
+    </Fragment>
+  );
+};
 
-        </Fragment>
-}
+export default LandingPage;
