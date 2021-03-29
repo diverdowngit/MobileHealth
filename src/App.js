@@ -15,8 +15,9 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import LandingPage from "./Components/LandingPage";
 import TherapistList from "./Components/TherapistList";
-import Login from "./Components/Login";
+import Login from "./Components/Login/Login";
 import RegisterPage from "./Components/RegisterPage";
+
 
 
 export default function App() {
