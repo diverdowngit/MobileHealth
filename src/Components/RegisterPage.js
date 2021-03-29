@@ -5,7 +5,7 @@ const RegisterPage = () => {
   return (
     <MDBContainer>
       <MDBRow>
-        <MDBCol md="6">
+        <MDBCol md="7">
           <MDBCard>
             <MDBCardBody>
               <form>
@@ -56,7 +56,7 @@ const RegisterPage = () => {
               
                 </div>
                 <div className="text-center py-4 mt-3">
-                  <MDBBtn color="cyan" type="submit">
+                  <MDBBtn background-color="#03af03;" type="submit">
                     Register
                   </MDBBtn>
                 </div>
