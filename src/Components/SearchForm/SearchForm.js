@@ -1,7 +1,7 @@
 import React from "react";
 import {  MDBRow, MDBCol, MDBInput, MDBCard, MDBCardBody, MDBMask, MDBIcon, MDBView, MDBBtn } from "mdbreact";
 
-const BlogPage = () => {
+const SearchForm = () => {
   return (
     <MDBCard lg="3" className="my-5 px-5 pb-5">
       <MDBCardBody>
@@ -19,26 +19,27 @@ const BlogPage = () => {
             </MDBView>
           </MDBCol>
           <MDBCol lg="7">
-            <a href="#!" className="indigo-text">
-              <h6 className="font-weight-bold mb-3">
-                <MDBIcon icon="suitcase" className="pr-2" />
-                Service
-              </h6>
-            </a>
+
             <h3 className="font-weight-bold mb-3 p-0">
-              <strong>Find the right service for you!</strong>
+              <strong>FIND THE RIGHT
+                <br></br>
+                SERVICE FOR YOU
+              </strong>
             </h3>
             <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt. Neque porro qui dolorem ipsum quia
-              sit amet.
+            Physical Therapy | Massage | Speech Therapist
             </p>
-            <MDBInput label="Example label" background size="lg" />
-            <MDBInput label="Example label" background size="lg" />
-            <MDBInput label="Example label" background size="lg" />
-            <MDBBtn color="indigo" size="md" className="waves-light ">
-              Search
+            <MDBInput label="" background size="lg" />
+            <p>
+              Postcode | Street | City
+            </p>
+            <MDBInput label="" background size="lg" />
+            <p>
+              Search for Date
+            </p>
+            <MDBInput label="" background size="lg" />
+            <MDBBtn color="#03af03" size="md" className="waves-light ">
+              Check Availability | Ability?
             </MDBBtn>
           </MDBCol>
         </MDBRow>
@@ -47,4 +48,4 @@ const BlogPage = () => {
   );
 }
 
-export default BlogPage;
+export default SearchForm;
