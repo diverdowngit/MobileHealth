@@ -1,7 +1,3 @@
-/* @import './app.css'; 
-@import './navbarpage.css'; 
-@import './footer.css';   */
-
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -13,6 +9,5 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.p-color {
-    color: #03af03;
-}
+
+/* color #03af03 */
