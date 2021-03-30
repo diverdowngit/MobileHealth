@@ -1,9 +1,12 @@
 import React, { Fragment } from "react"; 
 
-export default ()=>{
-    return <Fragment>   
+
+const TherapistList = () => {
+    return (<Fragment>    
                 <h1>
                     This will show all Therapist depending on your search.
                 </h1>
-            </Fragment>
+            </Fragment>)
 }
+
+export default TherapistList;
