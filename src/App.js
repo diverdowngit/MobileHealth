@@ -19,7 +19,7 @@ import TherapistList from "./Components/TherapistList";
 import Login from "./Components/Login/Login";
 import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
-import MyMapComponent from "./Components/Map";
+// import MyMapComponent from "./Components/Map";
 
 
 
