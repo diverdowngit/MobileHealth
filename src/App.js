@@ -16,9 +16,9 @@ import Footer from "./Components/Footer/Footer";
 import LandingPage from "./Components/LandingPage";
 import TherapistList from "./Components/TherapistList";
 
-import Login from "./Components/Login";
-import RegisterPage from "./Components/RegisterPage";
-import RegisterPage2 from "./Components/registerPage /RegisterPage2";
+import Login from "./Components/Login/Login";
+import RegisterPage from "./Components/RegisterPage/RegisterPage";
+import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 import MyMapComponent from "./Components/Map";
 
 
@@ -34,9 +34,15 @@ export default function App() {
         <Route path="/login">
           <Login />
         </Route>
+
+        <Route path="/registration2">
+          <RegisterPage2 />
+        </Route>
+
+
         <Route path="/registration">
-     //     <RegisterPage/>
-     <RegisterPage2 />
+         <RegisterPage/>
+     
         </Route>
         <Route exact path="/">
           <LandingPage />
