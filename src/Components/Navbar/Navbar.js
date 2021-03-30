@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <MDBNavbar color="grey" dark expand="md">
+    <MDBNavbar color="green" dark expand="md">
       <MDBNavbarBrand>
         <strong className="white-text">Logo Placeholder</strong>
       </MDBNavbarBrand>
