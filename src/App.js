@@ -18,13 +18,14 @@ import LandingPage from "./Components/LandingPage";
 import TherapistList from "./Components/TherapistList";
 import Login from "./Components/Login";
 import RegisterPage from "./Components/RegisterPage";
-
-
+import RegisterPage2 from "./Components/registerPage /RegisterPage2";
+import MyMapComponent from "./Components/Map";
 
 export default function App() {
   return (
-    <>
+    <> 
     <NavBarPage />
+    
     <div>
       <h1 style={{textAlign: "center"}}>Mobile Health</h1>
       <h3 style={{textAlign: "center"}}>Physical Therapy | Massage | Speech Therapist</h3>
@@ -38,7 +39,7 @@ export default function App() {
             <Login/>
           </Route>
           <Route path="/Registration">
-            <RegisterPage/>
+          <RegisterPage2 />
           </Route>
           <Route exact path="/">
             <LandingPage/>
@@ -46,6 +47,7 @@ export default function App() {
         </Switch>
       </div>
     <Footer />
+   
       </>
   );
 }
