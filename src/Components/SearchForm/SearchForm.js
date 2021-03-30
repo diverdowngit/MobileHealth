@@ -38,7 +38,7 @@ const SearchForm = () => {
               Search for Date
             </p>
             <MDBInput label="" background size="lg" />
-            <MDBBtn color="#03af03" size="md" className="waves-light ">
+            <MDBBtn backround color="green" size="md" className="">
               Check Availability | Ability?
             </MDBBtn>
           </MDBCol>
