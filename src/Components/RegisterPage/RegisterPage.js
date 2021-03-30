@@ -56,7 +56,7 @@ const RegisterPage = () => {
               
                 </div>
                 <div className="text-center py-4 mt-3">
-                  <MDBBtn background-color="#03af03;" type="submit">
+                  <MDBBtn color="green" type="submit">
                     Register
                   </MDBBtn>
                 </div>

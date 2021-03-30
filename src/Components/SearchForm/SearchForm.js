@@ -1,5 +1,5 @@
 import React from "react";
-import {  MDBRow, MDBCol, MDBInput, MDBCard, MDBCardBody, MDBMask, MDBIcon, MDBView, MDBBtn } from "mdbreact";
+import {  MDBRow, MDBCol, MDBInput, MDBCard, MDBCardBody, MDBMask, MDBView, MDBBtn } from "mdbreact";
 
 const SearchForm = () => {
   return (

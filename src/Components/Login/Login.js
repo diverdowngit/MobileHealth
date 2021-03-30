@@ -14,7 +14,7 @@ return (
           <MDBInput label="Type your password" icon="lock" group type="password" validate />
         </div>
         <div className="text-center">
-          <MDBBtn>Login</MDBBtn>
+          <MDBBtn color="green">Login</MDBBtn>
         </div>
       </form>
     </MDBCol>
