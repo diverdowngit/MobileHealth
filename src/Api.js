@@ -1,27 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import axios from "axios";
-import { useParams } from "react-router";
+// import { useParams } from "react-router";
+import TherapistsContext from "../context/TherapistsContext"
 
 const Api = () => {
-  const { id } = useParams();
-  const url = `https://cherry-cupcake-02141.herokuapp.com/therapist/${id}`;
+  const { setTherapists } = useContext(TherapistsContext)
+ // const { id } = useParams();
 
-  let content = null;
-
-  useEffect(() => {
-    axios.get(url).then((response) => {
-      setTherapists(response.data);
-    });
-  }, [url]);
-
-  if (therapists) {
-    content = (
-      <div>
-        <h1>{content.name}</h1>
-      </div>
-    );
-  }
-  return <div>{content}</div>;
 };
 
 export default Api;

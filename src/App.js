@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -20,7 +21,16 @@ import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 
 
 export default function App() {
-  const [therapists, setTherapists] = useState({ name: "Rafael" });
+  const [therapists, setTherapists] = useState([]);
+
+  const url = `https://cherry-cupcake-02141.herokuapp.com/therapist/`;
+
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setTherapists(response.data);
+    });
+  }, [url]);
+
   return (
     <>
       <Navbar />
