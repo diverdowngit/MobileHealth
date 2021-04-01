@@ -124,11 +124,31 @@ const  RegisterPage2 = () => {
             </MDBCol>
           </MDBRow>
           <MDBInput type="textarea" label="Description of Service" rows="5" />
-          <MDBRow>
+          <MDBRow> <MDBCol md="4" className="mb-3">
+              <label
+                htmlFor="defaultFormRegisterEmailEx2"
+                className="grey-text"
+              >
+                Address
+              </label>
+              
+              <input
+                // value={this.state.lname}
+                name="address"
+                // onChange={this.changeHandler}
+                type="text"
+                id="defaultFormRegisterEmailEx2"
+                className="form-control"
+                placeholder="Address"
+                required
+              />
+              <div className="valid-feedback">Looks good!</div>
+            </MDBCol>
             <MDBCol md="4" className="mb-3">
               <label
                 htmlFor="defaultFormRegisterPasswordEx4"
                 className="grey-text"
+                
               >
                 City
               </label>

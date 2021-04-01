@@ -17,9 +17,9 @@ import LandingPage from "./Components/LandingPage";
 import TherapistList from "./Components/TherapistList";
 
 import Login from "./Components/Login/Login";
-import RegisterPage from "./Components/RegisterPage/RegisterPage";
+//  import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
-// import MyMapComponent from "./Components/Map";
+//  import Map from "./Components/Map";
 
 
 
@@ -35,15 +35,18 @@ export default function App() {
           <Login />
         </Route>
 
-        <Route path="/registration2">
+        {/* <Route path="/registration2">
           <RegisterPage2 />
-        </Route>
+        </Route> */}
 
 
-        <Route path="/registration">
-         <RegisterPage/>
+        <Route path="/registration"> 
+        
+         <RegisterPage2 /> 
+         
      
-        </Route>
+        </Route> 
+        
         <Route exact path="/">
           <LandingPage />
         </Route>
