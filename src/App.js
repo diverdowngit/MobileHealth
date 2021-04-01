@@ -17,11 +17,15 @@ import LandingPage from "./Components/LandingPage";
 import TherapistList from "./Components/TherapistList";
 
 import Login from "./Components/Login/Login";
-import RegisterPage from "./Components/RegisterPage/RegisterPage";
+//  import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
+
+//  import Map from "./Components/Map";
+
+
 // import MyMapComponent from "./Components/Map";
 import Api from "./Api";
- 
+  
 
 
 export default function App() {
@@ -36,9 +40,19 @@ export default function App() {
           <Login />
         </Route>
 
-        <Route path="/registration2">
+        {/* <Route path="/registration2">
           <RegisterPage2 />
-        </Route>
+        </Route> */}
+
+
+
+        <Route path="/registration"> 
+        
+         <RegisterPage2 /> 
+         
+     
+        </Route> 
+        
 
         <Route path="/registration">
          <RegisterPage/>

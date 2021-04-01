@@ -20,9 +20,10 @@ const Navbar = () => {
 
   return (
     <MDBNavbar color="green" dark expand="md">
+      <MDBNavLink to="/">
       <MDBNavbarBrand>
-      <img className="logo" src={Logo} alt="MH Logo" height="100"/>
-      </MDBNavbarBrand>
+      <img className="logo" src={Logo} alt="MH Logo" height="100"to="/" />
+      </MDBNavbarBrand></MDBNavLink>
 
       <MDBNavbarToggler onClick={toggleCollapse} />
 
