@@ -3,9 +3,8 @@ import axios from "axios";
 import { useParams } from "react-router";
 
 const Api = () => {
-  const { id } = useParams()
-  const url = `http://localhost:3000/${id}`;
-  const [therapists, setTherapists] = useState(null);
+  const { id } = useParams();
+  const url = `https://cherry-cupcake-02141.herokuapp.com/therapist/${id}`;
 
   let content = null;
 
