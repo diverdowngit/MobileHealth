@@ -39,7 +39,7 @@ const SearchForm = () => {
             </p>
             <MDBInput label="" background size="lg" />
             <MDBBtn backround color="green" size="md" className="">
-              Check Availability | Ability?
+              Check Availability
             </MDBBtn>
           </MDBCol>
         </MDBRow>
