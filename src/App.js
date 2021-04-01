@@ -20,10 +20,10 @@ import Login from "./Components/Login/Login";
 //  import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 
-//  import Map from "./Components/Map";
 
 
-// import MyMapComponent from "./Components/Map";
+
+
 import Api from "./Api";
   
 
@@ -54,9 +54,9 @@ export default function App() {
         </Route> 
         
 
-        <Route path="/registration">
+        {/* <Route path="/registration">
          <RegisterPage/>
-        </Route>
+        </Route> */}
 
         <Route exact path="/">
           <LandingPage />

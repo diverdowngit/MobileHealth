@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { MDBRow, MDBCol, MDBBtn,MDBContainer,MDBInput } from "mdbreact";
-import Map from "../Map"
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
 
 
@@ -237,10 +236,10 @@ const  RegisterPage2 = () => {
         </MDBContainer>
         </MDBContainer>
         <MDBContainer >
-    <Map  /> 
+   {/* map slot */}
     </MDBContainer>
     < />
-    );
+    );  
   }
 
 
