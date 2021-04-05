@@ -13,17 +13,16 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import LandingPage from "./Components/LandingPage";
 import TherapistList from "./Components/TherapistList";
+import TherapistCard from "./Components/TherapistCard"
 
 import Login from "./Components/Login/Login";
 //  import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 // import Api from "./Api";
-
-
 export default function App() {
   const [therapists, setTherapists] = useState([]);
 
-  const url = `https://cherry-cupcake-02141.herokuapp.com/therapist/`;
+  const url = `https://cherry-cupcake-02141.herokuapp.com/theraçpist/`;
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -34,11 +33,13 @@ export default function App() {
   return (
     <>
       <Navbar />
-
       <TherapistContext.Provider value={{ therapists, setTherapists }}>
         <Switch>
           <Route path="/therapistList">
             <TherapistList />
+          </Route>
+          <Route path="/therapistCard">
+            <TherapistCard />
           </Route>
           <Route path="/login">
             <Login />
