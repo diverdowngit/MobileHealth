@@ -3,17 +3,16 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBIcon } from "mdbreact";
 
 const FooterPage = () => {
   return (
-    <MDBFooter color="green" className="font-small pt-4 mt-4">
+    <MDBFooter color="green" className="font-small pt-3 mt-3">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
-          <MDBCol md="4">
+          <MDBCol md="3">
             <h1 className="title font-big" >Mobile Health</h1>
-    
           </MDBCol>
-          <MDBCol md="2">
+          <MDBCol md="3">
             <h5 className="about">About Us</h5>
-            <ul>
-              <li className="list-unstyled">
+            <ul style={{padding: 5}}>
+              <li className="list-unstyled text-align auto">
                 <a href="#!">Our Story</a>
               </li>
               <li className="list-unstyled">
@@ -31,7 +30,7 @@ const FooterPage = () => {
             </ul>
           </MDBCol>
           <MDBCol><h5 className="patients">For Patients</h5>
-          <ul>
+          <ul style={{padding: 5}}>
               <li className="list-unstyled">
                 <a href="#!">Create new User</a>
               </li>
@@ -44,7 +43,7 @@ const FooterPage = () => {
             </ul>
             </MDBCol>
           <MDBCol><h5 className="therapists" >For Therapists</h5>
-          <ul>
+          <ul style={{padding: 5}}>
               <li className="list-unstyled">
                 <a href="#!">Add your Therapy</a>
               </li>

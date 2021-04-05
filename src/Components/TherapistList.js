@@ -6,7 +6,10 @@ const TherapistList = () => {
     const { therapists } = useContext(TherapistsContext)
     return (<Fragment>    
                 <ul>
-                {therapists && therapists.map(therapist => <li>{therapist.first_name}</li>)}
+                {therapists && therapists.map(therapist => <li>{therapist.first_name}</li>
+                )}
+                {therapists && therapists.map(therapist => <li>{therapist.address.country}</li>
+                )}
                 </ul>
             </Fragment>)
 }
