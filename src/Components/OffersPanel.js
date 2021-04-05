@@ -9,7 +9,7 @@ const PanelPage = () => {
         <img
           className="image"
           src={image}
-          alt="offers panel image"
+          alt="offers panel"
           width="1111"
           to="/"
         />

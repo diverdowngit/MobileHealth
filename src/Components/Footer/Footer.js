@@ -63,25 +63,25 @@ const FooterPage = () => {
         <MDBRow>
 
     <MDBContainer className="text-center">
-      <a href="#!" className="fb-ic mr-4 text-center">
+      <a href="#!" target="_blank" className="fb-ic mr-4 text-center">
         <MDBIcon fab icon="facebook-f" />
       </a>
-      <a href="#!" className="tw-ic mr-3">
+      <a href="#!" target="_blank" className="tw-ic mr-3">
         <MDBIcon fab icon="twitter" />
       </a>
-      <a href="#!" className="li-ic mr-3">
+      <a href="#!" target="_blank" className="li-ic mr-3">
         <MDBIcon fab icon="linkedin-in" />
       </a>
-      <a href="#!" className="ins-ic mr-3">
+      <a href="#!" target="_blank" className="ins-ic mr-3">
         <MDBIcon fab icon="instagram" />
       </a>
-      <a href="#!" className="pin-ic mr-3">
+      <a href="#!" target="_blank" className="pin-ic mr-3">
         <MDBIcon fab icon="pinterest" />
       </a>
-      <a href="#!" className="yt-ic mr-3">
+      <a href="#!" target="_blank" className="yt-ic mr-3">
         <MDBIcon fab icon="youtube" />
       </a>
-      <a href="https://github.com/ChristinThoma/Mobile_Health_FrontEnd" className="git-ic mr-3">
+      <a href="https://github.com/ChristinThoma/Mobile_Health_FrontEnd" target="_blank" rel="noreferrer" className="git-ic mr-3">
         <MDBIcon fab icon="github" />
       </a>
     </MDBContainer>
@@ -90,7 +90,7 @@ const FooterPage = () => {
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="https://github.com/ChristinThoma/Mobile_Health_FrontEnd"> Mobile-Health.com </a>
+          &copy; {new Date().getFullYear()} Copyright: <a href="https://github.com/ChristinThoma/Mobile_Health_FrontEnd" target="_blank" rel="noreferrer"> Mobile-Health.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>
