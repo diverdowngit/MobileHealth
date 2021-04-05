@@ -22,7 +22,7 @@ import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 export default function App() {
   const [therapists, setTherapists] = useState([]);
 
-  const url = `https://cherry-cupcake-02141.herokuapp.com/theraçpist/`;
+  const url = `https://cherry-cupcake-02141.herokuapp.com/therapist/`;
 
   useEffect(() => {
     axios.get(url).then((response) => {

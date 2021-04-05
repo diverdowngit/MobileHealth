@@ -8,8 +8,6 @@ const TherapistList = () => {
                 <ul>
                 {therapists && therapists.map(therapist => <li>{therapist.first_name}</li>
                 )}
-                {therapists && therapists.map(therapist => <li>{therapist.address.country}</li>
-                )}
                 </ul>
             </Fragment>)
 }
