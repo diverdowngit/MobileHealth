@@ -1,5 +1,8 @@
 .Footer {
     /* background-color: #03af03 !important; */
-    color: green; 
+    /* color: green;  */
+}
 
+.title {
+        color:blue !important;
 }
