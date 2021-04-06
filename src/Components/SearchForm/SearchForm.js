@@ -12,6 +12,8 @@ const SearchForm = () => {
                 className="img-fluid"
                 src="https://www.minimed.at/fileadmin/_processed_/0/7/csm_Physiotherapie_aeaf6ee751.jpg"
                 alt=""
+                padding-right="0"
+                margin-right="0"
               />
               <a href="#!">
                 <MDBMask overlay="white-slight" />
