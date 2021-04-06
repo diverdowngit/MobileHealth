@@ -6,7 +6,7 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { Switch, Route } from "react-router-dom";
 import AppState from './context/app/AppState';
-
+// import TherapistContext from "../src/context/TherapistsContext"; 
 // Import all Componentes
 // import TeamPage from "./Components/Team";
 import Navbar from "./Components/Navbar/Navbar";
@@ -23,20 +23,12 @@ import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 
 
 
-import Login from "./Components/Login/Login";
-//  import RegisterPage from "./Components/RegisterPage/RegisterPage";
-import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
-// import Api from "./Api";
-
 export default function App() {
+  
 
   return (
     <AppState>
       <Navbar />
-
-
-      <TherapistContext.Provider value={{ therapists, setTherapists }}>
- 
         <Switch>
           <Route path="/therapistList">
             <TherapistList />
@@ -66,5 +58,6 @@ export default function App() {
         </Switch>
       <Footer />
     </AppState>
+    
   );
 }
