@@ -1,51 +1,75 @@
-import React from 'react';
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBCardGroup, MDBContainer } from "mdbreact";
+import { MDBBtn, MDBContainer, MDBCol } from "mdbreact";
+import image from "../images/offersPannelOne.png";
+import image2 from "../images/offersPannelTwo.png";
+import image3 from "../images/offersPannelThree.png";
 
 const PanelPage = () => {
-return (
-  <MDBContainer>
-  <h3>This will be the Offer Panel.</h3>
-    <MDBCardGroup deck>
-      <MDBCard>
-        <MDBCardBody>
-          <MDBCardTitle tag="h5">Choose your Service</MDBCardTitle>
-          <MDBCardText>
-            This is a wider panel with supporting text below as a natural
-            lead-in to additional content. This content is a little bit
-            longer.
-          </MDBCardText>
-        </MDBCardBody>
-        <MDBCardFooter small muted>
-          Bla
-        </MDBCardFooter>
-      </MDBCard>
-      <MDBCard>
-        <MDBCardBody>
-          <MDBCardTitle tag="h5">Book your Appointment</MDBCardTitle>
-          <MDBCardText>
-            This panel has supporting text below as a natural lead-in to
-            additional content.
-          </MDBCardText>
-        </MDBCardBody>
-        <MDBCardFooter small muted>
-        Bla
-        </MDBCardFooter>
-      </MDBCard>
-      <MDBCard>
-        <MDBCardBody>
-          <MDBCardTitle tag="h5">Mobile Service</MDBCardTitle>
-          <MDBCardText>
-            This is a wider panel with supporting text below as a natural
-            lead-in to additional content. This panel has even longer
-            content than the first to show that equal height action.
-          </MDBCardText>
-        </MDBCardBody>
-        <MDBCardFooter small muted>
-        Bla
-        </MDBCardFooter>
-      </MDBCard>
-    </MDBCardGroup>
-  </MDBContainer>
+  return (
+    <MDBContainer className="text-center">
+      <MDBCol>
+        <img
+          className="image"
+          src={image}
+          alt="offers panel one"
+          width="250"
+          to="/"
+        />
+        <MDBBtn color="green" href="http://localhost:3000/therapistlist">Step 1: Please choose your Service here</MDBBtn>
+        <p width="250">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </MDBCol>
+      <MDBCol>
+        <img
+          className="image"
+          src={image2}
+          alt="offers panel one"
+          width="250"
+          to="/"
+        />
+        <MDBBtn color="green" href="http://localhost:3000/therapistcard" >Step 2: Please book your Appointment here</MDBBtn>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </MDBCol>
+      <MDBCol>
+        <img
+          className="image"
+          src={image3}
+          alt="offers panel one"
+          width="250"
+          to="/"
+        />
+        <MDBBtn color="green">Step 3: Please choose your Mobile Service</MDBBtn>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+      </MDBCol>
+    </MDBContainer>
   );
 };
 

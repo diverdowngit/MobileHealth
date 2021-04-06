@@ -14,11 +14,19 @@ import Footer from "./Components/Footer/Footer";
 import LandingPage from "./Components/LandingPage";
 import TherapistList from "./Components/TherapistList";
 import TherapistCard from "./Components/TherapistCard"
+
 import Login from "./Components/Login/Login";
 //  import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 //  import Api from "./Api";
 
+
+
+
+import Login from "./Components/Login/Login";
+//  import RegisterPage from "./Components/RegisterPage/RegisterPage";
+import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
+// import Api from "./Api";
 
 export default function App() {
 
@@ -26,9 +34,15 @@ export default function App() {
     <AppState>
       <Navbar />
 
+
+      <TherapistContext.Provider value={{ therapists, setTherapists }}>
+ 
         <Switch>
           <Route path="/therapistList">
             <TherapistList />
+          </Route>
+          <Route path="/therapistCard">
+            <TherapistCard />
           </Route>
           <Route path="/login">
             <Login />
