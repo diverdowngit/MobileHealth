@@ -1,13 +1,22 @@
-import React, { Fragment, useContext } from "react"; 
+import React, { Fragment, useContext, useEffect } from "react"; 
 import TherapistsContext from "../context/TherapistsContext"
+import TherapistCard from './TherapistCard';
+
 
 
 const TherapistList = () => {
-    const { therapists } = useContext(TherapistsContext)
+    const { data, fetchAPI } = useContext(TherapistsContext);
+  
+    useEffect(() => {
+      fetchAPI()
+    } , []);
+  
     return (<Fragment>    
                 <ul>
-                {therapists && therapists.map(therapist => <li>{therapist.first_name}</li>)}
+                {data.length && data.map(therapist => <TherapistCard therapist={therapist} />)}
                 </ul>
+             
+                
             </Fragment>)
 }
 

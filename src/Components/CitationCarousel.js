@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"; 
+import React from "react"; 
 import { MDBCarousel,MDBBtn,  MDBJumbotron, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
 

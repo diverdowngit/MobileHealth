@@ -28,7 +28,7 @@ const  RegisterPage2 = () => {
 
  
     return (
-    <> 
+   
     
    
    <MDBContainer className= "d-flex justify-content-left mt-5 ">
@@ -235,10 +235,10 @@ const  RegisterPage2 = () => {
         </form>
         </MDBContainer>
         </MDBContainer>
-        <MDBContainer >
-   {/* map slot */}
-    </MDBContainer>
-    < />
+        /* <MDBContainer >
+ <Map />
+    </MDBContainer> */
+  
     );  
   }
 
