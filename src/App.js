@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { Switch, Route } from "react-router-dom";
-import TherapistContext from "../src/context/TherapistsContext"; 
+import AppState from './context/app/AppState';
 
 // Import all Componentes
 // import TeamPage from "./Components/Team";
@@ -18,22 +18,25 @@ import TherapistCard from "./Components/TherapistCard"
 import Login from "./Components/Login/Login";
 //  import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
+//  import Api from "./Api";
+
+
+
+
+import Login from "./Components/Login/Login";
+//  import RegisterPage from "./Components/RegisterPage/RegisterPage";
+import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 // import Api from "./Api";
+
 export default function App() {
-  const [therapists, setTherapists] = useState([]);
-
-  const url = `https://cherry-cupcake-02141.herokuapp.com/therapist/`;
-
-  useEffect(() => {
-    axios.get(url).then((response) => {
-      setTherapists(response.data);
-    });
-  }, [url]);
 
   return (
-    <>
+    <AppState>
       <Navbar />
+
+
       <TherapistContext.Provider value={{ therapists, setTherapists }}>
+ 
         <Switch>
           <Route path="/therapistList">
             <TherapistList />
@@ -45,9 +48,9 @@ export default function App() {
             <Login />
           </Route>
 
-          {/* <Route path="/registration2">
-          <RegisterPage2 />
-        </Route> */}
+           <Route path="/TherapistCard">
+          <TherapistCard />
+        </Route> 
 
           <Route path="/registration">
             <RegisterPage2 />
@@ -61,8 +64,7 @@ export default function App() {
             <LandingPage />
           </Route>
         </Switch>
-      </TherapistContext.Provider>
       <Footer />
-    </>
+    </AppState>
   );
 }

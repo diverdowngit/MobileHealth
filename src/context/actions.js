@@ -1,0 +1,2 @@
+export const FETCH_API = 'FETCH_API';
+export const FETCH_SINGLE_THERAPIST = 'FETCH_SINGLE_THERAPIST';
