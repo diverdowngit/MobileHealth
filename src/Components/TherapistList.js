@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useEffect } from "react"; 
 import TherapistsContext from "../context/TherapistsContext"
 import TherapistCard from './TherapistCard';
+import ProfilePage from "./ProfilePage";
 
 
 
@@ -15,7 +16,10 @@ const TherapistList = () => {
                 <ul>
                   {data.length && data.map(therapist => <TherapistCard therapist={therapist} /> )}
                 </ul>
-             
+                {/* <ul>
+                  {data.length && data.map(therapist => <ProfilePage therapist={therapist} /> )}
+                </ul> */}
+
                 
             </Fragment>)
 }
