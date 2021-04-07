@@ -2,7 +2,7 @@
 import React from 'react';
 import { MDBRow, MDBCol, MDBBtn,MDBContainer,MDBInput } from "mdbreact";
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
-
+import ImageUpload from "../util/imageUploader"
 
 
 
@@ -210,6 +210,7 @@ const  RegisterPage2 = () => {
                 Please provide a valid zip.
               </div>
               <div className="valid-feedback">Looks good!</div>
+              <ImageUpload/>
             </MDBCol>
           </MDBRow>
           <MDBCol md="4" className="mb-3">
@@ -228,11 +229,12 @@ const  RegisterPage2 = () => {
                 You must agree before submitting.
               </div>
             </div>
+           
           </MDBCol>
           <MDBBtn  color="green"  type="submit">
             Submit Form
           </MDBBtn>
-        </form>
+          </form>
         </MDBContainer>
         </MDBContainer>
         /* <MDBContainer >
