@@ -25,8 +25,7 @@ const TherapistCard = ({ therapist }) => {
       Make Appointment
       </MDBBtn>
       <MDBBtn
-        href="https://www.mdbootstrap.com"
-        target="_blank"
+        href={`/profile/${therapist['_id']}`}
         color="grey"
         size='sm'
       >

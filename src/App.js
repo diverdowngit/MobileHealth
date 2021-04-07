@@ -29,29 +29,21 @@ export default function App() {
      
       <Navbar />
         <Switch>
-          <Route path="/therapistList">
+          <Route path="/therapistlist">
             <TherapistList />
           </Route>
-          <Route path="/therapistCard">
+          <Route path="/therapistcard">
             <TherapistCard />
           </Route>
-          <Route path="/ProfilePage">
+          <Route exact path="/profile/:id">
             <ProfilePage />
           </Route>
           <Route path="/login">
             <Login />
-          </Route>
-           <Route path="/TherapistCard">
-          <TherapistCard />
         </Route> 
           <Route path="/registration">
             <RegisterPage2 />
           </Route>
-
-          {/* <Route path="/registration">
-         <RegisterPage/>
-        </Route> */}
-
           <Route exact path="/">
             <LandingPage />
           </Route>

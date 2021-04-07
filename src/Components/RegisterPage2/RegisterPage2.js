@@ -1,8 +1,13 @@
-
-import React from 'react';
-import { MDBRow, MDBCol, MDBBtn,MDBContainer,MDBInput } from "mdbreact";
-import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
-import ImageUpload from "../util/imageUploader"
+import React from "react";
+import { MDBRow, MDBCol, MDBBtn, MDBContainer, MDBInput } from "mdbreact";
+import {
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+} from "mdbreact";
+import ImageUpload from "../util/imageUploader";
+import "./RegisterPage2.css";
 import Map from '../Map/Map';
 
 const  RegisterPage2 = () => {
@@ -25,32 +30,27 @@ const  RegisterPage2 = () => {
   //   this.setState({ [event.target.name]: event.target.value });
   // };
 
- 
-    return (
-   
-    
-   
-   <MDBContainer className= "d-flex justify-content-left mt-5 ">
+  return (
+    <MDBContainer className="d-flex justify-content-left mt-5 ">
       <MDBRow>
-      <MDBCol>
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg" className="rounded float-left" alt="aligment" />
-   
-      </MDBCol>
-    </MDBRow>
- 
-    <MDBContainer  className= " justify-content-right ">
+        <MDBCol>
+          <img
+            src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg"
+            className="rounded float-left"
+            alt="aligment"
+          />
+        </MDBCol>
+      </MDBRow>
+
+      <MDBContainer className=" justify-content-right ">
         <form
           className="needs-validation"
           // onSubmit={this.submitHandler}
           noValidate
         >
-         
           <MDBRow>
-            <MDBCol md="5" className="mb-4"  >
-              <label
-                htmlFor="defaultFormRegisterNameEx"
-                className="grey-text"
-              >
+            <MDBCol md="5" className="mb-4">
+              <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
                 First name
               </label>
               <input
@@ -72,7 +72,7 @@ const  RegisterPage2 = () => {
               >
                 Last name
               </label>
-              
+
               <input
                 // value={this.state.lname}
                 name="lname"
@@ -87,6 +87,7 @@ const  RegisterPage2 = () => {
             </MDBCol>
             {/* dropDown menu */}
             <MDBCol md="5" className="mb-3">
+
             <MDBDropdown >
       <MDBDropdownToggle color="green" size="sm">
        Select your Profession
@@ -95,9 +96,9 @@ const  RegisterPage2 = () => {
         <MDBDropdownItem>Physical Therapy</MDBDropdownItem>
         <MDBDropdownItem>Massage</MDBDropdownItem>
         <MDBDropdownItem>Speech Therapy</MDBDropdownItem>
-        
       </MDBDropdownMenu>
     </MDBDropdown>
+
             </MDBCol>
             <MDBCol md="4" className="mb-3">
               <label
@@ -118,7 +119,6 @@ const  RegisterPage2 = () => {
               <small id="emailHelp" className="form-text text-muted">
                 We'll never share your email with anyone else.
               </small>
-             
             </MDBCol>
           </MDBRow>
           <MDBCol md="5" className="mb-5 align-right">
@@ -149,6 +149,8 @@ const  RegisterPage2 = () => {
           <MDBInput type="textarea" label="Specialities " rows="3" />
           <MDBInput type="textarea" label="Education" rows="3" />
           <MDBRow> 
+          <MDBRow>
+            {" "}
             <MDBCol md="4" className="mb-3">
               <label
                 htmlFor="defaultFormRegisterEmailEx2"
@@ -156,7 +158,7 @@ const  RegisterPage2 = () => {
               >
                 Address
               </label>
-              
+
               <input
                 // value={this.state.lname}
                 name="address"
@@ -173,7 +175,6 @@ const  RegisterPage2 = () => {
               <label
                 htmlFor="defaultFormRegisterPasswordEx4"
                 className="grey-text"
-                
               >
                 City
               </label>
@@ -201,7 +202,7 @@ const  RegisterPage2 = () => {
               </label>
               <input
                 // value={this.state.state}
-                // 
+                //
                 // onChange={this.changeHandler}
                 type="text"
                 id="defaultFormRegisterPasswordEx4"
@@ -256,21 +257,19 @@ const  RegisterPage2 = () => {
                 You must agree before submitting.
               </div>
             </div>
-        
-           
           </MDBCol>
-          <MDBBtn  color="green"  type="submit">
+          <MDBBtn color="green" type="submit">
             Submit Form
           </MDBBtn>
-          </form>
-         
-        </MDBContainer>
-        </MDBContainer>
-        // <MDBContainer >
-    // </MDBContainer>
-  
-    );  
-  }
+
+        </form>
+      </MDBContainer>
+    </MDBContainer>
+    /* <MDBContainer >
+ <Map />
+    </MDBContainer> */
+  );
+};
 
 
 export default RegisterPage2;

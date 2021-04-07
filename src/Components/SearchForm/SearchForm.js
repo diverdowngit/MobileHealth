@@ -1,5 +1,19 @@
 import React from "react";
-import {  MDBRow, MDBCol, MDBInput, MDBCard, MDBCardBody, MDBMask, MDBView, MDBBtn } from "mdbreact";
+import {
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBRow,
+  MDBCol,
+  MDBInput,
+  MDBCard,
+  MDBCardBody,
+  MDBMask,
+  MDBView,
+  MDBBtn,
+} from "mdbreact";
+import "./SearchForm.css";
 
 const SearchForm = () => {
   return (
@@ -21,24 +35,28 @@ const SearchForm = () => {
             </MDBView>
           </MDBCol>
           <MDBCol lg="7">
-
             <h3 className="font-weight-bold mb-3 p-0">
-              <strong>FIND THE RIGHT
+              <strong>
+                FIND THE RIGHT
                 <br></br>
                 SERVICE FOR YOU
               </strong>
             </h3>
-            <p>
-            Physical Therapy | Massage | Speech Therapist
-            </p>
+            <p>Physical Therapy | Massage | Speech Therapist</p>
+            <MDBDropdown>
+              <MDBDropdownToggle color="green">
+                Select your Profession
+              </MDBDropdownToggle>
+              <MDBDropdownMenu basic>
+                <MDBDropdownItem>Physical Therapy</MDBDropdownItem>
+                <MDBDropdownItem>Massage</MDBDropdownItem>
+                <MDBDropdownItem>Speech Therapy</MDBDropdownItem>
+              </MDBDropdownMenu>
+            </MDBDropdown>
             <MDBInput label="" background size="lg" />
-            <p>
-              Postcode | Street | City
-            </p>
+            <p>Postcode | Street | City</p>
             <MDBInput label="" background size="lg" />
-            <p>
-              Search for Date
-            </p>
+            <p>Search for Date</p>
             <MDBInput label="" background size="lg" />
             <MDBBtn backround color="green" size="md" className="">
               Check Availability
@@ -48,6 +66,6 @@ const SearchForm = () => {
       </MDBCardBody>
     </MDBCard>
   );
-}
+};
 
 export default SearchForm;
