@@ -37,7 +37,7 @@ export default function App() {
           <Route path="/therapistCard">
             <TherapistCard />
           </Route>
-          <Route path="/ProfilePage">
+          <Route exact path="/profile/:id">
             <ProfilePage />
           </Route>
           <Route path="/login">

@@ -15,8 +15,7 @@ const PanelPage = () => {
           height="170"
           to="/"
         />
-        <MDBBtn color="green" height="10" href="http://localhost:3000/therapistlist">Step 1: Please choose your Service here</MDBBtn>
-        <p >
+<MDBBtn color="green" height="10" href="/therapistlist">Step 1: Please choose your Service here</MDBBtn>        <p >
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
@@ -33,7 +32,7 @@ const PanelPage = () => {
           height="170"
           to="/"
         />
-        <MDBBtn color="green" href="http://localhost:3000/therapistcard" >Step 2: Please book your Appointment</MDBBtn>
+        <MDBBtn color="green" href="#" >Step 2: Please book your Appointment</MDBBtn>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
