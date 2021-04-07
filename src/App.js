@@ -31,10 +31,10 @@ export default function App() {
     <AppState>
       <Navbar />
         <Switch>
-          <Route path="/therapistList">
+          <Route path="/therapistlist">
             <TherapistList />
           </Route>
-          <Route path="/therapistCard">
+          <Route path="/therapistcard">
             <TherapistCard />
           </Route>
           <Route exact path="/profile/:id">
@@ -42,18 +42,10 @@ export default function App() {
           </Route>
           <Route path="/login">
             <Login />
-          </Route>
-           <Route path="/TherapistCard">
-          <TherapistCard />
         </Route> 
           <Route path="/registration">
             <RegisterPage2 />
           </Route>
-
-          {/* <Route path="/registration">
-         <RegisterPage/>
-        </Route> */}
-
           <Route exact path="/">
             <LandingPage />
           </Route>
