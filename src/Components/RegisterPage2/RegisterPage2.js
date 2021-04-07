@@ -3,8 +3,7 @@ import React from 'react';
 import { MDBRow, MDBCol, MDBBtn,MDBContainer,MDBInput } from "mdbreact";
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
 import ImageUpload from "../util/imageUploader"
-
-
+import Map from '../Map/Map';
 
 const  RegisterPage2 = () => {
  
@@ -88,8 +87,8 @@ const  RegisterPage2 = () => {
             </MDBCol>
             {/* dropDown menu */}
             <MDBCol md="5" className="mb-3">
-            <MDBDropdown>
-      <MDBDropdownToggle color="green">
+            <MDBDropdown >
+      <MDBDropdownToggle color="green" size="sm">
        Select your Profession
       </MDBDropdownToggle>
       <MDBDropdownMenu basic>
@@ -122,8 +121,35 @@ const  RegisterPage2 = () => {
              
             </MDBCol>
           </MDBRow>
+          <MDBCol md="5" className="mb-5 align-right">
+              <label
+                htmlFor="defaultFormRegisterEmailEx2"
+                className="grey-text"
+              >
+               Password
+              </label>
+              
+              <input
+                // value={this.state.lname}
+                name="lname"
+                // onChange={this.changeHandler}
+                type="text"
+                id="defaultFormRegisterEmailEx2"
+                className="form-control"
+                placeholder=" Password"
+                required
+              />
+              <small id="emailHelp" className="form-text text-muted">
+                Please enter a valid password.
+              </small>
+              <div className="valid-feedback">Looks good!</div>
+            </MDBCol>
+            
           <MDBInput type="textarea" label="Description of Service" rows="5" />
-          <MDBRow> <MDBCol md="4" className="mb-3">
+          <MDBInput type="textarea" label="Specialities " rows="3" />
+          <MDBInput type="textarea" label="Education" rows="3" />
+          <MDBRow> 
+            <MDBCol md="4" className="mb-3">
               <label
                 htmlFor="defaultFormRegisterEmailEx2"
                 className="grey-text"
@@ -210,7 +236,7 @@ const  RegisterPage2 = () => {
                 Please provide a valid zip.
               </div>
               <div className="valid-feedback">Looks good!</div>
-              <ImageUpload/>
+              <ImageUpload md="4" className="mb-3 mt-3"/>
             </MDBCol>
           </MDBRow>
           <MDBCol md="4" className="mb-3">
@@ -222,6 +248,7 @@ const  RegisterPage2 = () => {
                 id="invalidCheck"
                 required
               />
+              <Map />
               <label className="custom-control-label" htmlFor="invalidCheck">
                 Agree to terms and conditions
               </label>
@@ -229,17 +256,18 @@ const  RegisterPage2 = () => {
                 You must agree before submitting.
               </div>
             </div>
+        
            
           </MDBCol>
           <MDBBtn  color="green"  type="submit">
             Submit Form
           </MDBBtn>
           </form>
+         
         </MDBContainer>
         </MDBContainer>
-        /* <MDBContainer >
- <Map />
-    </MDBContainer> */
+        // <MDBContainer >
+    // </MDBContainer>
   
     );  
   }
