@@ -1,14 +1,21 @@
 import React from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBIcon } from "mdbreact";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBIcon, MDBNavLink } from "mdbreact";
+import './Footer.css';
+import Logo from "../util/mhlogo.gif"
+
 
 const FooterPage = () => {
   return (
     <MDBFooter color="green" className="font-small pt-3 mt-3">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
-          <MDBCol md="3">
-            <h1 className="title font-big" >Mobile Health</h1>
+        <MDBNavLink to="/">
+          <MDBCol md="6">
+          <img className="logo" src={Logo} alt="MH Logo" height="125" to="/"/>
           </MDBCol>
+          </MDBNavLink>
+        
+
           <MDBCol md="3">
             <h5 className="about">About Us</h5>
             <ul style={{padding: 5}}>
