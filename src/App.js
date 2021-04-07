@@ -19,6 +19,7 @@ import Login from "./Components/Login/Login";
 //  import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 //  import Api from "./Api";
+import ProfilePage from "./Components/ProfilePage";
 
 
 
@@ -36,14 +37,15 @@ export default function App() {
           <Route path="/therapistCard">
             <TherapistCard />
           </Route>
+          <Route path="/ProfilePage">
+            <ProfilePage />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
-
            <Route path="/TherapistCard">
           <TherapistCard />
         </Route> 
-
           <Route path="/registration">
             <RegisterPage2 />
           </Route>
