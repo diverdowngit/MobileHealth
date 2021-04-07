@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios"
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -20,15 +20,13 @@ import Login from "./Components/Login/Login";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 //  import Api from "./Api";
 import ProfilePage from "./Components/ProfilePage";
-
-
-
+import Map from './Components/Map/Map';
 
 export default function App() {
-  
 
   return (
     <AppState>
+     
       <Navbar />
         <Switch>
           <Route path="/therapistlist">

@@ -8,8 +8,10 @@ import {
 } from "mdbreact";
 import ImageUpload from "../util/imageUploader";
 import "./RegisterPage2.css";
+import Map from '../Map/Map';
 
-const RegisterPage2 = () => {
+const  RegisterPage2 = () => {
+ 
   //   useState = {
   //    fname: "Mark",
   //   lname: "Otto",
@@ -85,16 +87,18 @@ const RegisterPage2 = () => {
             </MDBCol>
             {/* dropDown menu */}
             <MDBCol md="5" className="mb-3">
-              <MDBDropdown>
-                <MDBDropdownToggle color="green">
-                  Select your Profession
-                </MDBDropdownToggle>
-                <MDBDropdownMenu basic>
-                  <MDBDropdownItem>Physical Therapy</MDBDropdownItem>
-                  <MDBDropdownItem>Massage</MDBDropdownItem>
-                  <MDBDropdownItem>Speech Therapy</MDBDropdownItem>
-                </MDBDropdownMenu>
-              </MDBDropdown>
+
+            <MDBDropdown >
+      <MDBDropdownToggle color="green" size="sm">
+       Select your Profession
+      </MDBDropdownToggle>
+      <MDBDropdownMenu basic>
+        <MDBDropdownItem>Physical Therapy</MDBDropdownItem>
+        <MDBDropdownItem>Massage</MDBDropdownItem>
+        <MDBDropdownItem>Speech Therapy</MDBDropdownItem>
+      </MDBDropdownMenu>
+    </MDBDropdown>
+
             </MDBCol>
             <MDBCol md="4" className="mb-3">
               <label
@@ -117,7 +121,34 @@ const RegisterPage2 = () => {
               </small>
             </MDBCol>
           </MDBRow>
+          <MDBCol md="5" className="mb-5 align-right">
+              <label
+                htmlFor="defaultFormRegisterEmailEx2"
+                className="grey-text"
+              >
+               Password
+              </label>
+              
+              <input
+                // value={this.state.lname}
+                name="lname"
+                // onChange={this.changeHandler}
+                type="text"
+                id="defaultFormRegisterEmailEx2"
+                className="form-control"
+                placeholder=" Password"
+                required
+              />
+              <small id="emailHelp" className="form-text text-muted">
+                Please enter a valid password.
+              </small>
+              <div className="valid-feedback">Looks good!</div>
+            </MDBCol>
+            
           <MDBInput type="textarea" label="Description of Service" rows="5" />
+          <MDBInput type="textarea" label="Specialities " rows="3" />
+          <MDBInput type="textarea" label="Education" rows="3" />
+          <MDBRow> 
           <MDBRow>
             {" "}
             <MDBCol md="4" className="mb-3">
@@ -206,7 +237,7 @@ const RegisterPage2 = () => {
                 Please provide a valid zip.
               </div>
               <div className="valid-feedback">Looks good!</div>
-              <ImageUpload />
+              <ImageUpload md="4" className="mb-3 mt-3"/>
             </MDBCol>
           </MDBRow>
           <MDBCol md="4" className="mb-3">
@@ -218,6 +249,7 @@ const RegisterPage2 = () => {
                 id="invalidCheck"
                 required
               />
+              <Map />
               <label className="custom-control-label" htmlFor="invalidCheck">
                 Agree to terms and conditions
               </label>
@@ -229,6 +261,7 @@ const RegisterPage2 = () => {
           <MDBBtn color="green" type="submit">
             Submit Form
           </MDBBtn>
+
         </form>
       </MDBContainer>
     </MDBContainer>
@@ -237,5 +270,6 @@ const RegisterPage2 = () => {
     </MDBContainer> */
   );
 };
+
 
 export default RegisterPage2;
