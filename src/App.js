@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios"
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -18,6 +18,7 @@ import Login from "./Components/Login/Login"
 
 //  import RegisterPage from "./Components/RegisterPage/RegisterPage";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
+import ProfilePage from "./Components/ProfilePage";
 //  import Api from "./Api";
 import {login} from "./utils/auth"
 
@@ -38,37 +39,30 @@ const handleAuthentication = async()=> {
   await login(credentials)
 }
 
-
-
   return (
     <AppState>
+     
       <Navbar />
         <Switch>
-          <Route path="/therapistList">
+          <Route path="/therapistlist">
             <TherapistList />
           </Route>
-          <Route path="/therapistCard">
+          <Route path="/therapistcard">
             <TherapistCard />
           </Route>
-          {/* <Route path="/login">
+          <Route exact path="/profile/:id">
+            <ProfilePage />
+          </Route>
+          <Route path="/login">
             <Login />
-          </Route> */}
-
-           <Route path="/TherapistCard">
-          <TherapistCard />
         </Route> 
-
           <Route path="/registration">
             <RegisterPage2 />
           </Route>
           <Route path="/auth">
             <Login onAuth={handleAuthentication} onSetCredentials={handleSetCredentials}/>
           </Route>
-          <Route path="/">
-            <Redirect to="auth"/>
-          </Route>
-
-          {/* <Route path="/registration">
+        {/* <Route path="/registration">
          <RegisterPage/>
         </Route> */}
 
