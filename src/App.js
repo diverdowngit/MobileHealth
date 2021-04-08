@@ -20,7 +20,7 @@ import Login from "./Components/Login/Login";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 //  import Api from "./Api";
 import ProfilePage from "./Components/ProfilePage";
-import Map from './Components/Map/Map';
+
 
 export default function App() {
 

@@ -9,7 +9,7 @@ const TherapistCard = ({ therapist }) => {
      <MDBCard className='mt-5' style={{ maxWidth: '34rem' }}>
       <MDBRow className='p-2 '>
         <MDBCol md='4'>
-          <MDBCardImage src='https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg' alt='...' fluid height='200rem' />
+          <MDBCardImage src='https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg' alt='Therapist Images' fluid height='200rem' />
         </MDBCol>
         <MDBCol md='8'>
           <MDBCardBody>
