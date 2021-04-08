@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
-const Login = () => {
+const Login = ({onAuth, onSetCredentials}) => {
 return (
 <MDBContainer>
   <MDBRow>
@@ -10,12 +10,12 @@ return (
         <br></br>
         <p className="h5 text-center mb-3">Sign in</p>
         <div className="grey-text">
-          <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong"
-            success="right" />
-          <MDBInput label="Type your password" icon="lock" group type="password" validate />
+          <MDBInput label="Type your email" name="emailAddress" icon="envelope" group type="email" validate error="wrong"
+            success="right" onChange={onSetCredentials}/>
+          <MDBInput label="Type your password" name="password" icon="lock" group type="password" onChange={onSetCredentials} validate />
         </div>
         <div className="text-center">
-          <MDBBtn color="green">Login</MDBBtn>
+          <MDBBtn color="green" onClick={()=>onAuth()}>Login</MDBBtn>
         </div>
       </form>
     </MDBCol>
