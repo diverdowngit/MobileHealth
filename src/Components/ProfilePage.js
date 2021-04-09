@@ -36,8 +36,7 @@ const ProfilePage = () => {
       <MDBContainer className="bc-grey" style={{ padding: 15 }}>
         {" "}
         <h3 className="bc-grey">Profile</h3>
-        <MDBCardTitle>
-        </MDBCardTitle>
+        <MDBCardTitle></MDBCardTitle>
         <MDBContainer className="d-flex justify-content-left mb-6 mt-5">
           <MDBRow>
             <img
