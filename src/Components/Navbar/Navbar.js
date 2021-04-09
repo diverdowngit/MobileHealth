@@ -36,7 +36,7 @@ const Navbar = () => {
           </MDBNavItem>
           <MDBNavItem>
             {/* TODO add active to active page functionality */}
-            <MDBNavLink to="/login">Login</MDBNavLink>
+            <MDBNavLink  to="/auth">Login</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/registration">Register</MDBNavLink>

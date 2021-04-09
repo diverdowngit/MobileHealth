@@ -10,6 +10,10 @@ const TherapistList = () => {
     useEffect(() => {
       fetchAPI()
     } , []);
+
+
+
+    
   
     return (<Fragment>    
                 <ul>

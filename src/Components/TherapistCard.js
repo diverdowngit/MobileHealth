@@ -6,7 +6,7 @@ const TherapistCard = ({ therapist }) => {
   return (
     <Fragment>
      
-     <MDBCard className='mt-5' style={{ maxWidth: '34rem' }}>
+     <MDBCard className='mt-5' style={{ maxWidth: '55rem' }}>
       <MDBRow className='p-2 '>
         <MDBCol md='4'>
           <MDBCardImage src='https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg' alt='Therapist Images' fluid height='200rem' />

@@ -29,6 +29,7 @@ const [credentials, setCredentials]= useState();
 
 
 const handleSetCredentials = (e) => {
+  console.log(e.target)
   setCredentials((prevCredentials) => ({
     ...prevCredentials,
     [e.target.name]: e.target.value,
@@ -53,9 +54,9 @@ const handleAuthentication = async()=> {
           <Route exact path="/profile/:id">
             <ProfilePage />
           </Route>
-          <Route path="/login">
+          {/* <Route path="/login">
             <Login />
-        </Route> 
+        </Route>  */}
           <Route path="/registration">
             <RegisterPage2 />
           </Route>
