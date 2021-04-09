@@ -16,7 +16,7 @@ return (
           <MDBInput label="Type your password" name="password" icon="lock" group type="password" onChange={onSetCredentials} validate />
         </div>
         <div className="text-center">
-          <MDBBtn color="green"  onClick={onAuth}>Login</MDBBtn>
+          <MDBBtn color="green" onClick={onAuth}>Login</MDBBtn>
         </div>
       </form>
     </MDBCol>
