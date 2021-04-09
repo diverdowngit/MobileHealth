@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   MDBDropdown,
   MDBDropdownToggle,
@@ -14,8 +14,54 @@ import {
   MDBBtn,
 } from "mdbreact";
 import "./SearchForm.css";
+import SearchCheckBox from "../SearchCheckbox/SearchCheckBox";
+import axios from "axios";
 
 const SearchForm = () => {
+  // const res = await axios.get('http://mywebsite.com/therapists', { params: { category: "massage" } });
+  const URL = "https://cherry-cupcake-02141.herokuapp.com/therapist";
+
+  const [categories, setCategories] = useState({
+    massage: { selected: false, displayName: "Massage Therapist" },
+    physioTherapist: { selected: false, displayName: "Physio Therapist" },
+    speechTherapist: { selected: false, displayName: "Speech Therapist" },
+    nutritionTherapist: { selected: false, displayName: "Nutrition Therapist" },
+  });
+
+  const handleChange = (e) => {
+    setCategories({
+      ...categories,
+      [e.target.name]: {
+        selected: e.target.checked,
+        displayName: categories[e.target.name].displayName,
+      },
+    });
+  };
+
+  const checkAvailability = (e) => {
+    e.preventDefault();
+    const filteredCategories = Object.entries(categories).reduce(
+      (acc, [name, { selected }]) => (selected && acc.push(name), acc),
+      []
+    );
+
+    /*
+      const selectedDoctors = [];
+
+      for (const doctor in categories) {
+        if (categories[doctor].selected === true) selectedDoctors.push(doctor);
+      }
+    */
+    axios
+      .get(URL, {
+        params: {
+          category: filteredCategories,
+        },
+      })
+      .then((res) => console.log("res", res))
+      .catch((err) => console.log("err", err));
+  };
+
   return (
     <MDBCard lg="3" className="my-5 px-5 pb-5">
       <MDBCardBody>
@@ -42,23 +88,21 @@ const SearchForm = () => {
                 SERVICE FOR YOU
               </strong>
             </h3>
-            <p>Physical Therapy | Massage | Speech Therapist</p>
-            <MDBDropdown>
-              <MDBDropdownToggle color="green">
-                Select your Profession
-              </MDBDropdownToggle>
-              <MDBDropdownMenu basic>
-                <MDBDropdownItem>Physical Therapy</MDBDropdownItem>
-                <MDBDropdownItem>Massage</MDBDropdownItem>
-                <MDBDropdownItem>Speech Therapy</MDBDropdownItem>
-              </MDBDropdownMenu>
-            </MDBDropdown>
-            <MDBInput label="" background size="lg" />
+            <SearchCheckBox
+              categories={categories}
+              handleChange={handleChange}
+            />
+            <br></br>
             <p>Postcode | Street | City</p>
             <MDBInput label="" background size="lg" />
             <p>Search for Date</p>
             <MDBInput label="" background size="lg" />
-            <MDBBtn backround color="green" size="md" className="">
+            <MDBBtn
+              onClick={checkAvailability}
+              color="green"
+              size="md"
+              className=""
+            >
               Check Availability
             </MDBBtn>
           </MDBCol>
