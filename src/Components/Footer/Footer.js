@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBIcon, MDBNavLink } from "mdbreact";
 import './Footer.css';
-import Logo from "../util/mhlogo.gif"
+import Logo from "../util/mhicon.png"
 
 
 const FooterPage = () => {
