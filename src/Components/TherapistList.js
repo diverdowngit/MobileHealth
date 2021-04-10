@@ -18,6 +18,7 @@ const TherapistList = () => {
     return (<Fragment>    
                 <ul>
                   {data.length && data.map(therapist => <TherapistCard therapist={therapist} /> )}
+                  
                 </ul>
                 {/* pageination */}
                 <MDBRow>

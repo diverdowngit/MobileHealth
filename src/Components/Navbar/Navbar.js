@@ -10,7 +10,7 @@ import {
   MDBFormInline,
 } from "mdbreact";
 import './Navbar.css';
-import Logo from "../util/mhlogo.gif"
+import Logo from "../util/mhicon.png"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +22,7 @@ const Navbar = () => {
     <MDBNavbar color="green" dark expand="md">
       <MDBNavLink to="/">
       <MDBNavbarBrand>
-      <img className="logo" src={Logo} alt="MH Logo" height="125" to="/"/>
+      <img className="logo" src={Logo} alt="MH Logo" height="110" to="/"/>
       </MDBNavbarBrand></MDBNavLink>
 
       <MDBNavbarToggler onClick={toggleCollapse} />
