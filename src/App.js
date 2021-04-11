@@ -1,13 +1,9 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-<<<<<<< HEAD
-import { Switch, Route} from "react-router-dom";
-=======
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
->>>>>>> ce70fcda755f93d8ec30566436692a5fc4c84077
 import AppState from "./context/app/AppState";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
@@ -17,14 +13,11 @@ import TherapistCard from "./Components/TherapistCard";
 import Login from "./Components/Login/Login";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 import ProfilePage from "./Components/ProfilePage";
-<<<<<<< HEAD
-import { login } from "./utils/auth";
 import Team from "./Components/Team"
-=======
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
 import { login, logout, setAuthHeaders} from "./utils/auth";
->>>>>>> ce70fcda755f93d8ec30566436692a5fc4c84077
+
 
 export default function App() {
   const [credentials, setCredentials] = useState();
