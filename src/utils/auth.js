@@ -1,40 +1,32 @@
 import axios from "axios";
-import Cookies from "js-cookies";
-const { REACT_APP_NAME} = process.env
+import Cookies from "js-cookie";
+import jwt from "jsonwebtoken"; //also used in Backend, can decode token
+const { REACT_APP_NAME, REACT_APP_BACKEND_API_HEROKU} = process.env
 
+//add this url in front of axios calls 
+
+//***************somehow that doesnt work - maybe we need to set up something in the backend for it?
+// axios.defaults.baseURL= REACT_APP_BACKEND_API_HEROKU
+//define default for token, so you dont need to request the auth every time
+
+
+const setAuthHeaders= ()=>{
+  const token = Cookies.get(`${REACT_APP_NAME}-auth-token`);
+  if (token){
+  //***********axios.defaults doesnt work also somehow
+     axios.defaults.headers.common['Authorization']= `Bearer ${token}`
+    console.log("jsdlgfa")
+    return true // will be helpful in App.js- useEffect, to see if you already logged in
+  } else {
+    return false
+  }
+}
+
+
+//send credential // safe token or block user and send error
 const login= async (credentials)=>{
-//     var myHeaders = new Headers();
-//     myHeaders.append("Content-Type", "application/json");
-//     var requestOptions = {
-//     method: 'POST',
-//     headers: myHeaders,
-//     body: JSON.stringify(credentials),
-//     redirect: 'follow'
-//     };
-
-// fetch("https://cherry-cupcake-02141.herokuapp.com/auth/login", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
-    //in this try block, you get header with token -> now different actions possible save it
-    // 1. set token in cookie of userBrower 2. set in local sotrage 3. keep it in memory of application(safest way) 4. save it as http cookoe
-    // here we go for saving it in Cookies
-    //  try{   const data= await axios.post('https://wbs-simple-auth.herokuapp.com/auth/login', {
-    //         ...credentials
-    //     })
-    //     const token = data.headers["x-authorization-token"] // this is where token in header is saved
-    //     if (token){
-    //         Cookies.set('${REACT_APP_NAME}-auth-token', token) // use namespace that is specific for this applcation
-    //         return true //Login was successfull
-    //     }
-    //     console.log(data)
-    // } catch (e){
-    //     console.log(e)
-    // }
-   
-    //   });
-      
-    axios( {
+    let authorization= false
+    await axios( {
         method: 'post',
         url: 'https://cherry-cupcake-02141.herokuapp.com/auth/login',
         headers: { 
@@ -44,23 +36,90 @@ const login= async (credentials)=>{
       })
       .then(function (response) {
         console.log(response);
-        //!!!!!!!!!!Does not return an token at the moment
-        // const token= response.headers["x-authorization-token"];
-        const token = "139aoösdgnöqog23ß9ß34"
+        const token= response.headers["x-authorization-token"];
+        console.log(token)
         if(token){
+          //we save JWT here, but need to verify the JWT in the backend to be sure its valid as it is very easy to change in in FE
             Cookies.set(`${REACT_APP_NAME}-auth-token`, token)
-            return true
+            console.log("Cookiset")
+            authorization= true
         }  else {
             throw new Error(`Authentication  - failed`)}
+        
       })
       .catch(function (error) {
         console.log(error);
-      });
-
-    
+      })
+    return authorization
 }
-//send credential // safe token or block user and send error
+// this will just check if the token is a valid kind of token, not if it really exists in the backend
+const decodeToken=()=>{
+  const token= Cookies.get(`${REACT_APP_NAME}-auth-token`);
+  let decodedToken;
+  try{
+    //decode manually or or package jwt
+    if(token){
+      decodedToken= jwt.decode(token)
+    }
+  } catch(e){
+    console.log()
+  } 
+  return decodedToken
+}
+
+const userContext = async() =>{
+  // make a route in the backend for that? 
+  // setAuthHeaders()
+
+//***********one version**************************/
+  // try{
+  //   const data = await axios.get('https://cherry-cupcake-02141.herokuapp.com/therapist/me')
+  //   console.log("data got here")
+  //   console.log(data)
+  //   return data
+  // }catch(e){
+  //   console.log(e.message)
+  //   return null
+  // }
+//**************second version*********************/
+//returns a 404, works on postman though- MISTAKE WITH HEADER!
+  const token = Cookies.get(`${REACT_APP_NAME}-auth-token`)
+  console.log("inside verif")
+  const res = await axios.get('https://cherry-cupcake-02141.herokuapp.com/therapist/me', {
+  headers: {
+    'Authorization': `Bearer ${token}`
+  }
+  
+  // ***************third version****************/
+  // });
+  // await axios( {
+  //   method: 'GET',
+  //   url: 'https://cherry-cupcake-02141.herokuapp.com/therapist/me',
+  //   headers: { 
+  //     'Authorization': `Bearer ${token}`,
+  //   },
+  // })
+  // .then((res) => {
+  //   console.log(res.data)
+  // })
+  // .catch((error) => {
+  //   console.error('rodfsäbp! '+error)
+  })
+  console.log(res) 
+}
+
+const logout=()=>{
+  Cookies.remove(`${REACT_APP_NAME}-auth-token`)
+}
+
 export {
-    login
+    axios as client,//not used in this app
+    login,
+    decodeToken,
+    userContext,
+    setAuthHeaders,
+    logout
+
 }
 //named export 
+
