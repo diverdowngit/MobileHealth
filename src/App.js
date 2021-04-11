@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import React, { useState} from "react";
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import AppState from "./context/app/AppState";
-// import TherapistContext from "../src/context/TherapistsContext";
-// import TeamPage from "./Components/Team";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import LandingPage from "./Components/LandingPage";
@@ -17,6 +14,7 @@ import Login from "./Components/Login/Login";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 import ProfilePage from "./Components/ProfilePage";
 import { login } from "./utils/auth";
+import Team from "./Components/Team"
 
 export default function App() {
   const [credentials, setCredentials] = useState();
@@ -61,7 +59,9 @@ export default function App() {
         {/* <Route path="/registration">
          <RegisterPage/>
         </Route> */}
-
+        <Route path="/team">
+          <Team />
+        </Route>
         <Route exact path="/">
           <LandingPage />
         </Route>

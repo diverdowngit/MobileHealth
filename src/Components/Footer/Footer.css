@@ -1,8 +1,10 @@
-.Footer {
+footer {
     /* background-color: #03af03 !important; */
     /* color: green;  */
+    
 }
 
 .title {
         color:green;
+        margin-left: 5rem;
 }

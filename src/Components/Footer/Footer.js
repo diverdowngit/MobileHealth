@@ -7,23 +7,22 @@ import Logo from "../util/mhicon.png"
 const FooterPage = () => {
   return (
     <MDBFooter color="green" className="font-small pt-3 mt-3">
-      <MDBContainer fluid className="text-center text-md-left">
-        <MDBRow>
+      <MDBContainer fluid className="text-center text-md-center" >
+        <MDBRow md="4" style={{padding: 5}}>
         <MDBNavLink to="/">
           <MDBCol md="6">
           <img className="logo" src={Logo} alt="MH Logo" height="125" to="/"/>
           </MDBCol>
           </MDBNavLink>
-        
-
-          <MDBCol md="3">
+      
+          <MDBCol md="3" >
             <h5 className="about">About Us</h5>
             <ul style={{padding: 5}}>
               <li className="list-unstyled text-align auto">
                 <a href="#!">Our Story</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">The Team</a>
+                <a href="/team">The Team</a>
               </li>
               <li className="list-unstyled">
                 <a href="#!">Careers</a>
@@ -39,7 +38,7 @@ const FooterPage = () => {
           <MDBCol><h5 className="patients">For Patients</h5>
           <ul style={{padding: 5}}>
               <li className="list-unstyled">
-                <a href="#!">Create new User</a>
+                <a href="/registration">Create new User</a>
               </li>
               <li className="list-unstyled">
                 <a href="#!">Patients Login</a>
@@ -55,7 +54,7 @@ const FooterPage = () => {
                 <a href="#!">Add your Therapy</a>
               </li>
               <li className="list-unstyled">
-                <a href="/login">Therapist Login</a>
+                <a href="/auth">Therapist Login</a>
               </li>
               <li className="list-unstyled">
                 <a href="#!">FAQs</a>
