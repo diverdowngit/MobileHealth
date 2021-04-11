@@ -4,7 +4,7 @@ import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import AppState from "./context/app/AppState";
 // import TherapistContext from "../src/context/TherapistsContext";
 // import TeamPage from "./Components/Team";
@@ -16,13 +16,16 @@ import TherapistCard from "./Components/TherapistCard";
 import Login from "./Components/Login/Login";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
 import ProfilePage from "./Components/ProfilePage";
-import { login } from "./utils/auth";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
+import { login, logout, setAuthHeaders} from "./utils/auth";
 
 export default function App() {
   const [credentials, setCredentials] = useState();
 
+  const history = useHistory();
+
   const handleSetCredentials = (e) => {
-    console.log(e.target);
     setCredentials((prevCredentials) => ({
       ...prevCredentials,
       [e.target.name]: e.target.value,
@@ -30,13 +33,32 @@ export default function App() {
   };
 
   const handleAuthentication = async () => {
-    await login(credentials);
+    let isAuthenticated = await login(credentials);
+    console.log(isAuthenticated)
+    //here is a mistake, somehow it return undefined and not true
+    // isAuthenticated = true
+    if(isAuthenticated){
+      history.push("/dashboard")
+    } else {
+      alert("Wrong credentials, try again")
+    }
   };
+
+  const handleLogout = async ()=>  {
+    logout()
+    history.push('/auth')
+  }
+
+  //check if there is already a token, if yes, redirect to dashboars
+  useEffect(()=>{
+    setAuthHeaders() && history.push("/dashboard")
+  },[])
 
   return (
     <AppState>
       <Navbar />
       <Switch>
+        <ProtectedRoute path="/dashboard" onLogout={handleLogout} component={Dashboard} />
         <Route path="/therapistlist">
           <TherapistList />
         </Route>
@@ -56,6 +78,7 @@ export default function App() {
           <Login
             onAuth={handleAuthentication}
             onSetCredentials={handleSetCredentials}
+            
           />
         </Route>
         {/* <Route path="/registration">
