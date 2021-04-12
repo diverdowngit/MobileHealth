@@ -1,11 +1,12 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBCard, MDBCardBody} from "mdbreact";
+import { MDBRow, MDBCol, MDBCard, MDBCardBody } from "mdbreact";
 import rafa from "../images/rafa.png";
 import christin from "../images/christin.png";
 import fred from "../images/fred.png";
 import helge from "../images/helge.png";
 
 const Team = () => {
+
   return (
     <MDBCard className="my-5 px-5 pb-1 text-center">
       <MDBCardBody>
@@ -27,8 +28,8 @@ const Team = () => {
                 className="image float-right"
                 src={fred}
                 alt="fred"
-                width="250"
-                height="170"
+                width="330"
+                height="220"
               />
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
                 Fred Diver
@@ -48,8 +49,9 @@ const Team = () => {
                 className="image float-right"
                 src={christin}
                 alt="christin"
-                width="250"
-                height="170"
+                width="330"
+                height="220"
+
               />
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
                 Christin Rekoj
@@ -69,8 +71,8 @@ const Team = () => {
                 className="image float-right"
                 src={rafa}
                 alt="rafa"
-                width="250"
-                height="170"
+                  width="330"
+                height="220"
               />{" "}
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
                 Gordon Shumway
@@ -90,8 +92,8 @@ const Team = () => {
                 className="image float-right"
                 src={helge}
                 alt="helge"
-                width="250"
-                height="170"
+                width="330"
+                height="220"
                 to="/"
               />
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
@@ -111,5 +113,6 @@ const Team = () => {
     </MDBCard>
   );
 };
+
 
 export default Team;
