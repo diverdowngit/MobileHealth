@@ -28,30 +28,44 @@ const ProfilePage = () => {
   therapist && console.log(therapist);
 
   if (loading) {
-    return <h1>Loading....</h1>;
+    return (
+      <h1>
+        <br />
+        <div
+          className="spinner-border fast"
+          style={{ color: "green" }}
+          role="status"
+        >
+          <span className="sr-only">Loading...</span>
+        </div>
+      </h1>
+    );
   }
 
   if (therapist) {
     return (
       <MDBContainer className="bc-grey" style={{ padding: 15 }}>
         {" "}
-        <h3 className="bc-grey">Profile</h3>
-        <MDBCardTitle></MDBCardTitle>
-        <MDBContainer className="d-flex justify-content-left mb-6 mt-5">
+        <MDBCardTitle>
+          {" "}
+          <h3 className="bc-grey text-center">Profile</h3>
+        </MDBCardTitle>
+        <MDBContainer className="d-flex justify-content-center aligment mb-6 mt-5">
           <MDBRow>
             <img
               src={benJammin}
               className="rounded float-left"
-              width="120"
-              height="150"
+              width="440"
+              height="360"
               alt="aligment"
             />
-            <MDBCol>
-              <h3>
+            <MDBCol className="text-center">
+              <h3 style={{ color: "green" }}>
                 {therapist.first_name} {therapist.last_name}
               </h3>
               <h4>{therapist.category}</h4>
-              <br></br>
+              <br />
+              <br />
               <p>
                 {therapist.address.streetName} {therapist.address.streetNumber},
               </p>
@@ -59,30 +73,35 @@ const ProfilePage = () => {
                 {therapist.address.postalCode} {therapist.address.city}
               </p>
               <p>{therapist.phoneNumber}</p>
+              <br />
+              <br />
+
               <MDBBtn
                 className="rounded float-center"
-                style={{ margin: 0 }}
+                style={{ padding: "1.25rem" }}
                 color="green"
               >
-                Make Appointment
+                Make AN Appointment
               </MDBBtn>
             </MDBCol>
           </MDBRow>
-          <MDBCol md="6" className="mb-6">
-            <MDBCard>
+          <MDBCol className="rounded float-center">
+            <MDBCard style={{ padding: "1.2rem" }}>
               About
-              <p>{therapist.about}</p>
+              <p >{therapist.about}</p>
             </MDBCard>
-            <br></br>
-            <MDBCard>
+            <br/>
+            <MDBCard style={{ padding: "1.2rem" }}>
               Education and Background
               <p>{therapist.education}</p>
             </MDBCard>
-            <br></br>
-            <MDBCard>
+            <br/>
+            <MDBCard style={{ padding: "1.2rem" }}>
               Specialities
               <p>{therapist.specialities}</p>
             </MDBCard>
+            <br/>
+
           </MDBCol>
         </MDBContainer>
       </MDBContainer>
