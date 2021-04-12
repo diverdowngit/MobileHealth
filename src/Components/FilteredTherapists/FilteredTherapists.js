@@ -10,6 +10,7 @@ import {
   MDBCardImage,
 } from "mdbreact";
 import TherapistsContext from "../../context/TherapistsContext";
+import BookingPage from "../BookingPage/BookingPage"
 
 const FilteredTherapists = () => {
 

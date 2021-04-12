@@ -25,6 +25,7 @@ export default function App() {
   const history = useHistory();
 
   const handleSetCredentials = (e) => {
+    console.log(e.target.value)
     setCredentials((prevCredentials) => ({
       ...prevCredentials,
       [e.target.name]: e.target.value,
@@ -77,7 +78,7 @@ export default function App() {
           <Login
             onAuth={handleAuthentication}
             onSetCredentials={handleSetCredentials}
-            
+          
           />
         </Route>
         {/* <Route path="/registration">

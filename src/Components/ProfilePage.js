@@ -8,6 +8,7 @@ import {
   MDBCard,
 } from "mdbreact";
 import benJammin from "../images/benJammin.png";
+import BookingPage from "./BookingPage/BookingPage"
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -59,7 +60,8 @@ const ProfilePage = () => {
               height="360"
               alt="aligment"
             />
-            <MDBCol className="text-center">
+            <MDBCol >
+              <div className="text-center">
               <h3 style={{ color: "green" }}>
                 {therapist.first_name} {therapist.last_name}
               </h3>
@@ -75,14 +77,15 @@ const ProfilePage = () => {
               <p>{therapist.phoneNumber}</p>
               <br />
               <br />
-
-              <MDBBtn
+              </div>
+              {/* <MDBBtn
                 className="rounded float-center"
                 style={{ padding: "1.25rem" }}
                 color="green"
               >
                 Make AN Appointment
-              </MDBBtn>
+              </MDBBtn> */}
+              <BookingPage/>
             </MDBCol>
           </MDBRow>
           <MDBCol className="rounded float-center">

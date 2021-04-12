@@ -16,6 +16,7 @@ import "./SearchForm.css";
 import SearchCheckBox from "../SearchCheckbox/SearchCheckBox";
 import TherapistsContext from "../../context/TherapistsContext";
 import axios from "axios";
+import BookingPage from "../BookingPage/BookingPage"
 
 const SearchForm = () => {
 
@@ -94,7 +95,7 @@ const SearchForm = () => {
           <MDBCardText text="black" >Eductaion:  {filteredTherapists.length &&filteredTherapists[0].education}</MDBCardText>
           <MDBCardText text="black" >Specialities:  {filteredTherapists.length &&filteredTherapists[0].specialities}</MDBCardText>
           <MDBCardText text="black" >About me:  {filteredTherapists.length &&filteredTherapists[0].about}</MDBCardText>
-          <MDBBtn color="green" href="#">Book me</MDBBtn>
+          <BookingPage/>
         </MDBCardBody>
       </MDBCard>
     </MDBCol>
