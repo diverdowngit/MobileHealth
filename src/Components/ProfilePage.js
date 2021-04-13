@@ -11,6 +11,7 @@ import benJammin from "../images/benJammin.png";
 import BookingPage from "./BookingPage/BookingPage"
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import serverUrl from '../utils/serverUrl';
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const ProfilePage = () => {
   const [loading, setloading] = useState(true);
 
   useEffect(() => {
-    axios(`https://cherry-cupcake-02141.herokuapp.com/therapist/${id}`).then(
+    axios(`${serverUrl}/therapist/${id}`).then(
       (response) => {
         setloading(false);
         setTherapist(response.data);
