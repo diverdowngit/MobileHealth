@@ -12,7 +12,7 @@ import BookingPage from "./BookingPage/BookingPage";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Logo from "./util/mhlogo.gif";
-import Loader from "./Loader"
+// import Loader from "./Loader"
 import serverUrl from '../utils/serverUrl';
 
 const ProfilePage = () => {
@@ -60,15 +60,18 @@ const ProfilePage = () => {
         {" "}
         <MDBCardTitle>
           {" "}
+          <br/>
           <h3 className="bc-grey text-center">Profile</h3>
+                    <br/>
+
         </MDBCardTitle>
-        <MDBContainer className="d-flex justify-content-center aligment mb-6 mt-5">
+        <MDBContainer className="d-flex text-center aligment mb-6 mt-5">
           <MDBRow>
             <img
               src={benJammin}
               className="rounded float-left"
-              width="440"
-              height="360"
+              width="300"
+              height="220"
               alt="aligment"
             />
             <MDBCol>
@@ -90,7 +93,8 @@ const ProfilePage = () => {
                 <br />
                 <br />
               </div>
-              <BookingPage />
+              <BookingPage/>
+              {/* <BookingPage style={{ padding: "5rem" }}/> */}
             </MDBCol>
           </MDBRow>
           <MDBCol className="rounded float-center">
