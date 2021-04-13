@@ -22,7 +22,7 @@ const SearchForm = () => {
 
   const [categories, setCategories] = useState({
     massage: { selected: false, displayName: "Massage Therapist" },
-    physioTherapist: { selected: false, displayName: "Physio Therapist" },
+    physioTherapist: { selected: false, displayName: "Physical Therapist" },
     speechTherapist: { selected: false, displayName: "Speech Therapist" },
     nutritionTherapist: { selected: false, displayName: "Nutrition Therapist" },
   });

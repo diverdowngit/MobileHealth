@@ -5,7 +5,7 @@ export default function SearchCheckBox({ categories, handleChange }) {
   return (
     <div>
       <MDBFormInline>
-        {" "}
+       
         <h5>Select the Therapist thats right for you.</h5>
       </MDBFormInline>
       <MDBFormInline>

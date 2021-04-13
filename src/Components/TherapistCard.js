@@ -10,12 +10,12 @@ const TherapistCard = ({ therapist }) => {
      <MDBCard className='mt-5' style={{ maxWidth: '55rem' }}>
       <MDBRow className='p-2 '>
         <MDBCol md='4'>
-          <MDBCardImage src='https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg' alt='Therapist Images' fluid height='320rem' />
+          <MDBCardImage src={therapist['profilPhoto']} alt='Therapist Images' fluid height='320rem' />
         </MDBCol>
         <MDBCol md='4'>
           <MDBCardBody>
           
-            <MDBCardTitle className='h1 font-weight-bold'>Dr. {therapist['first_name' ]} {therapist['last_name']}</MDBCardTitle>
+            <MDBCardTitle className='h1 font-weight-bold'> {therapist['first_name' ]} {therapist['last_name']}</MDBCardTitle>
             <MDBCardText className="blockquote font-weight-bold">
             Category <p> <small>
                 {therapist['category']}</small></p>
