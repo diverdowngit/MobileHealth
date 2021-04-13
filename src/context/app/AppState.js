@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import TherapistsContext from '../TherapistsContext';
 import AppReducer from './AppReducer';
+import serverUrl from '../../utils/serverUrl';
 
 import {
     FETCH_API,
@@ -13,8 +14,6 @@ import {
 const AppState = (props) => {
     const { children } = props;
     const history = useHistory();
-
-    const URL = `https://cherry-cupcake-02141.herokuapp.com/therapist/`;
 
     const initialState = {
         data: [],
@@ -32,7 +31,7 @@ const AppState = (props) => {
         );
         
         axios
-        .get(URL, {
+        .get(serverUrl, {
             params: {
                 category: filteredCategories,
             },
@@ -45,7 +44,7 @@ const AppState = (props) => {
       };
     
     const fetchAPI = () => {
-        fetch(URL)
+        fetch(serverUrl)
         .then(res => res.json())
         .then(data => dispatch({ type: FETCH_API, payload: data }))
         .catch( err => console.log(err));

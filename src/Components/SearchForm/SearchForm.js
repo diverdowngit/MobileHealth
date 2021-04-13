@@ -8,9 +8,7 @@ import {
   MDBMask,
   MDBView,
   MDBBtn,
-  MDBCardText,
-  MDBCardTitle,
-  MDBCardImage,
+ 
 } from "mdbreact";
 import "./SearchForm.css";
 import SearchCheckBox from "../SearchCheckbox/SearchCheckBox";
@@ -22,7 +20,7 @@ const SearchForm = () => {
 
   const [categories, setCategories] = useState({
     massage: { selected: false, displayName: "Massage Therapist" },
-    physioTherapist: { selected: false, displayName: "Physio Therapist" },
+    physioTherapist: { selected: false, displayName: "Physical Therapist" },
     speechTherapist: { selected: false, displayName: "Speech Therapist" },
     nutritionTherapist: { selected: false, displayName: "Nutrition Therapist" },
   });
@@ -70,16 +68,12 @@ const SearchForm = () => {
             <br></br>
             <p>Postcode</p>
             <MDBInput label="Valid Postcode" background size="lg" />
-            
-
-            
             <MDBBtn
               onClick={(e) => checkAvailability(e, categories)}
               color="green"
               size="md"
               className=""
           >
-            
               Check Availability
             </MDBBtn>
           </MDBCol>

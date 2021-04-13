@@ -25,6 +25,7 @@ export default function App() {
   const history = useHistory();
 
   const handleSetCredentials = (e) => {
+    e.persist();
     console.log(e.target.value)
     setCredentials((prevCredentials) => ({
       ...prevCredentials,
@@ -34,7 +35,7 @@ export default function App() {
 
   const handleAuthentication = async () => {
     let isAuthenticated = await login(credentials);
-    console.log(isAuthenticated)
+    console.log({isAuthenticated})
     //here is a mistake, somehow it return undefined and not true
     // isAuthenticated = true
     if(isAuthenticated){

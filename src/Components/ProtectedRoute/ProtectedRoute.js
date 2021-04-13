@@ -6,6 +6,7 @@ import { decodeToken } from "../../utils/auth"
 
 // react is sensitive to capital letter as Component
 const ProtectedRoute =({component: Component, onLogout, ...rest})=>{
+    console.log({ decodedToken: decodeToken()})
     return (
     <Route
         {...rest}

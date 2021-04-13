@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Logo from "./util/mhlogo.gif";
 import Loader from "./Loader"
+import serverUrl from '../utils/serverUrl';
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const ProfilePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios(`https://cherry-cupcake-02141.herokuapp.com/therapist/${id}`).then(
+    axios(`${serverUrl}/therapist/${id}`).then(
       (response) => {
         setLoading(false);
         setTherapist(response.data);

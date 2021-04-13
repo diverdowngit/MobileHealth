@@ -209,7 +209,6 @@ const RegisterPage2 = () => {
               <ImageUpload />
             </MDBCol>
           </MDBRow>
-          <Map />
           <MDBCol md="4" className="mb-3">
             <div className="custom-control custom-checkbox pl-3">
               <input

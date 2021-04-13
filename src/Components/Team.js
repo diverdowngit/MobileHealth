@@ -19,9 +19,9 @@ const Team = () => {
           Dived into the deep of the coding ocean - Aufgetaucht aus dem Teich
           der Turtles.
         </p>
-        <MDBRow className="text-md-right">
+        <MDBRow className="text-left">
           <MDBCol lg="3" md="12" className="mb-5">
-            <MDBCol md="6" lg="6" className="float-left"></MDBCol>
+           
             <MDBCol md="8" lg="6" className="float-right">
               <img
                 className="image float-right"
@@ -33,10 +33,9 @@ const Team = () => {
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
                 Fred
               </h4>
-              <h6 className="font-weight-bold grey-text mb-3">Web Designer</h6>
+              <h6 className="font-weight-bold grey-text mb-3">Web Destroyer</h6>
               <p className="grey-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                eos id officiis hic tenetur.
+                He can destroy everything .
               </p>
             </MDBCol>
           </MDBCol>
