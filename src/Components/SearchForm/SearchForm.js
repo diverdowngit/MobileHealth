@@ -15,7 +15,7 @@ import {
 import "./SearchForm.css";
 import SearchCheckBox from "../SearchCheckbox/SearchCheckBox";
 import TherapistsContext from "../../context/TherapistsContext";
-import axios from "axios";
+
 
 const SearchForm = () => {
 
@@ -83,22 +83,6 @@ const SearchForm = () => {
             
               Check Availability
             </MDBBtn>
-            {/* CARD */}
-<MDBCol>
-      <MDBCard style={{ width: "22rem" }}>
-        <MDBCardImage className="img-fluid" src="https://n-cdn.serienjunkies.de/og/96920.jpg" waves />
-        <MDBCardBody style={{backgroundColor:'rgb(216, 214, 214)'}}>
-          <MDBCardTitle>{filteredTherapists.length &&filteredTherapists[0].category}</MDBCardTitle>
-          <MDBCardText text="black" >{filteredTherapists.length &&filteredTherapists[0].first_name}</MDBCardText>
-          <MDBCardText text="black" >{filteredTherapists.length &&filteredTherapists[0].last_name}</MDBCardText>
-          <MDBCardText text="black" >Eductaion:  {filteredTherapists.length &&filteredTherapists[0].education}</MDBCardText>
-          <MDBCardText text="black" >Specialities:  {filteredTherapists.length &&filteredTherapists[0].specialities}</MDBCardText>
-          <MDBCardText text="black" >About me:  {filteredTherapists.length &&filteredTherapists[0].about}</MDBCardText>
-          <MDBBtn color="green" href="#">Book me</MDBBtn>
-        </MDBCardBody>
-      </MDBCard>
-    </MDBCol>
-{/* CARD */}
           </MDBCol>
         </MDBRow>
       </MDBCardBody>

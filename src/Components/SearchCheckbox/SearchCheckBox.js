@@ -15,7 +15,7 @@ export default function SearchCheckBox({ categories, handleChange }) {
             label={categories[category].displayName}
             type="checkbox"
             name={category}
-            containerClass="mr-5"
+            containerClass="mr-2"
             onChange={handleChange}
           />
         ))}
