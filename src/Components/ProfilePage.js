@@ -8,39 +8,45 @@ import {
   MDBCard,
 } from "mdbreact";
 import benJammin from "../images/benJammin.png";
-import BookingPage from "./BookingPage/BookingPage"
+import BookingPage from "./BookingPage/BookingPage";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Logo from "./util/mhlogo.gif"
-
+import Logo from "./util/mhlogo.gif";
+import Loader from "./Loader"
 
 const ProfilePage = () => {
   const { id } = useParams();
   const [therapist, setTherapist] = useState();
-  const [loading, setloading] = useState(true, 3000);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios(`https://cherry-cupcake-02141.herokuapp.com/therapist/${id}`).then(
       (response) => {
-        setloading(false);
+        setLoading(false);
         setTherapist(response.data);
       }
     );
   }, [id]);
 
-  therapist && console.log(therapist);
-
-  if (loading) 
-  {
+  // useEffect(() => {
+  //   if (loading) {
+  //     setTimeout(() => {
+  //       setLoading(false);
+  //     }, 2000);
+  //   }
+  // }, [loading]);
+  
+  if (loading) {
     return (
       <h1>
         <br />
         {/* timeout need to run, but for me so far its too complicated */}
         <div
           className="spinner"
-          setTimeout="2000"
-          role="status" >
-          <img src={Logo} height="200rem"/>
+          // setTimeout="2000"
+          role="status"
+        >
+          <img src={Logo} height="200rem" />
           <span className="sr-only">Loading...</span>
         </div>
       </h1>
@@ -64,51 +70,44 @@ const ProfilePage = () => {
               height="360"
               alt="aligment"
             />
-            <MDBCol >
+            <MDBCol>
               <div className="text-center">
-              <h3 style={{ color: "green" }}>
-                {therapist.first_name} {therapist.last_name}
-              </h3>
-              <h4>{therapist.category}</h4>
-              <br />
-              <br />
-              <p>
-                {therapist.address.streetName} {therapist.address.streetNumber},
-              </p>
-              <p>
-                {therapist.address.postalCode} {therapist.address.city}
-              </p>
-              <p>{therapist.phoneNumber}</p>
-              <br />
-              <br />
+                <h3 style={{ color: "green" }}>
+                  {therapist.first_name} {therapist.last_name}
+                </h3>
+                <h4>{therapist.category}</h4>
+                <br />
+                <br />
+                <p>
+                  {therapist.address.streetName}{" "}
+                  {therapist.address.streetNumber},
+                </p>
+                <p>
+                  {therapist.address.postalCode} {therapist.address.city}
+                </p>
+                <p>{therapist.phoneNumber}</p>
+                <br />
+                <br />
               </div>
-              {/* <MDBBtn
-                className="rounded float-center"
-                style={{ padding: "1.25rem" }}
-                color="green"
-              >
-                Make AN Appointment
-              </MDBBtn> */}
-              <BookingPage/>
+              <BookingPage />
             </MDBCol>
           </MDBRow>
           <MDBCol className="rounded float-center">
             <MDBCard style={{ padding: "1.2rem" }}>
               About
-              <p >{therapist.about}</p>
+              <p>{therapist.about}</p>
             </MDBCard>
-            <br/>
+            <br />
             <MDBCard style={{ padding: "1.2rem" }}>
               Education and Background
               <p>{therapist.education}</p>
             </MDBCard>
-            <br/>
+            <br />
             <MDBCard style={{ padding: "1.2rem" }}>
               Specialities
               <p>{therapist.specialities}</p>
             </MDBCard>
-            <br/>
-
+            <br />
           </MDBCol>
         </MDBContainer>
       </MDBContainer>
