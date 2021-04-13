@@ -27,7 +27,7 @@ const Team = () => {
                 className="image float-right"
                 src={fred}
                 alt="fred"
-                width="330"
+                width="300"
                 height="220"
               />
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
@@ -47,7 +47,7 @@ const Team = () => {
                 className="image float-right"
                 src={christin}
                 alt="christin"
-                width="330"
+                width="300"
                 height="220"
               />
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
@@ -68,7 +68,7 @@ const Team = () => {
                 className="image float-right"
                 src={rafa}
                 alt="rafa"
-                width="330"
+                width="300"
                 height="220"
               />{" "}
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
@@ -81,7 +81,6 @@ const Team = () => {
               </p>
             </MDBCol>
           </MDBCol>
-
           <MDBCol lg="3" md="12" className="mb-5">
             <MDBCol md="6" lg="6" className="float-left"></MDBCol>
             <MDBCol md="8" lg="6" className="float-right">
@@ -89,7 +88,7 @@ const Team = () => {
                 className="image float-right"
                 src={tim}
                 alt="tim"
-                width="330"
+                width="300"
                 height="220"
                 to="/"
               />
