@@ -3,10 +3,9 @@ import { MDBRow, MDBCol, MDBCard, MDBCardBody } from "mdbreact";
 import rafa from "../images/rafa.png";
 import christin from "../images/christin.png";
 import fred from "../images/fred.png";
-import helge from "../images/helge.png";
+import tim from "../images/tim.jpeg";
 
 const Team = () => {
-
   return (
     <MDBCard className="my-5 px-5 pb-1 text-center">
       <MDBCardBody>
@@ -17,8 +16,8 @@ const Team = () => {
           Our amazing team
         </h2>
         <p className="grey-text w-responsive mx-auto mb-5">
-          Dived into the deep of the coding ocean - 
-          Aufgetaucht aus dem Teich der Turtles.
+          Dived into the deep of the coding ocean - Aufgetaucht aus dem Teich
+          der Turtles.
         </p>
         <MDBRow className="text-md-right">
           <MDBCol lg="3" md="12" className="mb-5">
@@ -32,7 +31,7 @@ const Team = () => {
                 height="220"
               />
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
-                Fred Diver
+                Fred
               </h4>
               <h6 className="font-weight-bold grey-text mb-3">Web Designer</h6>
               <p className="grey-text">
@@ -51,10 +50,9 @@ const Team = () => {
                 alt="christin"
                 width="330"
                 height="220"
-
               />
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
-                Christin Rekoj
+                Christin
               </h4>
               <h6 className="font-weight-bold grey-text mb-3">Photographer</h6>
               <p className="grey-text">
@@ -71,11 +69,11 @@ const Team = () => {
                 className="image float-right"
                 src={rafa}
                 alt="rafa"
-                  width="330"
+                width="330"
                 height="220"
               />{" "}
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
-                Gordon Shumway
+                Rafael
               </h4>
               <h6 className="font-weight-bold grey-text mb-3">Web Developer</h6>
               <p className="grey-text">
@@ -90,14 +88,14 @@ const Team = () => {
             <MDBCol md="8" lg="6" className="float-right">
               <img
                 className="image float-right"
-                src={helge}
-                alt="helge"
+                src={tim}
+                alt="tim"
                 width="330"
                 height="220"
                 to="/"
               />
               <h4 className="font-weight-bold mb-3" style={{ color: "green" }}>
-                Helge Schneider
+                Tim
               </h4>
               <h6 className="font-weight-bold grey-text mb-3">
                 Junior Front-end Developer
@@ -113,6 +111,5 @@ const Team = () => {
     </MDBCard>
   );
 };
-
 
 export default Team;

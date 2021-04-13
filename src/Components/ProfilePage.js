@@ -11,11 +11,13 @@ import benJammin from "../images/benJammin.png";
 import BookingPage from "./BookingPage/BookingPage"
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Logo from "./util/mhlogo.gif"
+
 
 const ProfilePage = () => {
   const { id } = useParams();
   const [therapist, setTherapist] = useState();
-  const [loading, setloading] = useState(true);
+  const [loading, setloading] = useState(true, 3000);
 
   useEffect(() => {
     axios(`https://cherry-cupcake-02141.herokuapp.com/therapist/${id}`).then(
@@ -28,15 +30,17 @@ const ProfilePage = () => {
 
   therapist && console.log(therapist);
 
-  if (loading) {
+  if (loading) 
+  {
     return (
       <h1>
         <br />
+        {/* timeout need to run, but for me so far its too complicated */}
         <div
-          className="spinner-border fast"
-          style={{ color: "green" }}
-          role="status"
-        >
+          className="spinner"
+          setTimeout="2000"
+          role="status" >
+          <img src={Logo} height="200rem"/>
           <span className="sr-only">Loading...</span>
         </div>
       </h1>
