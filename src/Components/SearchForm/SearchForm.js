@@ -16,7 +16,6 @@ import "./SearchForm.css";
 import SearchCheckBox from "../SearchCheckbox/SearchCheckBox";
 import TherapistsContext from "../../context/TherapistsContext";
 
-
 const SearchForm = () => {
 
   const { checkAvailability, filteredTherapists } = useContext(TherapistsContext)

@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"; 
 import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage,MDBBtn, MDBRow, MDBCol  } from "mdbreact";
 import Map from "./Map/Map";
+import BookingPage from "./BookingPage/BookingPage"
 const TherapistCard = ({ therapist }) => {
 
   return (
@@ -9,9 +10,9 @@ const TherapistCard = ({ therapist }) => {
      <MDBCard className='mt-5' style={{ maxWidth: '55rem' }}>
       <MDBRow className='p-2 '>
         <MDBCol md='4'>
-          <MDBCardImage src='https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg' alt='Therapist Images' fluid height='400rem' />
+          <MDBCardImage src='https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg' alt='Therapist Images' fluid height='320rem' />
         </MDBCol>
-        <MDBCol md='6'>
+        <MDBCol md='4'>
           <MDBCardBody>
           
             <MDBCardTitle className='h1 font-weight-bold'>Dr. {therapist['first_name' ]} {therapist['last_name']}</MDBCardTitle>
@@ -29,23 +30,28 @@ const TherapistCard = ({ therapist }) => {
             <MDBCardText className="blockquote font-weight-bold">
              Specialities   <p><small>{therapist['specialities']}</small></p>
             </MDBCardText>
-            
-          </MDBCardBody>
-        </MDBCol> <MDBBtn  href="/LandingPage" color="green" size='sm'>
-      Make Appointment
-      </MDBBtn>
-      <MDBBtn
-        href={`/profile/${therapist['_id']}`}
-        color="grey"
-        size='sm'
-      >
-        View Profile
-      </MDBBtn>
       
-      </MDBRow>
+          </MDBCardBody>
+        </MDBCol> 
+        <MDBCol md='4' className="d-flex flex-column justify-content-around">
+            <Map className="p-2 col-example text-right" />
+            <BookingPage/>
+            <MDBBtn
+                href={`/profile/${therapist['_id']}`}
+                color="grey"
+              >
+                View Profile
+            </MDBBtn>
+        </MDBCol>
+        </MDBRow>
       <MDBCol md=''height='10 rem' className='col-example'>
-      <Map  />
+     
       </MDBCol>
+   <MDBRow> 
+     <MDBCol className="text-center">
+            
+     </MDBCol>
+   </MDBRow>
     </MDBCard>    
     
     
