@@ -9,8 +9,8 @@ import {
   MDBCollapse,
   MDBFormInline,
 } from "mdbreact";
-import './Navbar.css';
-import Logo from "../util/mhicon.png"
+import "./Navbar.css";
+import Logo from "../util/mhicon.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,9 +21,10 @@ const Navbar = () => {
   return (
     <MDBNavbar color="green" dark expand="md">
       <MDBNavLink to="/">
-      <MDBNavbarBrand>
-      <img className="logo" src={Logo} alt="MH Logo" height="110" to="/"/>
-      </MDBNavbarBrand></MDBNavLink>
+        <MDBNavbarBrand>
+          <img className="logo" src={Logo} alt="MH Logo" height="133" to="/" />
+        </MDBNavbarBrand>
+      </MDBNavLink>
 
       <MDBNavbarToggler onClick={toggleCollapse} />
 
@@ -36,7 +37,7 @@ const Navbar = () => {
           </MDBNavItem>
           <MDBNavItem>
             {/* TODO add active to active page functionality */}
-            <MDBNavLink  to="/auth">Login</MDBNavLink>
+            <MDBNavLink to="/auth">Login</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/registration">Register</MDBNavLink>
@@ -45,6 +46,7 @@ const Navbar = () => {
             <MDBFormInline waves>
               <div className="md-form my-0">
                 <input
+                
                   className="form-control mr-sm-2"
                   name="search"
                   type="text"
