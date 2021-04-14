@@ -46,6 +46,7 @@ const Navbar = () => {
               <div className="md-form my-0">
                 <input
                   className="form-control mr-sm-2"
+                  name="search"
                   type="text"
                   placeholder="Search"
                   aria-label="Search"

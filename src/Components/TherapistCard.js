@@ -37,7 +37,7 @@ const TherapistCard = ({ therapist }) => {
         </MDBCol> 
         <MDBCol md='4' className="d-flex flex-column justify-content-around">
             <Map className="p-2 col-example text-right" />
-            <BookingPage/>
+            <BookingPage therapist={therapist}/>
             <MDBBtn
                 href={`/profile/${therapist['_id']}`}
                 color="grey"
