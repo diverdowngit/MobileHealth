@@ -11,8 +11,7 @@ import benJammin from "../images/benJammin.png";
 import BookingPage from "./BookingPage/BookingPage";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Logo from "./util/mhlogo.gif";
-// import Loader from "./Loader"
+import Loader from "./Loader"
 import serverUrl from '../utils/serverUrl';
 
 const ProfilePage = () => {
@@ -29,33 +28,17 @@ const ProfilePage = () => {
     );
   }, [id]);
 
-  // useEffect(() => {
-  //   if (loading) {
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //     }, 2000);
-  //   }
-  // }, [loading]);
-  
-  if (loading) {
+
+  if (loading)  {
+    console.log("load...")
     return (
-      <h1>
-        <br />
-        {/* timeout need to run, but for me so far its too complicated */}
-        <div
-          className="spinner"
-          // setTimeout="2000"
-          role="status"
-        >
-          <img src={Logo} height="200rem" />
-          <span className="sr-only">Loading...</span>
-        </div>
-      </h1>
+    <Loader/>
     );
   }
 
   if (therapist) {
     return (
+      
       <MDBContainer className="bc-grey" style={{ padding: 15 }}>
         {" "}
         <MDBCardTitle>
@@ -94,7 +77,6 @@ const ProfilePage = () => {
                 <br />
               </div>
               <BookingPage/>
-              {/* <BookingPage style={{ padding: "5rem" }}/> */}
             </MDBCol>
           </MDBRow>
           <MDBCol className="rounded float-center">
