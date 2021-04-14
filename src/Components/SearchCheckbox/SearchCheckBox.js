@@ -11,6 +11,7 @@ export default function SearchCheckBox({ categories, handleChange }) {
       <MDBFormInline className="mb-4">
         {Object.keys(categories).map((category) => (
           <MDBInput
+            style={{ boxShadow: 'none' }}
             key={category}
             label={categories[category].displayName}
             type="checkbox"

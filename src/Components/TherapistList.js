@@ -46,7 +46,7 @@ const TherapistList = () => {
                   {filteredTherapists.length && page.data.map(therapist => <TherapistCard therapist={therapist} /> )}
                   
                 </ul> 
-                {/* pageination */}
+             
                 <MDBRow>
       <MDBCol>
        

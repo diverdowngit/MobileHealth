@@ -25,6 +25,8 @@ const SearchForm = () => {
     nutritionTherapist: { selected: false, displayName: "Nutrition Therapist" },
   });
 
+  const [postalCode, setPostalCode] = useState('');
+
   const handleChange = (e) => {
     setCategories({
       ...categories,
@@ -67,9 +69,9 @@ const SearchForm = () => {
             />
             <br></br>
             <p>Postcode</p>
-            <MDBInput label="Valid Postcode" background size="lg" />
+            <MDBInput onChange={(e) => setPostalCode(e.target.value)} label="Valid Postcode" background size="lg" />
             <MDBBtn
-              onClick={(e) => checkAvailability(e, categories)}
+              onClick={(e) => checkAvailability(e, categories, postalCode)}
               color="green"
               size="md"
               className=""

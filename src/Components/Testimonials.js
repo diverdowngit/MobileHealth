@@ -11,7 +11,7 @@ const TestimonialsPage = () => {
   return (
     <MDBContainer>
       <section className='text-center my-5'>
-        <h2 className='h3-responsive  my-5'>What Clients say.</h2>
+        <h2 className='h3-responsive  my-5'>What our Clients say.</h2>
         <MDBCarousel
           activeItem={1}
           length={3}
@@ -25,12 +25,7 @@ const TestimonialsPage = () => {
             <MDBCarouselItem itemId='1'>
               
                 <p>
-                  <MDBIcon icon='quote-left' className='green-text'/> Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit. Quod eos id officiis hic tenetur
-                  quae quaerat ad velit ab. Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit. Dolore cum accusamus eveniet
-                  molestias voluptatum inventore laboriosam labore sit,
-                  aspernatur praesentium iste impedit quidem dolor veniam.
+                  <MDBIcon icon='quote-left' className='green-text'/> Great organization, quick appointments.
                 </p>
                 <h4 className='font-weight-bold'>Anna Deynah</h4>
                 <h6 className='font-weight-bold my-3'>Founder at ET Company</h6>
@@ -44,12 +39,15 @@ const TestimonialsPage = () => {
             <MDBCarouselItem itemId='2'>
    
                 <p>
-                  <MDBIcon icon='quote-left' className='green-text'/> Nemo enim ipsam voluptatem quia
-                  voluptas sit aspernatur aut odit aut fugit, sed quia
-                  consequuntur magni dolores eos qui ratione voluptatem sequi
-                  nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-                  dolor sit amet, consectetur, adipisci velit, sed quia non
-                  numquam eius modi tempora incidunt ut labore.
+                  <MDBIcon icon='quote-left' className='green-text'/> Simply put ... Great team, great Site!!!
+
+
+
+I promise you won't be disappointed.
+
+
+
+One can only praise without end!
                 </p>
                 <h4 className='font-weight-bold'>Maria Kate</h4>
                 <h6 className='font-weight-bold my-3'>
@@ -63,12 +61,7 @@ const TestimonialsPage = () => {
             </MDBCarouselItem>
             <MDBCarouselItem itemId='3'>
                 <p>
-                  <MDBIcon icon='quote-left' className='green-text'/> Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                  nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id
-                  est laborum. Sed ut perspiciatis unde omnis iste natus error
-                  sit voluptatem accusantium doloremque laudantium. 
+                  <MDBIcon icon='quote-left' className='green-text'/> I am very pleased! Mobile Health is technically very competent and also top-notch personally! 
                 </p>
                 <h4 className='font-weight-bold'>John Doe</h4>
                 <h6 className='font-weight-bold my-3'>
