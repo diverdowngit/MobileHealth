@@ -6,7 +6,7 @@ export default function SearchCheckBox({ categories, handleChange }) {
     <div>
       <MDBFormInline className="mb-3">
        
-        <h5>Select the Therapist thats right for you.</h5>
+        <h5>Select the Therapist that fits your needs.</h5>
       </MDBFormInline>
       <MDBFormInline className="mb-4">
         {Object.keys(categories).map((category) => (
