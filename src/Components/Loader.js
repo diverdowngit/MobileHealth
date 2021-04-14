@@ -1,28 +1,15 @@
-
-import {useState, useEffect} from "react";
-import Logo from "./util/mhlogo.gif"
+import React from "react";
+import Logo from "./util/mhlogo.gif";
 
 const Loader = () => {
-
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (loading) {
-      setTimeout(() => {
-        setLoading(false);
-      }, 3000);
-    }
-  }, [loading]);
-
-
-
-  if (loading) return <Loader />;
-//   return (
-//     <span className="spinner">
-//       <img src={Logo} alt="spinner-logo" />
-//       setTimeout = { alert("Hello")}, 3000;
-
-//     </span>
-//   );
+  return (
+    <h1>
+      <div className="spinner" role="status">
+        <img src={Logo} height="200rem" />
+        <span className="sr-only">Loading...</span>
+      </div>
+    </h1>
+  );
 };
+
 export default Loader;

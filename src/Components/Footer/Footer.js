@@ -11,10 +11,9 @@ const FooterPage = () => {
         <MDBRow md="4" style={{padding: 5}}>
         <MDBNavLink to="/">
           <MDBCol md="6">
-          <img className="logo" src={Logo} alt="MH Logo" height="125" to="/"/>
+          <img className="logo" src={Logo} alt="MH Logo" height="133" to="/"/>
           </MDBCol>
           </MDBNavLink>
-      
           <MDBCol md="3" >
             <h5 className="about">About Us</h5>
             <ul style={{padding: 5}}>
@@ -68,22 +67,19 @@ const FooterPage = () => {
         <MDBRow>
 
     <MDBContainer className="text-center">
-      <a href="/" target="_blank" className="fb-ic mr-4 text-center">
+      <a href="https://www.facebook.com/wbscodingschool" target="_blank" className="fb-ic mr-4 text-center">
         <MDBIcon fab icon="facebook-f" />
       </a>
-      <a href="/" target="_blank" className="tw-ic mr-3">
+      <a href="https://twitter.com/wbscodingschool" target="_blank" className="tw-ic mr-3">
         <MDBIcon fab icon="twitter" />
       </a>
-      <a href="/" target="_blank" className="li-ic mr-3">
+      <a href="https://www.linkedin.com/school/wbs-coding-school" target="_blank" className="li-ic mr-3">
         <MDBIcon fab icon="linkedin-in" />
       </a>
-      <a href="/" target="_blank" className="ins-ic mr-3">
+      <a href="https://www.instagram.com/wbscodingschool/" target="_blank" className="ins-ic mr-3">
         <MDBIcon fab icon="instagram" />
       </a>
-      <a href="/" target="_blank" className="pin-ic mr-3">
-        <MDBIcon fab icon="pinterest" />
-      </a>
-      <a href="/" target="_blank" className="yt-ic mr-3">
+      <a href="https://www.youtube.com/channel/UCEjfjfdmXFn6rOCSUTZ3FYg" target="_blank" className="yt-ic mr-3">
         <MDBIcon fab icon="youtube" />
       </a>
       <a href="https://github.com/ChristinThoma/Mobile_Health_FrontEnd" target="_blank" rel="noreferrer" className="git-ic mr-3">
