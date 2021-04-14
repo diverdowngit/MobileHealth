@@ -2,9 +2,11 @@ import React, { Fragment } from "react";
 import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage,MDBBtn, MDBRow, MDBCol  } from "mdbreact";
 import Map from "./Map/Map";
 import BookingPage from "./BookingPage/BookingPage"
+
+
 const TherapistCard = ({ therapist }) => {
 
-  console.log('therapist', therapist);
+  // console.log('therapist', therapist);
 
   return (
     < >
@@ -36,7 +38,7 @@ const TherapistCard = ({ therapist }) => {
           </MDBCardBody>
         </MDBCol> 
         <MDBCol md='4' className="d-flex flex-column justify-content-around">
-            <Map className="p-2 col-example text-right" />
+            <Map className="p-2 col-example text-right" address={therapist.address}/>
             <BookingPage/>
             <MDBBtn
                 href={`/profile/${therapist['_id']}`}

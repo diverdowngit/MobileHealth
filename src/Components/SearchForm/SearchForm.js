@@ -60,7 +60,7 @@ const SearchForm = () => {
               <strong>
                 FIND THE RIGHT
                 <br></br>
-                SERVICE FOR YOU
+                 MEDICAL SERVICE. 
               </strong>
             </h3>
             <SearchCheckBox
@@ -68,7 +68,7 @@ const SearchForm = () => {
               handleChange={handleChange}
             />
             <br></br>
-            <p>Postcode</p>
+            <p>Select the postal code nearest you.</p>
             <MDBInput onChange={(e) => setPostalCode(e.target.value)} label="Valid Postcode" background size="lg" />
             <MDBBtn
               onClick={(e) => checkAvailability(e, categories, postalCode)}
@@ -76,7 +76,7 @@ const SearchForm = () => {
               size="md"
               className=""
           >
-              Check Availability
+              Find Therapists now
             </MDBBtn>
           </MDBCol>
         </MDBRow>
