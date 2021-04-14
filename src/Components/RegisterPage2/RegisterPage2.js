@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }from "react";
 import { MDBRow, MDBCol, MDBBtn, MDBContainer, MDBInput } from "mdbreact";
 import {
   MDBDropdown,
@@ -10,23 +10,49 @@ import ImageUpload from "../util/imageUploader";
 import Map from "../Map/Map";
 
 const RegisterPage2 = () => {
-  //   useState = {
-  //    fname: "Mark",
-  //   lname: "Otto",
-  //   email: "",
-  //   city: "",
-  //   state: "",
-  //   zip: ""
-  // };
+  const [userInput, setUserInput] = useState();
 
-  // submitHandler = event => {
-  //   event.preventDefault();
-  //   event.target.className += " was-validated";
-  // };
+  const saveUserInput =(e)=>{
+      e.persist()
+      setUserInput((prevData)=>({
+        ...prevData,
+        [e.target.name]: [e.target.value]
+      }
+      ))
+      console.log(userInput)
+  }
 
-  // changeHandler = event => {
-  //   this.setState({ [event.target.name]: event.target.value });
-  // };
+  const sendData= async(e)=>{
+      // console.log("create")
+      // await axios( {
+      //   method: 'post',
+      //   // url: `${serverUrl}/booking`,
+      //   url: "http://localhost:3000/booking",
+      //   headers: { 
+      //     'Content-Type': 'application/json',
+      //   },
+      //   data : {
+      //     first_name, 
+      //     last_name, 
+      //     address:{
+      //       country, 
+      //       city, 
+      //       streetName, 
+      //       streetNumber, 
+      //       postalCode},
+      //     phoneNumber, 
+      //     shortText,
+      //     emailAddress,
+      //     password: 
+      //   }
+      // })
+      // .then(function (response) {
+      //   console.log(response)
+      // })
+      // .catch(function (error) {
+      //   console.log(error);
+      // })
+    }
 
   return (
     <MDBContainer className="d-flex justify-content-left mt-5 ">
@@ -52,9 +78,8 @@ const RegisterPage2 = () => {
                 First name
               </label>
               <input
-                // value={this.state.fname}
-                name="fname"
-                // onChange={this.changeHandler}
+                name="first_name"
+                onChange={saveUserInput}
                 type="text"
                 id="defaultFormRegisterNameEx"
                 className="form-control"
@@ -72,9 +97,8 @@ const RegisterPage2 = () => {
               </label>
 
               <input
-                // value={this.state.lname}
-                name="lname"
-                // onChange={this.changeHandler}
+                name="last_name"
+                onChange={saveUserInput}
                 type="text"
                 id="defaultFormRegisterEmailEx2"
                 className="form-control"
@@ -104,12 +128,11 @@ const RegisterPage2 = () => {
                 Email
               </label>
               <input
-                // value={this.state.email}
-                // onChange={this.changeHandler}
+                onChange={saveUserInput}
                 type="email"
                 id="defaultFormRegisterConfirmEx3"
                 className="form-control"
-                name="email"
+                name="emailAddress"
                 placeholder="Your Email address"
               />
               <small id="emailHelp" className="form-text text-muted">
@@ -129,9 +152,7 @@ const RegisterPage2 = () => {
               </label>
 
               <input
-                // value={this.state.lname}
                 name="address"
-                // onChange={this.changeHandler}
                 type="text"
                 id="defaultFormRegisterEmailEx2"
                 className="form-control"
@@ -148,8 +169,8 @@ const RegisterPage2 = () => {
                 City
               </label>
               <input
-                // value={this.state.city}
-                // onChange={this.changeHandler}
+  
+                onChange={saveUserInput}
                 type="text"
                 id="defaultFormRegisterPasswordEx4"
                 className="form-control"
@@ -170,13 +191,11 @@ const RegisterPage2 = () => {
                 State
               </label>
               <input
-                // value={this.state.state}
-                //
-                // onChange={this.changeHandler}
+                onChange={saveUserInput}
                 type="text"
                 id="defaultFormRegisterPasswordEx4"
                 className="form-control"
-                name="state"
+                name="country"
                 placeholder="State"
                 required
               />
@@ -193,12 +212,12 @@ const RegisterPage2 = () => {
                 Postal Code
               </label>
               <input
-                // value={this.state.zip}
-                // onChange={this.changeHandler}
+             
+                onChange={saveUserInput}
                 type="text"
                 id="defaultFormRegisterPasswordEx4"
                 className="form-control"
-                name="Postal Code"
+                name="postalCode"
                 placeholder="Postal Code"
                 required
               />

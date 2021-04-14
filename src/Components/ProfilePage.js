@@ -76,7 +76,10 @@ const ProfilePage = () => {
                 <br />
                 <br />
               </div>
-              <BookingPage/>
+
+              <BookingPage therapist={therapist}/>
+              {/* <BookingPage style={{ padding: "5rem" }}/> */}
+
             </MDBCol>
           </MDBRow>
           <MDBCol className="rounded float-center">
