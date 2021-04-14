@@ -16,11 +16,7 @@ const PanelPage = () => {
           to="/"
         />
 <MDBBtn color="green" height="10" href="/therapistlist">Step 1: Please choose your Service here</MDBBtn>        <p >
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet.
+          You can look here to see the list of all of Our Therapist Services.
         </p>
       </MDBCol>
       <MDBCol>
@@ -34,11 +30,7 @@ const PanelPage = () => {
         />
         <MDBBtn color="green" href="#" >Step 2: Please book your Appointment</MDBBtn>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. 
+         If you are ready to make your Appointment you can click here to book now.
         </p>
       </MDBCol>
       <MDBCol>
@@ -50,13 +42,9 @@ const PanelPage = () => {
           height="170"
           to="/"
         />
-        <MDBBtn color="green">Step 3: Please choose your Mobile Service</MDBBtn>
+        <MDBBtn color="green">Step 3: we have no idea what this step is!</MDBBtn>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet.
+          Lorem ipsum is driving me crazy!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         </p>
       </MDBCol>
     </MDBContainer>

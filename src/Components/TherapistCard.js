@@ -4,6 +4,8 @@ import Map from "./Map/Map";
 import BookingPage from "./BookingPage/BookingPage"
 const TherapistCard = ({ therapist }) => {
 
+  console.log('therapist', therapist);
+
   return (
     < >
      
