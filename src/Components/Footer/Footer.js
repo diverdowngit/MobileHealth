@@ -6,7 +6,7 @@ import Logo from "../util/mhicon.png"
 
 const FooterPage = () => {
   return (
-    <MDBFooter color="green" className="font-small pt-3 mt-3">
+    <MDBFooter color="green" className="font-small pt-3 mt-3  ">
       <MDBContainer fluid className="text-center text-md-center" >
         <MDBRow md="4" style={{padding: 5}}>
         <MDBNavLink to="/">

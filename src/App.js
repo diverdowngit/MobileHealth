@@ -92,7 +92,7 @@ export default function App() {
           <LandingPage />
         </Route>
       </Switch>
-      <Footer />
+      <Footer  />
     </AppState>
   );
 }

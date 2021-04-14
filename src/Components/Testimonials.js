@@ -9,16 +9,16 @@ import {
 
 const TestimonialsPage = () => {
   return (
-    <MDBContainer>
+    <MDBContainer  className="testimonials">
       <section className='text-center my-5'>
         <h2 className='h3-responsive  my-5'>What our Clients say.</h2>
         <MDBCarousel
           activeItem={1}
           length={3}
-          testimonial
-          interval={false}
-          showIndicators={true}
-          showControls={true}
+       
+        
+          showIndicators={false}
+          showControls={false}
           className='no-flex z-depth-1'
         >
           <MDBCarouselInner>
