@@ -32,6 +32,8 @@ const ProfilePage = () => {
     return <Loader />;
   }
 
+  therapist && console.log(therapist)
+
   if (therapist) {
     return (
       <MDBContainer className="bc-grey" style={{ padding: 15 }}>
@@ -54,7 +56,28 @@ const ProfilePage = () => {
               alt="Therapist Image"
               // maxhight="320rem"
             />
-            <MDBCol></MDBCol>
+
+            <MDBCol>
+              <div className="text-center">
+                <h3 style={{ color: "green" }}>
+                  {therapist.first_name} {therapist.last_name}
+                </h3>
+                <h4>{therapist.category}</h4>
+                <br />
+                <br />
+                <p>
+                  {therapist.address.streetName}{" "}
+                  {therapist.address.streetNumber},
+                </p>
+                <p>
+                  {therapist.address.postalCode} {therapist.address.city}
+                </p>
+                <p>{therapist.phoneNumber}</p>
+                <br />
+                <br />
+              </div>
+              {/* <BookingPage/> */}
+            </MDBCol>
           </MDBRow>
           <MDBCol className="rounded float-center">
             <MDBCard style={{ padding: "1.2rem" }}>

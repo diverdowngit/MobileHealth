@@ -2,3 +2,7 @@
     color: green !important;
     text-align: left !important;
 }
+
+ .custom-button {
+    width: 300px;
+} 

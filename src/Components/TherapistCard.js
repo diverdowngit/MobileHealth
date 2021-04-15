@@ -1,67 +1,74 @@
-import React, { Fragment } from "react"; 
-import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage,MDBBtn, MDBRow, MDBCol  } from "mdbreact";
+import {
+  MDBCard,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardBody,
+  MDBCardImage,
+  MDBBtn,
+  MDBRow,
+  MDBCol,
+} from "mdbreact";
 import Map from "./Map/Map";
-import BookingPage from "./BookingPage/BookingPage"
-
+import BookingPage from "./BookingPage/BookingPage";
 
 const TherapistCard = ({ therapist }) => {
-
-  // console.log('therapist', therapist);
-
   return (
-    < >
-     
-     <MDBCard className='mt-5' style={{ maxWidth: '55rem' }}>
-      <MDBRow className='p-2 '>
-        <MDBCol md='4'>
-          <MDBCardImage src={therapist['profilPhoto']} alt='Therapist Images' fluid height='320rem' />
-        </MDBCol>
-        <MDBCol md='4'>
-          <MDBCardBody>
-          
-            <MDBCardTitle className='h1 font-weight-bold'> {therapist['first_name' ]} {therapist['last_name']}</MDBCardTitle>
-            <MDBCardText className="blockquote font-weight-bold">
-            Category <p> <small>
-                {therapist['category']}</small></p>
-            </MDBCardText>
-            <MDBCardText className="blockquote font-weight-bold">
-              About <p> <small>
-                {therapist['about']}</small></p>
-            </MDBCardText>
-            <MDBCardText className="blockquote font-weight-bold">
-             Education <p><small>{therapist['education']} </small></p>
-            </MDBCardText>
-            <MDBCardText className="blockquote font-weight-bold">
-             Specialities   <p><small>{therapist['specialities']}</small></p>
-            </MDBCardText>
-      
-          </MDBCardBody>
-        </MDBCol> 
-        <MDBCol md='4' className="d-flex flex-column justify-content-around">
-            <Map className="p-2 col-example text-right" address={therapist.address}/>
-            <BookingPage therapist={therapist}/>
+    <>
+      <MDBCard className="mt-5" style={{ maxWidth: "100%" }}>
+        <MDBRow className="p-5 ">
+          <MDBCol md="4">
+            <MDBCardImage
+              src={therapist["profilPhoto"]}
+              alt="Therapist Images"
+              fluid
+              height="320rem"
+            />
+
+            <Map
+              className="p-4 col-example text-right"
+              address={therapist.address}
+            />
+          </MDBCol>
+
+          <MDBCol md="8">
+            <MDBCardBody>
+              <MDBCardTitle className="h1 font-weight-bold">
+                {" "}
+                {therapist["first_name"]} {therapist["last_name"]}
+              </MDBCardTitle>
+
+              <MDBCardText className="blockquote font-weight-bold">
+                Category <small>{therapist["category"]}</small>
+              </MDBCardText>
+              <MDBCardText className="blockquote font-weight-bold">
+                About <small>{therapist["about"]}</small>
+              </MDBCardText>
+              <MDBCardText className="blockquote font-weight-bold">
+                Education<small>{therapist["education"]} </small>
+              </MDBCardText>
+              <MDBCardText className="blockquote font-weight-bold">
+                Specialities <small>{therapist["specialities"]}</small>
+              </MDBCardText>
+            </MDBCardBody>
+          </MDBCol>
+
+          <MDBCol md="12" size="md" className="d-flex justify-content-center">
+            <BookingPage therapist={therapist} />
+
+
+
             <MDBBtn
-                href={`/profile/${therapist['_id']}`}
-                color="grey"
-              >
-                View Profile
+              href={`/profile/${therapist["_id"]}`}
+              color="grey"
+              className="custom-button"
+            >
+              View Profile
             </MDBBtn>
-        </MDBCol>
+          </MDBCol>
         </MDBRow>
-      <MDBCol md=''height='10 rem' className='col-example'>
-     
-      </MDBCol>
-   <MDBRow> 
-     <MDBCol className="text-center">
-            
-     </MDBCol>
-   </MDBRow>
-    </MDBCard>    
-    
-    
-   
+      </MDBCard>
     </>
-  )
+  );
 };
 
 export default TherapistCard;
