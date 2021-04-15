@@ -17,20 +17,11 @@ const FooterPage = () => {
           <MDBCol md="3" >
             <h5 className="about">About Us</h5>
             <ul style={{padding: 5}}>
-              <li className="list-unstyled text-align auto">
-                <a href="#!">Our Story</a>
+              <li className="list-unstyled">
+                <a href="/team">Our Team</a>
               </li>
               <li className="list-unstyled">
-                <a href="/team">The Team</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Careers</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Our Reviews</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Contact Us</a>
+                <a href="mailto:Mobile_Health@wbs.com">Contact Us</a>
               </li>
             </ul>
           </MDBCol>
@@ -42,9 +33,6 @@ const FooterPage = () => {
               <li className="list-unstyled">
                 <a href="#!">Patients Login</a>
               </li>
-              <li className="list-unstyled">
-                <a href="#!">Reviews Policy</a>
-              </li>
             </ul>
             </MDBCol>
           <MDBCol><h5 className="therapists" >For Therapists</h5>
@@ -54,12 +42,6 @@ const FooterPage = () => {
               </li>
               <li className="list-unstyled">
                 <a href="/auth">Therapist Login</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">FAQs</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Our Reviews</a>
               </li>
             </ul>
           </MDBCol>
@@ -87,7 +69,7 @@ const FooterPage = () => {
       </a>
     </MDBContainer>
         </MDBRow>
-        <br></br>
+        <br/>
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
