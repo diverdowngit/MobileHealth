@@ -46,7 +46,7 @@ const Map = ({ address }) => {
   return (
     <div>
       {lng && lng && (
-        <div style={{ height: "6rem", width: "9rem" }} ref={mapContainer} />
+        <div className="mt-2"  style={{ height: "9rem", width: "15rem" }} ref={mapContainer} />
       )}
     </div>
   );

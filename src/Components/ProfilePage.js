@@ -36,6 +36,8 @@ const ProfilePage = () => {
     );
   }
 
+  therapist && console.log(therapist)
+
   if (therapist) {
     return (
       
@@ -76,7 +78,7 @@ const ProfilePage = () => {
                 <br />
                 <br />
               </div>
-              <BookingPage/>
+              {/* <BookingPage/> */}
             </MDBCol>
           </MDBRow>
           <MDBCol className="rounded float-center">

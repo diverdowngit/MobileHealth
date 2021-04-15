@@ -14,8 +14,8 @@ import BookingPage from "./BookingPage/BookingPage";
 const TherapistCard = ({ therapist }) => {
   return (
     <>
-      <MDBCard className="mt-5" style={{ maxWidth: "90%" }}>
-        <MDBRow className="p-2 ">
+      <MDBCard className="mt-5" style={{ maxWidth: "100%" }}>
+        <MDBRow className="p-5 ">
           <MDBCol md="4">
             <MDBCardImage
               src={therapist["profilPhoto"]}
@@ -25,7 +25,7 @@ const TherapistCard = ({ therapist }) => {
             />
 
             <Map
-              className="p-2 col-example text-right"
+              className="p-4 col-example text-right"
               address={therapist.address}
             />
           </MDBCol>
@@ -53,16 +53,17 @@ const TherapistCard = ({ therapist }) => {
           </MDBCol>
 
           <MDBCol md="12" size="md" className="d-flex justify-content-center">
+            <BookingPage therapist={therapist} />
 
-          <BookingPage therapist={therapist} />
-  
-          <MDBBtn href={`/profile/${therapist["_id"]}`} color="grey" className="custom-button">
-            View Profile
-          </MDBBtn>
-        </MDBCol>
+            <MDBBtn
+              href={`/profile/${therapist["_id"]}`}
+              color="grey"
+              className="custom-button"
+            >
+              View Profile
+            </MDBBtn>
+          </MDBCol>
         </MDBRow>
-
-
       </MDBCard>
     </>
   );
