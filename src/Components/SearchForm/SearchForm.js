@@ -8,15 +8,15 @@ import {
   MDBMask,
   MDBView,
   MDBBtn,
- 
 } from "mdbreact";
 import "./SearchForm.css";
 import SearchCheckBox from "../SearchCheckbox/SearchCheckBox";
 import TherapistsContext from "../../context/TherapistsContext";
 
 const SearchForm = () => {
-
-  const { checkAvailability, filteredTherapists } = useContext(TherapistsContext)
+  const { checkAvailability, filteredTherapists } = useContext(
+    TherapistsContext
+  );
 
   const [categories, setCategories] = useState({
     massage: { selected: false, displayName: "Massage Therapist" },
@@ -25,7 +25,7 @@ const SearchForm = () => {
     nutritionTherapist: { selected: false, displayName: "Nutrition Therapist" },
   });
 
-  const [postalCode, setPostalCode] = useState('');
+  const [postalCode, setPostalCode] = useState("");
 
   const handleChange = (e) => {
     setCategories({
@@ -50,32 +50,32 @@ const SearchForm = () => {
                 padding-right="0"
                 margin-right="0"
               />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
             </MDBView>
           </MDBCol>
           <MDBCol lg="7">
-            <h3 className="font-weight-bold mb-3 p-0">
-              <strong>
-                FIND THE RIGHT
-                <br></br>
-                 MEDICAL SERVICE. 
-              </strong>
-            </h3>
+            <h2 className="font-weight-bold mb-3 p-0" style={{color: "green"}}>
+              <strong>FIND THE RIGHT MEDICAL SERVICE</strong>
+            </h2>
+            <br />
+            <br/>
             <SearchCheckBox
               categories={categories}
               handleChange={handleChange}
             />
-            <br></br>
-            <p>Select the postal code nearest you.</p>
-            <MDBInput onChange={(e) => setPostalCode(e.target.value)} label="Valid Postcode" background size="lg" />
+            <br />
+            <h3>Select the postal code nearest you</h3>
+            <MDBInput
+              onChange={(e) => setPostalCode(e.target.value)}
+              label="Valid Postcode"
+              background
+              size="lg"
+            />
             <MDBBtn
               onClick={(e) => checkAvailability(e, categories, postalCode)}
               color="green"
               size="md"
               className=""
-          >
+            >
               Find Therapists now
             </MDBBtn>
           </MDBCol>
