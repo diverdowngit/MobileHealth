@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect,useState, useContext } from "react";
 import {useHistory} from "react-router-dom"
 import { userContext,logout } from "../../utils/auth";
 import { MDBContainer, MDBRow, MDBCol, MDBTabPane, MDBTabContent,  MDBCardHeader, MDBCardFooter, MDBBtn,MDBNav, MDBNavItem, MDBNavLink, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText,MDBView } from "mdbreact";
@@ -6,15 +6,20 @@ import '../../App.css'; //Import here your file style
 import './Dashboard.css'
 import { FETCH_SINGLE_THERAPIST } from "../../context/actions";
 import { FreeCameraOptions } from "mapbox-gl";
+import UsersContext from '../../context/UsersContext'
+import axios from "axios";
 
 const Dashboard = ({onLogout}) => {
+    const { usersContext, setUsersContext} = useContext(UsersContext)
     const history =useHistory();
     const [user, setUser] = useState(null);
     const [pill, setPill] = useState("1")
     
+
     const togglePills =(tab) => {
         setPill(tab)
       };
+
 
     useEffect(()=>{
         const getContext = async ()=>{
@@ -22,17 +27,36 @@ const Dashboard = ({onLogout}) => {
                 // Grab User information
                 const { data: userData } = await userContext();
                 if(!userData) return onLogout()
-                console.log(userData)
                 setUser(userData)
-                
+                //set UserData to UserContext in global
+                setUsersContext(userData)
+           
             }catch(e){
                 //remove Cookie and send user back to login
                 console.log(e.message)
-                onLogout()
-            
+                onLogout()           
             }
         }
-        getContext()
+        getContext();
+        console.log(user)
+        const getBooking = async ()=>{
+          await axios({
+            method: "get",
+            // url: `${serverUrl}/booking`,
+            url: "http://localhost:3000/therapist/booking",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            data: user,
+          })
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }
+        getBooking();
     }, [])
     return (
         

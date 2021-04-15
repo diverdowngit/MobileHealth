@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   MDBContainer,
   MDBRow,
@@ -14,8 +14,11 @@ import {
 import "./BookingPage.css";
 import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
+import UsersContext from '../../context/UsersContext';
+import { userContext } from "../../utils/auth";
 
 const BookingPage = ({ therapist }) => {
+  const { usersContext, setUsersContext} = useContext(UsersContext)
   const [extendBooking, setextendBooking] = useState(false);
   const [inputData, setInputData] = useState({});
 
@@ -23,7 +26,7 @@ const BookingPage = ({ therapist }) => {
   const toggle = () => {
     setextendBooking((prevState) => !prevState);
   };
-
+  
   //save user Input in the state
   const saveInput = (e) => {
     e.persist();
@@ -44,7 +47,7 @@ const BookingPage = ({ therapist }) => {
         "Content-Type": "application/json",
       },
       data: {
-        clientId: "6062234ac30e5f91a20a744d",
+        clientId: usersContext._id.toString(),
         therapistId: therapist._id.toString(),
         time: inputData.time.toString(),
         place: "client loc",
@@ -62,7 +65,8 @@ const BookingPage = ({ therapist }) => {
 
   return (
     <>
-      <MDBContainer className="p-0">
+
+    <MDBContainer className="p-0">
       <MDBBtn
         size="md"
         color="green"
@@ -93,6 +97,7 @@ const BookingPage = ({ therapist }) => {
                       validate
                       error="wrong"
                       success="right"
+                      value={usersContext.first_name}
                     />
                     <MDBInput
                       onChange={saveInput}
@@ -104,6 +109,7 @@ const BookingPage = ({ therapist }) => {
                       validate
                       error="wrong"
                       success="right"
+                      value={usersContext.last_name}
                     />
                     <MDBInput
                       onChange={saveInput}
@@ -115,6 +121,7 @@ const BookingPage = ({ therapist }) => {
                       validate
                       error="wrong"
                       success="right"
+                      value={usersContext.emailAddress}
                     />
                     <MDBInput
                       onChange={saveInput}
@@ -165,8 +172,9 @@ const BookingPage = ({ therapist }) => {
           </MDBBtn>
         </MDBModalFooter>
       </MDBModal>
-      </MDBContainer>
-    </>
+    </MDBContainer>
+  </>
+
   );
 };
 

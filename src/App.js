@@ -17,10 +17,11 @@ import Team from "./Components/Team/Team"
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
 import { login, logout, setAuthHeaders} from "./utils/auth";
-
+import UsersContext from "./context/UsersContext"
 
 export default function App() {
   const [credentials, setCredentials] = useState();
+  const [usersContext, setUsersContext] = useState("test");
 
   const history = useHistory();
 
@@ -58,6 +59,7 @@ export default function App() {
   return (
     <AppState>
       <Navbar />
+      <UsersContext.Provider value={{usersContext, setUsersContext}}>
       <Switch>
         <ProtectedRoute path="/dashboard" onLogout={handleLogout} component={Dashboard} />
         <Route path="/therapistlist">
@@ -92,6 +94,7 @@ export default function App() {
           <LandingPage />
         </Route>
       </Switch>
+      </UsersContext.Provider>
       <Footer  />
     </AppState>
   );
