@@ -21,7 +21,8 @@ const Navbar = () => {
 
   //search is not working yet
   const saveInput = (e) => {
-    console.log("haaaaloooo e.target.name");
+    // e.persist()
+    console.log(e.target.value);
   };
 
   return (
@@ -51,11 +52,11 @@ const Navbar = () => {
           <MDBNavItem>
             <MDBFormInline waves>
               <div className="md-form my-0">
-                <MDBInput
+                <input
                   onChange={(e) => saveInput(e.target.value)}
                   id="textcolor"
                   className="form-control mr-sm-2"
-                  label="Search"
+                  placeholder="Search"
                   type="text"
                 />
               </div>
