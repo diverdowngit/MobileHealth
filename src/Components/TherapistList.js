@@ -42,11 +42,10 @@ const TherapistList = () => {
     }
   
     return (<Fragment>    
-                <ul>
+                <div>
                   {filteredTherapists.length && page.data.map(therapist => <TherapistCard therapist={therapist} /> )}
-                  
-                </ul> 
-             
+               
+                  </div>
                 <MDBRow>
       <MDBCol>
        

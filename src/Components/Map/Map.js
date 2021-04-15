@@ -7,8 +7,7 @@ import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
 mapboxgl.workerClass = MapboxWorker;
 mapboxgl.accessToken = process.env.REACT_APP_BASE_MAP;
 
-const Map = ({address}) => {
-
+const Map = ({ address }) => {
   const mapContainer = useRef();
   const [lng, setLng] = useState(13.404954);
   const [lat, setLat] = useState(52.520008);
@@ -16,19 +15,19 @@ const Map = ({address}) => {
 
   const addressString = `${address.streetName} ${address.streetNumber},
                  ${address.postalCode} ${address.city},
-                 ${address.country}`
-  
+                 ${address.country}`;
+
   useEffect(() => {
     const tryIt = async () => {
-      const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${addressString}.json?access_token=${process.env.REACT_APP_BASE_MAP}`
-      const result = await axios.get(url)
+      const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${addressString}.json?access_token=${process.env.REACT_APP_BASE_MAP}`;
+      const result = await axios.get(url);
       // console.log(result.data.features[0].center)
-      setLng(result.data.features[0].center[0])
-      setLat(result.data.features[0].center[1])
-    }
-    tryIt()
-  }, [addressString])
-
+      setLng(result.data.features[0].center[0]);
+      setLat(result.data.features[0].center[1]);
+      console.log(result);
+    };
+    tryIt();
+  }, [addressString]);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -36,19 +35,19 @@ const Map = ({address}) => {
       style: "mapbox://styles/diverman/ckmxmpj770ywq17o3utyrki1u",
       center: [lng, lat],
       zoom: zoom,
-      pitch: 70, 
-      bearing: 30, 
+      pitch: 70,
+      bearing: 30,
     });
-    let marker1 = new mapboxgl.Marker()
-      .setLngLat([lng, lat])
-      .addTo(map);
+    let marker1 = new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
     map.addControl(new mapboxgl.FullscreenControl());
     return () => map.remove();
-  }, []);
+  }, [lat, lng, zoom]);
 
   return (
     <div>
-      {lng && lng && <div style={{ height: "6rem", width: "9rem" }} ref={mapContainer} />}
+      {lng && lng && (
+        <div className="mt-2"  style={{ height: "9rem", width: "15rem" }} ref={mapContainer} />
+      )}
     </div>
   );
 };
