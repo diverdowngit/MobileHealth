@@ -44,7 +44,7 @@ const PanelPage = () => {
         />
         <MDBBtn color="green">Step 3: we have no idea what this step is!</MDBBtn>
         <p>
-          English Jokes driving me crazy!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          English Jokes driving me crazy!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Dont  worry its allllmost over
         </p>
       </MDBCol>
     </MDBContainer>
