@@ -65,6 +65,7 @@ const BookingPage = ({ therapist }) => {
 
   return (
     <>
+
     <MDBContainer className="p-0">
       <MDBBtn
         size="md"
@@ -161,7 +162,6 @@ const BookingPage = ({ therapist }) => {
         <MDBModalFooter>
           <MDBBtn style={{ padding: "1.25rem" }} color="grey" onClick={toggle}>
             Close Booking
-
           </MDBBtn>
           <MDBBtn
             style={{ padding: "1.25rem" }}
@@ -174,6 +174,7 @@ const BookingPage = ({ therapist }) => {
       </MDBModal>
     </MDBContainer>
   </>
+
   );
 };
 

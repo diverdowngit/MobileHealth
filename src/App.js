@@ -12,8 +12,8 @@ import TherapistList from "./Components/TherapistList";
 import TherapistCard from "./Components/TherapistCard";
 import Login from "./Components/Login/Login";
 import RegisterPage2 from "./Components/RegisterPage2/RegisterPage2";
-import ProfilePage from "./Components/ProfilePage";
-import Team from "./Components/Team"
+import ProfilePage from "./Components/ProfilePage/ProfilePage";
+import Team from "./Components/Team/Team"
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
 import { login, logout, setAuthHeaders} from "./utils/auth";

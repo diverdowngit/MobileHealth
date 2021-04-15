@@ -39,25 +39,27 @@ const SearchForm = () => {
 
   return (
     <MDBCard lg="3" className="my-5 px-5 pb-5 d-flex justify-content-center">
-      <MDBCardBody >
+      <MDBCardBody>
         <MDBRow>
           <MDBCol lg="5">
             <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
+              {/* to be changed/border on the right */}
               <img
                 className="img-fluid"
                 src="https://www.minimed.at/fileadmin/_processed_/0/7/csm_Physiotherapie_aeaf6ee751.jpg"
-                alt=""
-                padding-right="0"
-                margin-right="0"
+                alt="still hardcoded"
               />
             </MDBView>
           </MDBCol>
           <MDBCol lg="7 ">
-            <h2 className="font-weight-bold mb-3 p-0" style={{color: "green"}}>
+            <h2
+              className="font-weight-bold mb-3 p-0"
+              style={{ color: "green" }}
+            >
               <strong>FIND THE RIGHT MEDICAL SERVICE</strong>
             </h2>
             <br />
-            <br/>
+            <br />
             <SearchCheckBox
               categories={categories}
               handleChange={handleChange}
