@@ -38,8 +38,8 @@ const SearchForm = () => {
   };
 
   return (
-    <MDBCard lg="3" className="my-5 px-5 pb-5">
-      <MDBCardBody>
+    <MDBCard lg="3" className="my-5 px-5 pb-5 d-flex justify-content-center">
+      <MDBCardBody >
         <MDBRow>
           <MDBCol lg="5">
             <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
@@ -52,7 +52,7 @@ const SearchForm = () => {
               />
             </MDBView>
           </MDBCol>
-          <MDBCol lg="7">
+          <MDBCol lg="7 ">
             <h2 className="font-weight-bold mb-3 p-0" style={{color: "green"}}>
               <strong>FIND THE RIGHT MEDICAL SERVICE</strong>
             </h2>

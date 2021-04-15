@@ -8,6 +8,7 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
   MDBFormInline,
+  MDBInput,
 } from "mdbreact";
 import "./Navbar.css";
 import Logo from "../util/mhicon.png";
@@ -16,6 +17,11 @@ const Navbar = () => {
 
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
+  };
+
+  //search is not working yet
+  const saveInput = (e) => {
+    console.log("haaaaloooo e.target.name");
   };
 
   return (
@@ -45,13 +51,12 @@ const Navbar = () => {
           <MDBNavItem>
             <MDBFormInline waves>
               <div className="md-form my-0">
-                <input
-                
+                <MDBInput
+                  onChange={(e) => saveInput(e.target.value)}
+                  id="textcolor"
                   className="form-control mr-sm-2"
-                  name="search"
+                  label="Search"
                   type="text"
-                  placeholder="Search"
-                  aria-label="Search"
                 />
               </div>
             </MDBFormInline>

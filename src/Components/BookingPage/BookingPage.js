@@ -61,6 +61,7 @@ const BookingPage = ({ therapist }) => {
   };
 
   return (
+    <MDBContainer className="p-0">
     <>
       <MDBBtn
         size="md"
@@ -68,6 +69,7 @@ const BookingPage = ({ therapist }) => {
         onClick={toggle}
         className="custom-button"
       >
+
         Make an Appointment
       </MDBBtn>
       <MDBModal isOpen={extendBooking} size="lg">
@@ -151,8 +153,9 @@ const BookingPage = ({ therapist }) => {
           </MDBContainer>
         </MDBModalBody>
         <MDBModalFooter>
-          <MDBBtn color="secondary" onClick={toggle}>
-            Close
+          <MDBBtn style={{ padding: "1.25rem" }} color="grey" onClick={toggle}>
+            Close Booking
+
           </MDBBtn>
           <MDBBtn
             style={{ padding: "1.25rem" }}
@@ -163,6 +166,7 @@ const BookingPage = ({ therapist }) => {
           </MDBBtn>
         </MDBModalFooter>
       </MDBModal>
+    </MDBContainer>
     </>
   );
 };
