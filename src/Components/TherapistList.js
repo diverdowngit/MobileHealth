@@ -22,11 +22,11 @@ const TherapistList = () => {
     //   setPage( )     
     // }, [])
     const setPagination= (e) =>{   
-      console.log(page)
+      // console.log(page)
       console.dir(e.target.innerText)
       let selectedPage
       if (e.target.innerText === "Previous" && (parseInt(page.currentPage))-1 >= 1 ) {
-        console.log("rte")
+        // console.log("rte")
         selectedPage= parseInt(page.currentPage)-1}
       else if (e.target.innerText === "Next" ) {
         selectedPage = parseInt(page.currentPage) +1}

@@ -29,7 +29,7 @@ const ProfilePage = () => {
   }, [id]);
 
   if (loading) {
-    console.log("load...");
+    // console.log("load...");
     return <Loader />;
   }
 
