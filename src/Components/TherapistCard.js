@@ -14,9 +14,9 @@ import BookingPage from "./BookingPage/BookingPage";
 const TherapistCard = ({ therapist }) => {
   return (
     <>
-      <MDBCard className="mt-5" style={{ maxWidth: "100%" }}>
+      <MDBCard className="mt-5">
         <MDBRow className="p-5 ">
-          <MDBCol md="4">
+          <MDBCol md="3">
             <MDBCardImage
               src={therapist["profilPhoto"]}
               alt="Therapist Images"
@@ -36,7 +36,6 @@ const TherapistCard = ({ therapist }) => {
                 {" "}
                 {therapist["first_name"]} {therapist["last_name"]}
               </MDBCardTitle>
-
               <MDBCardText className="blockquote font-weight-bold">
                 Category <small>{therapist["category"]}</small>
               </MDBCardText>
@@ -49,21 +48,23 @@ const TherapistCard = ({ therapist }) => {
               <MDBCardText className="blockquote font-weight-bold">
                 Specialities <small>{therapist["specialities"]}</small>
               </MDBCardText>
+              <br />
+              <MDBRow>
+                <MDBCol md="4">
+                  <MDBBtn
+                    href={`/profile/${therapist["_id"]}`}
+                    color="grey"
+                    className="custom-button"
+                    size="lg"
+                  >
+                    View Profile
+                  </MDBBtn>
+                </MDBCol>
+                <MDBCol md="4">
+                  <BookingPage therapist={therapist} />
+                </MDBCol>
+              </MDBRow>
             </MDBCardBody>
-          </MDBCol>
-
-          <MDBCol md="12" size="md" className="d-flex justify-content-center">
-            <BookingPage therapist={therapist} />
-
-
-
-            <MDBBtn
-              href={`/profile/${therapist["_id"]}`}
-              color="grey"
-              className="custom-button"
-            >
-              View Profile
-            </MDBBtn>
           </MDBCol>
         </MDBRow>
       </MDBCard>

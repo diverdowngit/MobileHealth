@@ -43,7 +43,6 @@ const SearchForm = () => {
         <MDBRow>
           <MDBCol lg="5">
             <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
-              {/* to be changed/border on the right */}
               <img
                 className="img-fluid"
                 src="https://www.minimed.at/fileadmin/_processed_/0/7/csm_Physiotherapie_aeaf6ee751.jpg"
@@ -52,13 +51,9 @@ const SearchForm = () => {
             </MDBView>
           </MDBCol>
           <MDBCol lg="7 ">
-            <h2
-              className="font-weight-bold mb-3 p-0"
-              style={{ color: "green" }}
-            >
+            <h2 className="font-weight-bold mb-3 p-0">
               <strong>FIND THE RIGHT MEDICAL SERVICE</strong>
             </h2>
-            <br />
             <br />
             <SearchCheckBox
               categories={categories}
@@ -72,11 +67,12 @@ const SearchForm = () => {
               background
               size="lg"
             />
+            <br />
             <MDBBtn
               onClick={(e) => checkAvailability(e, categories, postalCode)}
+              size="lg"
+              className="pbtn"
               color="green"
-              size="md"
-              className=""
             >
               Find Therapists now
             </MDBBtn>
