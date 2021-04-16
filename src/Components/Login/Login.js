@@ -4,14 +4,14 @@ import './Login.css';
 
 const Login = ({onAuth, onSetCredentials}) => {
 return (
-<MDBContainer className="flex-center" >
+<MDBContainer className="text-left md-6 mb-6" >
   <MDBRow >
     <MDBCol >
       <form >
         <br/>
-        <h2 className="text-center font-weight-bold mb-3">Login</h2>
+        <h2 className="text-center font-weight-bold">Login</h2>
         <br/>
-        <div className="grey-text">
+        <div className="ilogin grey-text">
           <MDBInput label="Type your email" name="emailAddress" icon="envelope" group type="email" validate error="wrong"
             success="right" onChange={onSetCredentials}/>
           <MDBInput label="Type your password" name="password" icon="lock" group type="password" onChange={onSetCredentials} validate />
