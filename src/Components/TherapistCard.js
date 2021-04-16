@@ -4,12 +4,14 @@ import {
   MDBCardText,
   MDBCardBody,
   MDBCardImage,
+  MDBContainer,
   MDBBtn,
   MDBRow,
   MDBCol,
 } from "mdbreact";
 import Map from "./Map/Map";
 import BookingPage from "./BookingPage/BookingPage";
+import "./TherapistCard.css";
 
 const TherapistCard = ({ therapist }) => {
   return (
@@ -21,7 +23,8 @@ const TherapistCard = ({ therapist }) => {
               src={therapist["profilPhoto"]}
               alt="Therapist Images"
               fluid
-              height="320rem"
+              height="300rem"
+              width="240rem"
             />
 
             <Map
@@ -29,7 +32,7 @@ const TherapistCard = ({ therapist }) => {
               address={therapist.address}
             />
           </MDBCol>
-
+        
           <MDBCol md="8">
             <MDBCardBody>
               <MDBCardTitle className="h1 font-weight-bold">
@@ -38,32 +41,38 @@ const TherapistCard = ({ therapist }) => {
               </MDBCardTitle>
 
               <MDBCardText className="blockquote font-weight-bold">
-                Category <small>{therapist["category"]}</small>
+                Category{" "}
+                <small>
+                  {"  "}
+                  {therapist["category"]}
+                </small>
               </MDBCardText>
               <MDBCardText className="blockquote font-weight-bold">
-                About <small>{therapist["about"]}</small>
+                About <small> {therapist["about"]}</small>
               </MDBCardText>
               <MDBCardText className="blockquote font-weight-bold">
-                Education<small>{therapist["education"]} </small>
+                Education<small> {therapist["education"]} </small>
               </MDBCardText>
               <MDBCardText className="blockquote font-weight-bold">
-                Specialities <small>{therapist["specialities"]}</small>
+                Specialities <small> {therapist["specialities"]}</small>
               </MDBCardText>
+             
+           
             </MDBCardBody>
-          </MDBCol>
-
-          <MDBCol md="12" size="md" className="d-flex justify-content-center">
-            <BookingPage therapist={therapist} />
-
-
-
+            <MDBRow               style={{margin:"1rem"}}
+>
             <MDBBtn
+              size="lg"
               href={`/profile/${therapist["_id"]}`}
               color="grey"
-              className="custom-button"
+              className="ftherapist custom-button"
+              style={{maxwidth:"20rem", margin:"0.4rem"}}
             >
               View Profile
             </MDBBtn>
+          <BookingPage  therapist={therapist} />
+          </MDBRow>
+
           </MDBCol>
         </MDBRow>
       </MDBCard>

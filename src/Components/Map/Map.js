@@ -24,7 +24,7 @@ const Map = ({ address }) => {
       // console.log(result.data.features[0].center)
       setLng(result.data.features[0].center[0]);
       setLat(result.data.features[0].center[1]);
-      // console.log(result);
+
     };
     tryIt();
   }, [addressString]);

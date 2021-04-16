@@ -100,7 +100,7 @@ const ProfilePage = () => {
         </p>
         <p>mobile: {therapist.phoneNumber}</p>{" "}
         <br/>
-        <div className="pbutton">
+        <div className="pbtn">
         <BookingPage therapist={therapist} />
         </div>
       </MDBContainer>
