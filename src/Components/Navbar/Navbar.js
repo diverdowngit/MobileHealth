@@ -21,7 +21,7 @@ const Navbar = () => {
 
   //search is not working yet
   const saveInput = (e) => {
-    // e.persist()
+  //  e.persist()
     console.log(e.target.value);
   };
 

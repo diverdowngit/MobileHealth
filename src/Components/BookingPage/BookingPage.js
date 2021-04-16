@@ -68,7 +68,7 @@ const BookingPage = ({ therapist }) => {
 
     <MDBContainer className="p-0">
       <MDBBtn
-        size="md"
+        size="lg"
         color="green"
         onClick={toggle}
         className="custom-button"

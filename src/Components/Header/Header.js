@@ -9,9 +9,9 @@ const Header = () => {
       >
         Mobile Health
       </h1>
-      <h2>
+      <h3>
         Massage | Physical Therapy | Speech Therapy | Nutrition Therapy
-      </h2>
+      </h3>
     </div>
   );
 };
