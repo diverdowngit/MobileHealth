@@ -67,6 +67,12 @@ const TherapistList = () => {
             <MDBPageNav onClick={setPagination}>3</MDBPageNav>
           </MDBPageItem>
           <MDBPageItem>
+            <MDBPageNav onClick={setPagination}>4</MDBPageNav>
+          </MDBPageItem>
+          <MDBPageItem>
+            <MDBPageNav onClick={setPagination}>5</MDBPageNav>
+          </MDBPageItem>
+          <MDBPageItem>
             <MDBPageNav aria-label="Previous">
               <span  onClick={setPagination} aria-hidden="true">Next</span>
             </MDBPageNav>

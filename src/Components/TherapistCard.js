@@ -21,8 +21,8 @@ const TherapistCard = ({ therapist }) => {
               src={therapist["profilPhoto"]}
               alt="Therapist Images"
               fluid
-              height="320rem"
-            />
+              height="300rem"
+              width="240rem"            />
 
             <Map
               className="p-4 col-example text-right"
@@ -38,16 +38,16 @@ const TherapistCard = ({ therapist }) => {
               </MDBCardTitle>
 
               <MDBCardText className="blockquote font-weight-bold">
-                Category <small>{therapist["category"]}</small>
+                Category <small>{"  "}{therapist["category"]}</small>
               </MDBCardText>
               <MDBCardText className="blockquote font-weight-bold">
-                About <small>{therapist["about"]}</small>
+                About <small>{" "}{therapist["about"]}</small>
               </MDBCardText>
               <MDBCardText className="blockquote font-weight-bold">
-                Education<small>{therapist["education"]} </small>
+                Education<small>{" "}{therapist["education"]} </small>
               </MDBCardText>
               <MDBCardText className="blockquote font-weight-bold">
-                Specialities <small>{therapist["specialities"]}</small>
+                Specialities <small>{" "}{therapist["specialities"]}</small>
               </MDBCardText>
             </MDBCardBody>
           </MDBCol>
