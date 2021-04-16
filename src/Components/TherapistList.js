@@ -27,11 +27,7 @@ const TherapistList = () => {
     };
   }, []);
 
-  const handlePrevious = () => {
-
-  }
-
-  const setPagination = (e) => {
+const setPagination = (e) => {
     let selectedPage;
     if (e.target.innerText === "Previous") {
       selectedPage = parseInt(page.currentPage) - 1;

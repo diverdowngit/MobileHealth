@@ -15,12 +15,16 @@ import "./BookingPage.css";
 import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
 import UsersContext from '../../context/UsersContext';
+import TherapistsContext from '../../context/TherapistsContext';
 import { userContext } from "../../utils/auth";
 
 const BookingPage = ({ therapist }) => {
   const { usersContext, setUsersContext} = useContext(UsersContext)
+  const { therapistsContext, setTherapistsContext} = useContext(TherapistsContext)
   const [extendBooking, setextendBooking] = useState(false);
   const [inputData, setInputData] = useState({});
+
+// console.log('Userscontect',usersContext)
 
   //Toggle Button to see booking page
   const toggle = () => {
@@ -34,11 +38,11 @@ const BookingPage = ({ therapist }) => {
       ...prevData,
       [e.target.name]: [e.target.value],
     }));
-    console.log(inputData);
+    // console.log(inputData);
   };
 
   const sendData = async (e) => {
-    console.log("i am in");
+    // console.log("i am in");
     await axios({
       method: "post",
       // url: `${serverUrl}/booking`,
