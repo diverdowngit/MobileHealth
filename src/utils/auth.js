@@ -14,7 +14,7 @@ const { REACT_APP_NAME, REACT_APP_BACKEND_API_HEROKU} = process.env
 
 const setAuthHeaders= ()=>{
   const token = Cookies.get(`${REACT_APP_NAME}-auth-token`);
-  console.log({ tokenInsideUserComputer: token })
+  // console.log({ tokenInsideUserComputer: token })
   if (token){
   //***********axios.defaults doesnt work also somehow
      axios.defaults.headers.common['Authorization']= `Bearer ${token}`

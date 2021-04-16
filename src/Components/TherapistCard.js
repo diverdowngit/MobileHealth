@@ -56,8 +56,8 @@ const TherapistCard = ({ therapist }) => {
               <MDBCardText className="blockquote font-weight-bold">
                 Specialities <small> {therapist["specialities"]}</small>
               </MDBCardText>
-              <br />
-            <br />
+             
+           
             </MDBCardBody>
             <MDBRow               style={{margin:"1rem"}}
 >
