@@ -45,7 +45,7 @@ const Navbar = ({context}) => {
 
         <MDBNavbarNav right>
           <MDBNavItem>
-            <MDBNavLink to="#!">Are you a therapist</MDBNavLink>
+            <MDBNavLink to="/">Find Therapist</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             {/* TODO add active to active page functionality */}
