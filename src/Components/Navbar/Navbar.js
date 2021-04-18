@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -12,8 +12,13 @@ import {
 } from "mdbreact";
 import "./Navbar.css";
 import Logo from "../util/mhicon.png";
-const Navbar = () => {
+import {setAuthHeaders, logout} from "../../utils/auth"
+
+
+const Navbar = ({context}) => {
+  // const { usersContext, setUsersContext} = useContext(UsersContext)
   const [isOpen, setIsOpen] = useState(false);
+
 
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
@@ -44,8 +49,11 @@ const Navbar = () => {
           </MDBNavItem>
           <MDBNavItem>
             {/* TODO add active to active page functionality */}
-            <MDBNavLink to="/auth">Login</MDBNavLink>
+            {context?  <MDBNavLink onClick={logout} to="/#" >Logout</MDBNavLink>: <MDBNavLink to="/auth" >Login</MDBNavLink>}
           </MDBNavItem>
+          {context && <MDBNavItem>
+            <MDBNavLink to="/dashboard">Dashboard</MDBNavLink>
+          </MDBNavItem>}
           <MDBNavItem>
             <MDBNavLink to="/registration">Register</MDBNavLink>
           </MDBNavItem>

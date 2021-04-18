@@ -22,8 +22,8 @@ import UsersContext from "./context/UsersContext"
 export default function App() {
   const [credentials, setCredentials] = useState();
   const [usersContext, setUsersContext] = useState();
-
   const history = useHistory();
+
 
   const handleSetCredentials = (e) => {
     e.persist();
@@ -58,7 +58,7 @@ export default function App() {
 
   return (
     <AppState>
-      <Navbar />
+      <Navbar context={usersContext}/>
       <UsersContext.Provider value={{usersContext, setUsersContext}}>
       <Switch>
         <ProtectedRoute path="/dashboard" onLogout={handleLogout} component={Dashboard} />

@@ -1,3 +1,4 @@
+import React,{useContext} from "react";
 import {
   MDBCard,
   MDBCardTitle,
@@ -12,8 +13,10 @@ import {
 import Map from "./Map/Map";
 import BookingPage from "./BookingPage/BookingPage";
 import "./TherapistCard.css";
+import UsersContext from "../context/UsersContext"
 
 const TherapistCard = ({ therapist }) => {
+  const { usersContext, setUsersContext} = useContext(UsersContext)
   return (
     <>
       <MDBCard className="mt-5" style={{ maxWidth: "100%" }}>
@@ -70,7 +73,14 @@ const TherapistCard = ({ therapist }) => {
             >
               View Profile
             </MDBBtn>
-          <BookingPage  therapist={therapist} />
+          {usersContext?<BookingPage  therapist={therapist} />:  <MDBBtn
+              size="lg"
+              href={`/auth`}
+              color="grey"
+              className="ftherapist custom-button"
+              style={{maxwidth:"20rem", margin:"0.4rem"}}
+            >  Login to Book
+            </MDBBtn>}
           </MDBRow>
 
           </MDBCol>

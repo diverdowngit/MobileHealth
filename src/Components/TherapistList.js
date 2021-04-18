@@ -10,7 +10,9 @@ import {
 } from "mdbreact";
 import FilteredTherapists from "../Components/FilteredTherapists/FilteredTherapists";
 
+
 const TherapistList = () => {
+
   const { filteredTherapists, fetchAPI } = useContext(TherapistsContext);
   const [page, setPage] = useState({
     offset: 0,

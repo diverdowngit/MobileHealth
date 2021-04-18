@@ -15,6 +15,7 @@ const Dashboard = ({onLogout}) => {
     const [user, setUser] = useState(null);
     const [pill, setPill] = useState("1");
     const [therapistBookings, setTherapistBookings] = useState([]);
+    const [bookingAccepted, setBookingAccepted]= useState(false)
     
 
     const togglePills =(tab) => {
@@ -30,6 +31,7 @@ const Dashboard = ({onLogout}) => {
                 console.log({ userData })
                 if(!userData) return onLogout()
                 setUser(userData)
+                console.log(userData)
                 //set UserData to UserContext in global
                 setUsersContext(userData)
            
@@ -60,7 +62,13 @@ const Dashboard = ({onLogout}) => {
           })
             .then(function (response) {
               setTherapistBookings(response.data)
-              // console.log('response', response.data);
+              console.log('response', response.data)
+              response.data.map((res)=>{
+                setBookingAccepted((prevState)=>({
+                  ...prevState,
+                  [response.data.indexOf(res)]: false
+                }))
+              });
             })
             .catch(function (error) {
               console.log(error);
@@ -69,6 +77,14 @@ const Dashboard = ({onLogout}) => {
         getBooking();
       }
     }, [user])
+
+    const acceptBooking=(e)=>{
+      setBookingAccepted((prevState)=>({
+        ...prevState,
+        [Number(e.target.name)]: true
+      }))
+      console.log(bookingAccepted)
+    }
 
     return (
         
@@ -142,13 +158,14 @@ const Dashboard = ({onLogout}) => {
                        {therapistBookings && therapistBookings.map(therapistBooking => (
                         <MDBCol lg="4">
                         <MDBCard  className="text-center">
-                        <MDBCardHeader color="green">in 2 days</MDBCardHeader>
+                        <MDBCardHeader color="green"></MDBCardHeader>
                             <MDBCardBody>
                             <MDBCardTitle>Booking</MDBCardTitle>
                             <MDBCardText>
                                 
                                 <div className='rounded-bottom mdb-color lighten-5 text-center pt-3'>
-                                Client:{therapistBooking.clientId.first_name},{therapistBooking.clientId.last_name}<br/>
+                                {user.role=== "therapist" && `Client: ${therapistBooking.clientId.first_name},${therapistBooking.clientId.last_name}`}<br/>
+                                
                                 Location: {therapistBooking.place}<br/>
                                 Time: {therapistBooking.time}<br/>
                                 <br/>
@@ -181,9 +198,9 @@ const Dashboard = ({onLogout}) => {
                                       </ul>
                                     </div>
                             </MDBCardText>
-                            <MDBBtn color="green" size="sm">
-                                See details!
-                            </MDBBtn>
+                            {user.role === "therapist" && <MDBBtn name={therapistBookings.indexOf(therapistBooking)} onClick={acceptBooking} className={bookingAccepted[therapistBookings.indexOf(therapistBooking)]? "acceptedBooking": "bookingPending"} color="green" size="sm">
+                            {bookingAccepted[therapistBookings.indexOf(therapistBooking)]? "BOOKING ACCEPTED": "ACCEPT BOOKING"}
+                            </MDBBtn>}
                             </MDBCardBody>
                         </MDBCard>
                         </MDBCol>

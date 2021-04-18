@@ -13,3 +13,12 @@
     border-radius: 50%;
     display: inline-block;
   }
+
+.acceptedBooking{
+    background-color: green !important;
+}
+
+.bookingPending{
+    background-color: rgb(221, 221, 101) !important;
+    color:green !important
+}
