@@ -1,7 +1,7 @@
 import React, { useEffect,useState, useContext } from "react";
 import {useHistory} from "react-router-dom"
 import { userContext,logout } from "../../utils/auth";
-import { MDBContainer, MDBRow, MDBCol, MDBTabPane, MDBTabContent,  MDBCardHeader, MDBCardFooter, MDBBtn,MDBNav, MDBNavItem, MDBNavLink, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText,MDBView } from "mdbreact";
+import { MDBContainer, MDBIcon, MDBRow, MDBCol, MDBTabPane, MDBTabContent,  MDBCardHeader, MDBCardFooter, MDBBtn,MDBNav, MDBNavItem, MDBNavLink, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText,MDBView } from "mdbreact";
 import '../../App.css'; //Import here your file style
 import './Dashboard.css'
 import { FETCH_SINGLE_THERAPIST } from "../../context/actions";
@@ -13,7 +13,8 @@ const Dashboard = ({onLogout}) => {
     const { usersContext, setUsersContext} = useContext(UsersContext)
     const history =useHistory();
     const [user, setUser] = useState(null);
-    const [pill, setPill] = useState("1")
+    const [pill, setPill] = useState("1");
+    const [therapistBookings, setTherapistBookings] = useState([]);
     
 
     const togglePills =(tab) => {
@@ -26,38 +27,49 @@ const Dashboard = ({onLogout}) => {
             try{
                 // Grab User information
                 const { data: userData } = await userContext();
+                console.log({ userData })
                 if(!userData) return onLogout()
                 setUser(userData)
                 //set UserData to UserContext in global
                 setUsersContext(userData)
            
             }catch(e){
+              console.log('getting kicked out by the effect')
                 //remove Cookie and send user back to login
                 console.log(e.message)
                 onLogout()           
             }
         }
         getContext();
-        console.log(user)
+
+        // console.log(user)
+    }, [])
+
+    useEffect(() => {
+      if (user) {
+        console.log({user})
         const getBooking = async ()=>{
           await axios({
             method: "get",
             // url: `${serverUrl}/booking`,
-            url: "http://localhost:3000/therapist/booking",
+            url: `http://localhost:3000/${user.role}/bookings`,
             headers: {
               "Content-Type": "application/json",
             },
             data: user,
           })
             .then(function (response) {
-              console.log(response);
+              setTherapistBookings(response.data)
+              // console.log('response', response.data);
             })
             .catch(function (error) {
               console.log(error);
             });
         }
         getBooking();
-    }, [])
+      }
+    }, [user])
+
     return (
         
         (<>
@@ -71,7 +83,7 @@ const Dashboard = ({onLogout}) => {
                 hover
                 overlay='white-slight'
                 className='card-img-top'
-                src='https://mdbcdn.b-cdn.net/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg'
+                src={user.profilPhoto}
                 alt='Card cap'
                 />
             </MDBView>
@@ -90,7 +102,7 @@ const Dashboard = ({onLogout}) => {
         {' '}
             </MDBCardText>
             
-            <p className='font-weight-bold blue-text'><span class="dot"></span>You are logged in as Client/Thearpist</p>
+            <p className='font-weight-bold blue-text'><span class="dot"></span>You are logged in as {user.role}</p>
             {/* <MDBCol md='12' className='d-flex justify-content-center'>
                 maybe a button to change something?
             </MDBCol> */}
@@ -126,51 +138,57 @@ const Dashboard = ({onLogout}) => {
                 <MDBTabPane tabId="1">
                 <MDBContainer>
                     <MDBRow>
+                       
+                       {therapistBookings && therapistBookings.map(therapistBooking => (
                         <MDBCol lg="4">
                         <MDBCard  className="text-center">
-                        <MDBCardHeader color="success-color">in 2 days</MDBCardHeader>
+                        <MDBCardHeader color="green">in 2 days</MDBCardHeader>
                             <MDBCardBody>
-                            <MDBCardTitle>Special treatment</MDBCardTitle>
+                            <MDBCardTitle>Booking</MDBCardTitle>
                             <MDBCardText>
-                                Client:<br/>
-                                Location:<br/>
+                                
+                                <div className='rounded-bottom mdb-color lighten-5 text-center pt-3'>
+                                Client:{therapistBooking.clientId.first_name},{therapistBooking.clientId.last_name}<br/>
+                                Location: {therapistBooking.place}<br/>
+                                Time: {therapistBooking.time}<br/>
+                                <br/>
+                                Message: {therapistBooking.message}<br/>
+                                
+                                <br/>
+                                </div>
+                                <div className='rounded-bottom mdb-color lighten-3 text-center pt-3'>
+                                      <ul className='list-unstyled list-inline font-small'>
+                                        <li className='list-inline-item pr-2 white-text'>
+                                          <MDBIcon far icon='clock' /> {therapistBooking.last_updated}
+                                        </li>
+                                        <li className='list-inline-item pr-2'>
+                                          <a href='#!' className='white-text'>
+                                            <MDBIcon far icon='comments' className='mr-1' />
+                                            12
+                                          </a>
+                                        </li>
+                                        <li className='list-inline-item pr-2'>
+                                          <a href='#!' className='white-text'>
+                                            <MDBIcon fab icon='facebook-f' className='mr-1' />
+                                            21
+                                          </a>
+                                        </li>
+                                        <li className='list-inline-item'>
+                                          <a href='#!' className='white-text'>
+                                            <MDBIcon fab icon='twitter' className='mr-1' />5
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
                             </MDBCardText>
-                            <MDBBtn color="success" size="sm">
+                            <MDBBtn color="green" size="sm">
                                 See details!
                             </MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                         </MDBCol>
-                        <MDBCol lg="4">
-                        <MDBCard className="text-center">
-                        <MDBCardHeader color="success-color">in 3 days</MDBCardHeader>
-                            <MDBCardBody>
-                            <MDBCardTitle>Special treatment</MDBCardTitle>
-                            <MDBCardText>
-                                Client:<br/>
-                                Location:<br/>
-                            </MDBCardText>
-                            <MDBBtn color="success" size="sm">
-                                See details!
-                            </MDBBtn>
-                            </MDBCardBody>
-                        </MDBCard>
-                        </MDBCol>
-                        <MDBCol lg="4">
-                        <MDBCard  className="text-center">
-                        <MDBCardHeader color="success-color">in 4 days</MDBCardHeader>
-                            <MDBCardBody>
-                            <MDBCardTitle>Special treatment</MDBCardTitle>
-                            <MDBCardText>
-                                Client:<br/>
-                                Location:<br/>
-                            </MDBCardText>
-                            <MDBBtn color="success" size="sm">
-                                See details!
-                            </MDBBtn>
-                            </MDBCardBody>
-                        </MDBCard>
-                        </MDBCol>
+                      ))}
+
                     </MDBRow>
                 </MDBContainer>
                 </MDBTabPane>

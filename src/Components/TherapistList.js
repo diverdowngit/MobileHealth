@@ -1,87 +1,88 @@
-import React, { Fragment, useContext, useEffect, useState } from "react"; 
-import TherapistsContext from "../context/TherapistsContext"
-import TherapistCard from './TherapistCard';
-import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow } from "mdbreact";
-import FilteredTherapists from "../Components/FilteredTherapists/FilteredTherapists"
+import React, { Fragment, useContext, useEffect, useState } from "react";
+import TherapistsContext from "../context/TherapistsContext";
+import TherapistCard from "./TherapistCard";
+import {
+  MDBPagination,
+  MDBPageItem,
+  MDBPageNav,
+  MDBCol,
+  MDBRow,
+} from "mdbreact";
+import FilteredTherapists from "../Components/FilteredTherapists/FilteredTherapists";
 
 const TherapistList = () => {
-    const { filteredTherapists, fetchAPI } = useContext(TherapistsContext);
-    const [page, setPage]= useState({
-      offset: 0,
-      data: filteredTherapists.slice(0,5),
-      perPage: 5,
-      currentPage: 1
-    })
+  const { filteredTherapists, fetchAPI } = useContext(TherapistsContext);
+  const [page, setPage] = useState({
+    offset: 0,
+    data: filteredTherapists.slice(0, 5),
+    perPage: 5,
+    currentPage: 1,
+  });
+  const [paginationLength, setPaginationLength] = useState(Math.ceil(filteredTherapists.length / page.perPage));
 
-    useEffect(() => {
-      if (!filteredTherapists.length)
-      fetchAPI(); 
-    }, [])
-    // useEffect(() => {
-      
-    //   setPage( )     
-    // }, [])
-    const setPagination= (e) =>{   
-      console.log(page)
-      console.dir(e.target.innerText)
-      let selectedPage
-      if (e.target.innerText === "Previous" && (parseInt(page.currentPage))-1 >= 1 ) {
-        console.log("rte")
-        selectedPage= parseInt(page.currentPage)-1}
-      else if (e.target.innerText === "Next" ) {
-        selectedPage = parseInt(page.currentPage) +1}
-      else {
-        selectedPage = e.target.innerText}
-      const offset = selectedPage * page.perPage;
-      setPage( prevState =>({
-          ...prevState,
-          currentPage: selectedPage ,
-          offset: offset,
-          data: filteredTherapists.slice(offset, offset+ prevState.perPage)
-             })) 
+  useEffect(() => {
+    if (!filteredTherapists.length) {
+      fetchAPI()
+      setPaginationLength(Math.ceil(filteredTherapists.length / page.perPage));
+    };
+  }, []);
+
+const setPagination = (e) => {
+    let selectedPage;
+    if (e.target.innerText === "Previous") {
+      selectedPage = parseInt(page.currentPage) - 1;
+    } else if (e.target.innerText === "Next") {
+      selectedPage = parseInt(page.currentPage) + 1;
+    } else {
+      selectedPage = e.target.innerText;
     }
-  
-    return (<Fragment>    
-                <div>
-                  {filteredTherapists.length && page.data.map(therapist => <TherapistCard therapist={therapist} /> )}
-               
-                  </div>
-                <MDBRow>
-      <MDBCol>
-       
-        <MDBPagination className="mb-5" color="green">
-          <MDBPageItem>
-            <MDBPageNav  aria-label="Previous">
-              <span onClick={setPagination} aria-hidden="true" name="prev">Previous</span>
-            </MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav onClick={setPagination}>
-              1
-            </MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav onClick={setPagination}>2</MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav onClick={setPagination}>3</MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav onClick={setPagination}>4</MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav onClick={setPagination}>5</MDBPageNav>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav aria-label="Previous">
-              <span  onClick={setPagination} aria-hidden="true">Next</span>
-            </MDBPageNav>
-          </MDBPageItem>
-        </MDBPagination>
-      </MDBCol>
-    </MDBRow>
-                
-            </Fragment>)
-}
+    const offset = (selectedPage - 1)* page.perPage;
+    
+    setPage((prevState) => ({
+      ...prevState,
+      currentPage: selectedPage,
+      offset: offset,
+      data: filteredTherapists.slice(offset, offset + prevState.perPage),
+    }));
+
+    window.scrollTo({
+      top: 0
+    })
+  };
+
+  return (
+    <Fragment>
+      <div>
+        {filteredTherapists.length &&
+          page.data.map((therapist) => <TherapistCard therapist={therapist} />)}
+      </div>
+      <MDBRow>
+        <MDBCol>
+          <MDBPagination className="mb-5" color="green">
+            <MDBPageItem disabled={page.currentPage == 1}>
+              <MDBPageNav aria-label="Previous">
+                <span onClick={setPagination} aria-hidden="true" name="prev">
+                  Previous
+                </span>
+              </MDBPageNav>
+            </MDBPageItem>
+            {Array.from( { length: paginationLength }, (_, i) => (
+              <MDBPageItem>
+                <MDBPageNav onClick={setPagination}>{i + 1}</MDBPageNav>
+              </MDBPageItem>
+            ))}
+            <MDBPageItem disabled={page.currentPage == paginationLength}>
+              <MDBPageNav aria-label="Previous">
+                <span onClick={setPagination} aria-hidden="true">
+                  Next
+                </span>
+              </MDBPageNav>
+            </MDBPageItem>
+          </MDBPagination>
+        </MDBCol>
+      </MDBRow>
+    </Fragment>
+  );
+};
 
 export default TherapistList;

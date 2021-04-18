@@ -3,6 +3,7 @@
 }
 
 .tpic {
-    height: 20rem;
-    width: 28rem;
+    height: 14rem;
+    max-width: 20rem;
+    padding: 0 0 0 0.7rem;
 }

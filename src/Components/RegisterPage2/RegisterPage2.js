@@ -19,7 +19,7 @@ const RegisterPage2 = () => {
         [e.target.name]: [e.target.value]
       }
       ))
-      console.log(userInput)
+      // console.log(userInput)
   }
 
   const sendData= async(e)=>{

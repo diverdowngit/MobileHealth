@@ -21,13 +21,13 @@ import UsersContext from "./context/UsersContext"
 
 export default function App() {
   const [credentials, setCredentials] = useState();
-  const [usersContext, setUsersContext] = useState("test");
+  const [usersContext, setUsersContext] = useState();
 
   const history = useHistory();
 
   const handleSetCredentials = (e) => {
     e.persist();
-    console.log(e.target.value)
+    // console.log(e.target.value)
     setCredentials((prevCredentials) => ({
       ...prevCredentials,
       [e.target.name]: e.target.value,
@@ -36,7 +36,7 @@ export default function App() {
 
   const handleAuthentication = async () => {
     let isAuthenticated = await login(credentials);
-    console.log({isAuthenticated})
+    // console.log({isAuthenticated})
     //here is a mistake, somehow it return undefined and not true
     // isAuthenticated = true
     if(isAuthenticated){
