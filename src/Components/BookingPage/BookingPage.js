@@ -42,7 +42,6 @@ const BookingPage = ({ therapist }) => {
   };
 
   const sendData = async (e) => {
-    // console.log("i am in");
     await axios({
       method: "post",
       // url: `${serverUrl}/booking`,
@@ -64,7 +63,9 @@ const BookingPage = ({ therapist }) => {
       })
       .catch(function (error) {
         console.log(error);
+        alert("Booking failed. Please try again later")
       });
+      toggle()
   };
 
   return (
@@ -129,7 +130,7 @@ const BookingPage = ({ therapist }) => {
                     />
                     <MDBInput
                       onChange={saveInput}
-                      label="Booking an appointment for ...service"
+                      label="Service"
                       name="service"
                       icon="tag"
                       group
