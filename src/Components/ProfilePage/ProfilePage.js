@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   MDBCardTitle,
   MDBContainer,
@@ -14,12 +14,15 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Loader from "../Loader";
 import serverUrl from "../../utils/serverUrl";
+import UsersContext from "../../context/UsersContext"
 import "./ProfilePage.css";
 
 const ProfilePage = () => {
+  const { usersContext, setUsersContext} = useContext(UsersContext)
   const { id } = useParams();
   const [therapist, setTherapist] = useState();
   const [loading, setLoading] = useState(true);
+ 
 
   useEffect(() => {
     axios(`${serverUrl}/therapist/${id}`).then((response) => {
@@ -101,7 +104,14 @@ const ProfilePage = () => {
         <p>mobile: {therapist.phoneNumber}</p>{" "}
         <br/>
         <div className="pbtn">
-        <BookingPage therapist={therapist} />
+        {usersContext?<BookingPage  therapist={therapist} />:  <MDBBtn
+              size="lg"
+              href={`/auth`}
+              color="grey"
+              className="ftherapist custom-button"
+              style={{maxwidth:"20rem", margin:"0.4rem"}}
+            >  Login to Book
+            </MDBBtn>}
         </div>
       </MDBContainer>
       </MDBCard>
