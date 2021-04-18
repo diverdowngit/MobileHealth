@@ -33,12 +33,15 @@ const Team = () => {
             <MDBCardBody>
               <MDBCardTitle>Head of Web Developement 🍻</MDBCardTitle>
               <br />
-
               <MDBCardText>
-                <img className="tpic image float-right" src={rafa} alt="rafa" />{" "}
                 <p className="grey-text">
                   He is the product owner and the best teamlead ever.
                 </p>
+                <img
+                  className="tpic image float-center"
+                  src={rafa}
+                  alt="rafa"
+                />{" "}
               </MDBCardText>
             </MDBCardBody>
           </MDBCard>
@@ -52,15 +55,18 @@ const Team = () => {
               <MDBCardTitle>Head of Design and Web Destroyer 💣</MDBCardTitle>
               <br />
               <MDBCardText>
-                <img className="tpic image float-right" src={fred} alt="fred" />{" "}
                 <p className="grey-text">He can destroy everything.</p>
+                <img
+                  className="tpic image float-center"
+                  src={fred}
+                  alt="fred"
+                />{" "}
               </MDBCardText>
             </MDBCardBody>
           </MDBCard>
           <br />
           <br />
         </MDBCol>
-
         <MDBCol lg="6">
           <MDBCard className="text-center">
             <MDBCardHeader color="green">Christin</MDBCardHeader>
@@ -68,12 +74,12 @@ const Team = () => {
               <MDBCardTitle> JavaScriptQueen and Git Fay 🧚</MDBCardTitle>
               <br />
               <MDBCardText>
+              <p className="grey-text">For her more than 70 hours per week are normal.</p>
                 <img
-                  className="tpic image float-right"
+                  className="tpic image float-center"
                   src={christin}
                   alt="christin"
                 />
-                For her more than 70 hours per week are normal.
                 <br />
               </MDBCardText>
             </MDBCardBody>
@@ -86,8 +92,8 @@ const Team = () => {
               <MDBCardTitle> Junior Developer and Git Clown 🤹🏽</MDBCardTitle>
               <br />
               <MDBCardText>
-                <img className="tpic image float-right" src={tim} alt="tim" />
-                He is always lookinÍg for a good Code-Life-Balance.
+              <p className="grey-text">He is always lookinÍg for a good Code-Life-Balance.</p>
+                <img className="tpic image float-center" src={tim} alt="tim" />
               </MDBCardText>
             </MDBCardBody>
           </MDBCard>
