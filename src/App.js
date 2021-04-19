@@ -17,9 +17,12 @@ import Team from "./Components/Team/Team"
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
 // import { login, logout, setAuthHeaders} from "./utils/auth";
-import UsersState from "./context/UsersState"
+import UsersState from "./context/UsersState";
+import { createBrowserHistory } from 'history';
+
 
 export default function App() {
+  const createBrowserHistory = require('history').createBrowserHistory;
   // const [credentials, setCredentials] = useState();
 
   // const history = useHistory();

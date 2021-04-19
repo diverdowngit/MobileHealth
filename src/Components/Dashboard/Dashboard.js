@@ -71,7 +71,7 @@ const Dashboard = () => {
         <MDBRow className="my-5">
           <MDBCol lg="3">    
             <MDBCard >
-            <MDBView >
+            {usersContext.role=== "therapist" && <MDBView >
                 <MDBCardImage
                 hover
                 overlay='white-slight'
@@ -79,7 +79,7 @@ const Dashboard = () => {
                 src={usersContext.profilPhoto}
                 alt='Card cap'
                 />
-            </MDBView>
+            </MDBView>}
 
           <MDBCardBody className='text-center'>
             <MDBCardTitle className='card-title'>
@@ -121,18 +121,13 @@ const Dashboard = () => {
                     Booking History
                   </MDBNavLink>
                 </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink link to="#" className={pill==="3"? "activeLink": "link"} onClick={()=>togglePills("3")} >
-                    Contact
-                  </MDBNavLink>
-                </MDBNavItem>
               </MDBNav>
               <MDBTabContent activeItem={pill}>
                 <MDBTabPane tabId="1">
                 <MDBContainer>
                     <MDBRow>
                        
-                       {therapistBookings && therapistBookings.map(therapistBooking => (
+                       {therapistBookings.length? therapistBookings.map(therapistBooking => (
                         <MDBCol lg="4">
                         <MDBCard  className="text-center">
                         <MDBCardHeader color="green"></MDBCardHeader>
@@ -181,7 +176,7 @@ const Dashboard = () => {
                             </MDBCardBody>
                         </MDBCard>
                         </MDBCol>
-                      ))}
+                      )): <MDBCol lg="4"><h5>No Bookings made</h5></MDBCol>}
 
                     </MDBRow>
                 </MDBContainer>
@@ -193,27 +188,6 @@ const Dashboard = () => {
                     </h5>
                     </MDBContainer>
                   
-                </MDBTabPane>
-                <MDBTabPane tabId="3">
-                <MDBContainer>      
-                  <p>
-                    Est quis nulla laborum officia ad nisi ex nostrud culpa
-                    Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis
-                    ipsum nisi elit fugiat commodo sunt reprehenderit laborum
-                    veniam eu veniam. Eiusmod minim exercitation fugiat irure ex
-                    labore incididunt do fugiat commodo aliquip sit id deserunt
-                    reprehenderit aliquip nostrud. Amet ex cupidatat excepteur
-                    aute veniam incididunt mollit cupidatat esse irure officia
-                    elit do ipsum ullamco Lorem. Ullamco ut ad minim do mollit
-                    labore ipsum laboris ipsum commodo sunt tempor enim
-                    incididunt. Commodo quis sunt dolore aliquip aute tempor
-                    irure magna enim minim reprehenderit. Ullamco consectetur
-                    culpa veniam sint cillum aliqua incididunt velit ullamco
-                    sunt ullamco quis quis commodo voluptate. Mollit nulla
-                    nostrud adipisicing aliqua cupidatat aliqua pariatur mollit
-                    voluptate voluptate consequat non.
-                  </p>
-                </MDBContainer>     
                 </MDBTabPane>
               </MDBTabContent>
             </MDBCol>
