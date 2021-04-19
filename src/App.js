@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -16,52 +16,52 @@ import ProfilePage from "./Components/ProfilePage/ProfilePage";
 import Team from "./Components/Team/Team"
 import Dashboard from "./Components/Dashboard/Dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
-import { login, logout, setAuthHeaders} from "./utils/auth";
-import UsersContext from "./context/UsersContext"
+// import { login, logout, setAuthHeaders} from "./utils/auth";
+import UsersState from "./context/UsersState"
 
 export default function App() {
-  const [credentials, setCredentials] = useState();
-  const [usersContext, setUsersContext] = useState();
-  const history = useHistory();
+  // const [credentials, setCredentials] = useState();
+
+  // const history = useHistory();
 
 
-  const handleSetCredentials = (e) => {
-    e.persist();
-    // console.log(e.target.value)
-    setCredentials((prevCredentials) => ({
-      ...prevCredentials,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  // const handleSetCredentials = (e) => {
+  //   e.persist();
+  //   // console.log(e.target.value)
+  //   setCredentials((prevCredentials) => ({
+  //     ...prevCredentials,
+  //     [e.target.name]: e.target.value,
+  //   }));
+  // };
 
-  const handleAuthentication = async () => {
-    let isAuthenticated = await login(credentials);
-    // console.log({isAuthenticated})
-    //here is a mistake, somehow it return undefined and not true
-    // isAuthenticated = true
-    if(isAuthenticated){
-      history.push("/dashboard")
-    } else {
-      alert("Wrong credentials, try again")
-    }
-  };
+  // const handleAuthentication = async () => {
+  //   let isAuthenticated; // = await login(credentials);
+  //   // console.log({isAuthenticated})
+  //   //here is a mistake, somehow it return undefined and not true
+  //   // isAuthenticated = true
+  //   if(isAuthenticated){
+  //     history.push("/dashboard")
+  //   } else {
+  //     alert("Wrong credentials, try again")
+  //   }
+  // };
 
-  const handleLogout = async ()=>  {
-    logout()
-    history.push('/auth')
-  }
+  // const handleLogout = async ()=>  {
+  //   // logout()
+  //   history.push('/auth')
+  // }
 
   //check if there is already a token, if yes, redirect to dashboars
-  useEffect(()=>{
-    setAuthHeaders() && history.push("/dashboard")
-  },[])
+  // useEffect(()=>{
+  //   //setAuthHeaders() // && history.push("/dashboard")
+  // },[])
 
   return (
     <AppState>
-      <Navbar context={usersContext}/>
-      <UsersContext.Provider value={{usersContext, setUsersContext}}>
+      <UsersState>
+      <Navbar />
       <Switch>
-        <ProtectedRoute path="/dashboard" onLogout={handleLogout} component={Dashboard} />
+        <ProtectedRoute path="/dashboard" component={Dashboard} />
         <Route path="/therapistlist">
           <TherapistList />
         </Route>
@@ -78,11 +78,7 @@ export default function App() {
           <RegisterPage2 />
         </Route>
         <Route path="/auth">
-          <Login
-            onAuth={handleAuthentication}
-            onSetCredentials={handleSetCredentials}
-          
-          />
+          <Login />
         </Route>
         {/* <Route path="/registration">
          <RegisterPage/>
@@ -94,7 +90,7 @@ export default function App() {
           <LandingPage />
         </Route>
       </Switch>
-      </UsersContext.Provider>
+      </UsersState>
       <Footer  />
     </AppState>
   );

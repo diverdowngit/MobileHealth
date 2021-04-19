@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import UsersContext from '../../context/UsersContext';
 import {
   MDBContainer,
   MDBRow,
@@ -9,7 +10,9 @@ import {
 } from "mdbreact";
 import "./Login.css";
 
-const Login = ({ onAuth, onSetCredentials }) => {
+const Login = () => {
+  const { handleAuthentication, handleSetCredentials } = useContext(UsersContext);
+  
   return (
     <MDBCard className="my-5 px-5 pb-1 text-center">
       <MDBContainer className="text-left md-6 mb-6">
@@ -29,7 +32,7 @@ const Login = ({ onAuth, onSetCredentials }) => {
                   validate
                   error="wrong"
                   success="right"
-                  onChange={onSetCredentials}
+                  onChange={handleSetCredentials}
                 />
                 <MDBInput
                   label="Type your password"
@@ -37,13 +40,13 @@ const Login = ({ onAuth, onSetCredentials }) => {
                   icon="lock"
                   group
                   type="password"
-                  onChange={onSetCredentials}
+                  onChange={handleSetCredentials}
                   validate
                 />
               </div>
               <br />
               <div className="text-center">
-                <MDBBtn color="green" onClick={onAuth}>
+                <MDBBtn color="green" onClick={handleAuthentication}>
                   Login
                 </MDBBtn>
                 <br />

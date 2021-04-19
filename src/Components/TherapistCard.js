@@ -11,12 +11,14 @@ import {
   MDBCol,
 } from "mdbreact";
 import Map from "./Map/Map";
+import { Link } from 'react-router-dom';
 import BookingPage from "./BookingPage/BookingPage";
 import "./TherapistCard.css";
 import UsersContext from "../context/UsersContext"
 
 const TherapistCard = ({ therapist }) => {
-  const { usersContext, setUsersContext} = useContext(UsersContext)
+  const { usersContext, setUsersContext} = useContext(UsersContext);
+  console.log('therapist', therapist);
   return (
     <>
       <MDBCard className="mt-5" style={{ maxWidth: "100%" }}>

@@ -1,6 +1,5 @@
 import React, { useEffect,useState, useContext } from "react";
 import {useHistory} from "react-router-dom"
-import { userContext,logout } from "../../utils/auth";
 import { MDBContainer, MDBIcon, MDBRow, MDBCol, MDBTabPane, MDBTabContent,  MDBCardHeader, MDBCardFooter, MDBBtn,MDBNav, MDBNavItem, MDBNavLink, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText,MDBView } from "mdbreact";
 import '../../App.css'; //Import here your file style
 import './Dashboard.css'
@@ -9,10 +8,9 @@ import { FreeCameraOptions } from "mapbox-gl";
 import UsersContext from '../../context/UsersContext'
 import axios from "axios";
 
-const Dashboard = ({onLogout}) => {
-    const { usersContext, setUsersContext} = useContext(UsersContext)
+const Dashboard = () => {
+    const { usersContext, setUsersContext, logout, userContext } = useContext(UsersContext)
     const history =useHistory();
-    const [user, setUser] = useState(null);
     const [pill, setPill] = useState("1");
     const [therapistBookings, setTherapistBookings] = useState([]);
     const [bookingAccepted, setBookingAccepted]= useState(false)
@@ -22,47 +20,26 @@ const Dashboard = ({onLogout}) => {
         setPill(tab)
       };
 
-
-    useEffect(()=>{
-        const getContext = async ()=>{
-            try{
-                // Grab User information
-                const { data: userData } = await userContext();
-                console.log({ userData })
-                if(!userData) return onLogout()
-                setUser(userData)
-                console.log(userData)
-                //set UserData to UserContext in global
-                setUsersContext(userData)
-           
-            }catch(e){
-              console.log('getting kicked out by the effect')
-                //remove Cookie and send user back to login
-                console.log(e.message)
-                onLogout()           
-            }
-        }
-        getContext();
-
-        // console.log(user)
+    useEffect(() => {
+     (async () => await userContext())()
     }, [])
 
     useEffect(() => {
-      if (user) {
-        console.log({user})
+      if (usersContext) {
+        // console.log({user})
         const getBooking = async ()=>{
           await axios({
             method: "get",
             // url: `${serverUrl}/booking`,
-            url: `http://localhost:3000/${user.role}/bookings`,
+            url: `http://localhost:3000/${usersContext.role}/bookings`,
             headers: {
               "Content-Type": "application/json",
             },
-            data: user,
+            data: usersContext,
           })
             .then(function (response) {
               setTherapistBookings(response.data)
-              console.log('response', response.data)
+
               response.data.map((res)=>{
                 setBookingAccepted((prevState)=>({
                   ...prevState,
@@ -76,7 +53,7 @@ const Dashboard = ({onLogout}) => {
         }
         getBooking();
       }
-    }, [user])
+    }, [usersContext])
 
     const acceptBooking=(e)=>{
       setBookingAccepted((prevState)=>({
@@ -89,7 +66,7 @@ const Dashboard = ({onLogout}) => {
     return (
         
         (<>
-        {user? 
+        {usersContext ? 
         <MDBContainer>
         <MDBRow className="my-5">
           <MDBCol lg="3">    
@@ -99,26 +76,26 @@ const Dashboard = ({onLogout}) => {
                 hover
                 overlay='white-slight'
                 className='card-img-top'
-                src={user.profilPhoto}
+                src={usersContext.profilPhoto}
                 alt='Card cap'
                 />
             </MDBView>
 
           <MDBCardBody className='text-center'>
             <MDBCardTitle className='card-title'>
-              <strong>{user.first_name} {user.last_name}</strong>
+              <strong>{usersContext.first_name} {usersContext.last_name}</strong>
             <MDBCardText>
-                {user.specialities}
+                {usersContext.specialities}
             </MDBCardText>
             </MDBCardTitle>
             <MDBCardText>
-              {user.address.streetName} {user.address.streetNumber}<br/>
-              {user.address.city} <br/>
-              {user.address.country} <br/>
+              {usersContext.address.streetName} {usersContext.address.streetNumber}<br/>
+              {usersContext.address.city} <br/>
+              {usersContext.address.country} <br/>
         {' '}
             </MDBCardText>
             
-            <p className='font-weight-bold blue-text'><span class="dot"></span>You are logged in as {user.role}</p>
+            <p className='font-weight-bold blue-text'><span class="dot"></span>You are logged in as {usersContext.role}</p>
             {/* <MDBCol md='12' className='d-flex justify-content-center'>
                 maybe a button to change something?
             </MDBCol> */}
@@ -129,7 +106,7 @@ const Dashboard = ({onLogout}) => {
           <MDBRow>
             <MDBCol md="12">
             <div style={{padding:1 + "rem"}}>
-            <h2 style={{textAlign:"left"}}>Hello {user.first_name}!</h2>
+            <h2 style={{textAlign:"left"}}>Hello {usersContext.first_name}!</h2>
             <h5>Welcome to your Dashboard. Here you can see your upcoming appointments and make changes in your Profile.</h5>
             </div>
             
@@ -164,7 +141,7 @@ const Dashboard = ({onLogout}) => {
                             <MDBCardText>
                                 
                                 <div className='rounded-bottom mdb-color lighten-5 text-center pt-3'>
-                                {user.role=== "therapist" && `Client: ${therapistBooking.clientId.first_name},${therapistBooking.clientId.last_name}`}<br/>
+                                {usersContext.role=== "therapist" && `Client: ${therapistBooking.clientId.first_name},${therapistBooking.clientId.last_name}`}<br/>
                                 
                                 Location: {therapistBooking.place}<br/>
                                 Time: {therapistBooking.time}<br/>
@@ -198,7 +175,7 @@ const Dashboard = ({onLogout}) => {
                                       </ul>
                                     </div>
                             </MDBCardText>
-                            {user.role === "therapist" && <MDBBtn name={therapistBookings.indexOf(therapistBooking)} onClick={acceptBooking} className={bookingAccepted[therapistBookings.indexOf(therapistBooking)]? "acceptedBooking": "bookingPending"} color="green" size="sm">
+                            {usersContext.role === "therapist" && <MDBBtn name={therapistBookings.indexOf(therapistBooking)} onClick={acceptBooking} className={bookingAccepted[therapistBookings.indexOf(therapistBooking)]? "acceptedBooking": "bookingPending"} color="green" size="sm">
                             {bookingAccepted[therapistBookings.indexOf(therapistBooking)]? "BOOKING ACCEPTED": "ACCEPT BOOKING"}
                             </MDBBtn>}
                             </MDBCardBody>

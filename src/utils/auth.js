@@ -26,6 +26,7 @@ const setAuthHeaders= ()=>{
 }
 
 
+
 //send credential // safe token or block user and send error
 const login= async (credentials)=>{
     let authorization= false
@@ -54,6 +55,7 @@ const login= async (credentials)=>{
       })
     return authorization
 }
+
 // this will just check if the token is a valid kind of token, not if it really exists in the backend
 const decodeToken=()=>{
   const token= Cookies.get(`${REACT_APP_NAME}-auth-token`);
