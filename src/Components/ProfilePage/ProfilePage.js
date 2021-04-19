@@ -36,8 +36,6 @@ const ProfilePage = () => {
     return <Loader />;
   }
 
-  therapist && console.log(therapist);
-
   if (therapist) {
     return (
       <MDBCard className="my-5 px-5 pb-1 text-left">

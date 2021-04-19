@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -12,11 +12,11 @@ import {
 } from "mdbreact";
 import "./Navbar.css";
 import Logo from "../util/mhicon.png";
-import {setAuthHeaders, logout} from "../../utils/auth"
+import UsersContext from '../../context/UsersContext'
 
 
-const Navbar = ({context}) => {
-  // const { usersContext, setUsersContext} = useContext(UsersContext)
+const Navbar = () => {
+  const { usersContext, logout, isLoggedIn } = useContext(UsersContext)
   const [isOpen, setIsOpen] = useState(false);
 
 
@@ -30,6 +30,10 @@ const Navbar = ({context}) => {
     console.log(e.target.value);
   };
 
+  useEffect(() => {
+    isLoggedIn();
+  }, [])
+  
   return (
     <MDBNavbar color="green" dark expand="md">
       <MDBNavLink to="/">
@@ -49,14 +53,14 @@ const Navbar = ({context}) => {
           </MDBNavItem>
           <MDBNavItem>
             {/* TODO add active to active page functionality */}
-            {context?  <MDBNavLink onClick={logout} to="/#" >Logout</MDBNavLink>: <MDBNavLink to="/auth" >Login</MDBNavLink>}
+            {usersContext ?  <MDBNavLink onClick={logout} to="/#" >Logout</MDBNavLink>: <MDBNavLink to="/auth" >Login</MDBNavLink>}
           </MDBNavItem>
-          {context && <MDBNavItem>
+          {usersContext && <MDBNavItem>
             <MDBNavLink to="/dashboard">Dashboard</MDBNavLink>
           </MDBNavItem>}
-          <MDBNavItem>
+          {!usersContext && <MDBNavItem>
             <MDBNavLink to="/registration">Register</MDBNavLink>
-          </MDBNavItem>
+          </MDBNavItem>}
           <MDBNavItem>
             <MDBFormInline waves>
               <div className="md-form my-0">
