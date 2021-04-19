@@ -12,7 +12,7 @@ import "./Login.css";
 
 const Login = () => {
   const { handleAuthentication, handleSetCredentials } = useContext(UsersContext);
-  
+
   return (
     <MDBCard className="my-5 px-5 pb-1 text-center">
       <MDBContainer className="text-left md-6 mb-6">
@@ -46,8 +46,11 @@ const Login = () => {
               </div>
               <br />
               <div className="text-center">
-                <MDBBtn color="green" onClick={handleAuthentication}>
-                  Login
+                <MDBBtn color="green" onClick={()=> handleAuthentication("Dash")}>
+                  Go to Dashboard
+                </MDBBtn>
+                <MDBBtn color="green" onClick={() => handleAuthentication("Back")}>
+                  Go back to last page
                 </MDBBtn>
                 <br />
               </div>

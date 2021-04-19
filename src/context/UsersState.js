@@ -94,13 +94,18 @@ const UsersState = (props) => {
         dispatch({ type: CLEAR_USERS_CONTEXT })
       }
 
-      const handleAuthentication = async () => {
+      const handleAuthentication = async (location) => {
         let isAuthenticated = await login(credentials);
         // console.log({isAuthenticated})
         //here is a mistake, somehow it return undefined and not true
         // isAuthenticated = true
         if(isAuthenticated){
-          history.push("/dashboard")
+          // history.push("/dashboard")
+          console.log("")
+          if (location=== "Dash") {
+            history.push("/dashboard")}
+          if (location === "Back"){
+             history.goBack()}
         } else {
           alert("Wrong credentials, try again")
         }

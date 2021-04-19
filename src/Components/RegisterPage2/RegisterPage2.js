@@ -8,6 +8,7 @@ import {
 } from "mdbreact";
 import ImageUpload from "../util/imageUploader";
 import Map from "../Map/Map";
+import axios from "axios";
 
 const RegisterPage2 = () => {
   const [userInput, setUserInput] = useState();
@@ -16,13 +17,46 @@ const RegisterPage2 = () => {
       e.persist()
       setUserInput((prevData)=>({
         ...prevData,
-        [e.target.name]: [e.target.value]
+        [e.target.name]: e.target.value
       }
       ))
       // console.log(userInput)
   }
 
   const sendData= async(e)=>{
+    console.log(userInput)
+   
+    if (userInput.role==="client"){
+      console.log ("I am client")
+      try {
+        await axios( {
+            method: 'post',
+            // url: `${serverUrl}/booking`,
+            url: "http://localhost:3000/client/",
+            headers: { 
+              'Content-Type': 'application/json',
+            },
+            data : {
+              first_name: userInput.first_name,
+              last_name: userInput.last_name,
+              address:{
+                country: userInput.country,
+                city: userInput.city,
+                streetName: userInput.streetName, 
+                streetNumber: userInput.streetNum,
+                postalCode: userInput.postalCode},
+              phoneNumber: userInput.phoneNumber, 
+              shortText: userInput.text,
+              emailAddress: userInput.emailAddress,
+              password: userInput.password
+            }
+          })
+       } catch (e) { 
+         console.error(e.message)
+        }
+     } else if (userInput.role==="therapist"){
+      alert("Sorry dude, we have enough therapist already. Come back later!")
+    }
       // console.log("create")
       // await axios( {
       //   method: 'post',
@@ -56,6 +90,7 @@ const RegisterPage2 = () => {
 
   return (
     <MDBContainer className="d-flex justify-content-left mt-5 ">
+
       <MDBRow>
         <MDBCol>
           <img
@@ -69,11 +104,18 @@ const RegisterPage2 = () => {
       <MDBContainer className=" justify-content-right ">
         <form
           className="needs-validation"
-          // onSubmit={this.submitHandler}
           noValidate
         >
+          
           <MDBRow>
             <MDBCol md="5" className="mb-4">
+            <div>
+                <select className="browser-default custom-select" name="role" onChange={saveUserInput}>
+                  <option>I am a </option>
+                  <option value="therapist" >Therapist</option>
+                  <option value="client" >Client</option>
+                </select>
+              </div>
               <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
                 First name
               </label>
@@ -135,12 +177,27 @@ const RegisterPage2 = () => {
                 name="emailAddress"
                 placeholder="Your Email address"
               />
+        
               <small id="emailHelp" className="form-text text-muted">
                 We'll never share your email with anyone else.
               </small>
+              <label
+                htmlFor="defaultFormRegisterConfirmEx3"
+                className="grey-text "
+              >
+                Password
+              </label>
+              <input
+                onChange={saveUserInput}
+                type="password"
+                id="defaultFormRegisterConfirmEx3"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+              />
             </MDBCol>
           </MDBRow>
-          <MDBInput type="textarea" label="Description of Service" rows="5" />
+          <MDBInput type="textarea" label="Description" rows="5" name="message" onChange={saveUserInput}/>
           <MDBRow>
             {" "}
             <MDBCol md="4" className="mb-3">
@@ -148,21 +205,59 @@ const RegisterPage2 = () => {
                 htmlFor="defaultFormRegisterEmailEx2"
                 className="grey-text"
               >
-                Address
+                Street
               </label>
 
               <input
-                name="address"
+                name="streetName"
                 type="text"
                 id="defaultFormRegisterEmailEx2"
                 className="form-control"
                 placeholder="Address"
                 required
               />
+               <label
+                htmlFor="defaultFormRegisterPasswordEx4"
+                className="grey-text"
+              >
+                State
+              </label>
+              <input
+                onChange={saveUserInput}
+                type="text"
+                id="defaultFormRegisterPasswordEx4"
+                className="form-control"
+                name="country"
+                placeholder="State"
+                required
+              />
+              <div className="invalid-feedback">
+                Please provide a valid state.
+              </div>
+              <div className="valid-feedback">Looks good!</div>  
               <div className="valid-feedback">Looks good!</div>
             </MDBCol>
             <MDBCol md="4" className="mb-3">
-              <label
+            <label
+                htmlFor="defaultFormRegisterEmailEx2"
+                className="grey-text"
+              >
+                No.
+              </label>
+
+              <input
+                name="streetNum"
+                type="text"
+                id="defaultFormRegisterEmailEx2"
+                className="form-control"
+                placeholder="Address"
+                required
+              />
+             
+              <div className="valid-feedback">Looks good!</div>
+            </MDBCol>
+            <MDBCol md="4" className="mb-3">
+            <label
                 htmlFor="defaultFormRegisterPasswordEx4"
                 className="grey-text"
               >
@@ -181,28 +276,7 @@ const RegisterPage2 = () => {
               <div className="invalid-feedback">
                 Please provide a valid city.
               </div>
-              <div className="valid-feedback">Looks good!</div>
-            </MDBCol>
-            <MDBCol md="4" className="mb-3">
-              <label
-                htmlFor="defaultFormRegisterPasswordEx4"
-                className="grey-text"
-              >
-                State
-              </label>
-              <input
-                onChange={saveUserInput}
-                type="text"
-                id="defaultFormRegisterPasswordEx4"
-                className="form-control"
-                name="country"
-                placeholder="State"
-                required
-              />
-              <div className="invalid-feedback">
-                Please provide a valid state.
-              </div>
-              <div className="valid-feedback">Looks good!</div>
+              
             </MDBCol>
             <MDBCol md="4" className="mb-3">
               <label
@@ -245,7 +319,7 @@ const RegisterPage2 = () => {
               </div>
             </div>
           </MDBCol>
-          <MDBBtn color="green" type="submit">
+          <MDBBtn color="green" onClick={sendData}> 
             Submit Form
           </MDBBtn>
         </form>
