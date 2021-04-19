@@ -1,5 +1,6 @@
 import React, { useState }from "react";
 import { MDBRow, MDBCol, MDBBtn, MDBContainer, MDBInput } from "mdbreact";
+import { useHistory } from "react-router-dom";
 import {
   MDBDropdown,
   MDBDropdownToggle,
@@ -12,6 +13,7 @@ import axios from "axios";
 
 const RegisterPage2 = () => {
   const [userInput, setUserInput] = useState();
+  const history = useHistory();
 
   const saveUserInput =(e)=>{
       e.persist()
@@ -51,6 +53,7 @@ const RegisterPage2 = () => {
               password: userInput.password
             }
           })
+          history.push("/auth")
        } catch (e) { 
          console.error(e.message)
         }

@@ -100,8 +100,6 @@ const UsersState = (props) => {
         //here is a mistake, somehow it return undefined and not true
         // isAuthenticated = true
         if(isAuthenticated){
-          // history.push("/dashboard")
-          console.log("")
           if (location=== "Dash") {
             history.push("/dashboard")}
           if (location === "Back"){
