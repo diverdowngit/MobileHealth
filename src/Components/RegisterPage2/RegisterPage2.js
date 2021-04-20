@@ -162,6 +162,7 @@ const RegisterPage2 = () => {
                   <MDBDropdownItem>Physical Therapy</MDBDropdownItem>
                   <MDBDropdownItem>Massage</MDBDropdownItem>
                   <MDBDropdownItem>Speech Therapy</MDBDropdownItem>
+                  <MDBDropdownItem>Nutrition Therapy</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBCol>
@@ -253,7 +254,7 @@ const RegisterPage2 = () => {
                 type="text"
                 id="defaultFormRegisterEmailEx2"
                 className="form-control"
-                placeholder="Address"
+                placeholder="#"
                 required
               />
              
