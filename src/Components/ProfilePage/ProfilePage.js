@@ -83,14 +83,7 @@ const ProfilePage = () => {
             >
               Specialities <small>{therapist["specialities"]}</small>
             </MDBCardText>
-            <MDBCardText
-              className="blockquote"
-              style={{ padding: "1.2rem" }}
-            >
-              <b>Hobbies</b>
-        <p>here could be ur ad or maybe more information about the therapist</p>
-
-            </MDBCardText>
+           
           </MDBCol>
         </MDBContainer>
         <p>
