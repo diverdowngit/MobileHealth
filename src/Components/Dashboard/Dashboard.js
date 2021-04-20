@@ -130,14 +130,14 @@ const Dashboard = () => {
                        {therapistBookings.length? therapistBookings.map(therapistBooking => (
                         <MDBCol lg="4">
                         <MDBCard  className="text-center">
-                        <MDBCardHeader color="green"></MDBCardHeader>
+                        <MDBCardHeader color="green">{'test'}</MDBCardHeader>
                             <MDBCardBody>
                             <MDBCardTitle>Booking</MDBCardTitle>
                             <MDBCardText>
                                 
                                 <div className='rounded-bottom mdb-color lighten-5 text-center pt-3'>
                                 {usersContext.role=== "therapist" && `Client: ${therapistBooking.clientId.first_name},${therapistBooking.clientId.last_name}`}<br/>
-                                
+                                {usersContext.role=== "client" && `Booking with : ${therapistBooking.therapistId.education},${therapistBooking.therapistId.last_name}`}
                                 Location: {therapistBooking.place}<br/>
                                 Time: {therapistBooking.time}<br/>
                                 <br/>
@@ -148,9 +148,9 @@ const Dashboard = () => {
                                 <div className='rounded-bottom mdb-color lighten-3 text-center pt-3'>
                                       <ul className='list-unstyled list-inline font-small'>
                                         <li className='list-inline-item pr-2 white-text'>
-                                          <MDBIcon far icon='clock' /> {therapistBooking.last_updated}
+                                          {/* <MDBIcon far icon='clock' /> {therapistBooking.last_updated} */}
                                         </li>
-                                        <li className='list-inline-item pr-2'>
+                                        {/* <li className='list-inline-item pr-2'>
                                           <a href='#!' className='white-text'>
                                             <MDBIcon far icon='comments' className='mr-1' />
                                             12
@@ -166,7 +166,7 @@ const Dashboard = () => {
                                           <a href='#!' className='white-text'>
                                             <MDBIcon fab icon='twitter' className='mr-1' />5
                                           </a>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                             </MDBCardText>
