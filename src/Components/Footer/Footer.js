@@ -31,7 +31,7 @@ const FooterPage = () => {
                 <a href="/registration">Create new User</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Patients Login</a>
+                <a href="/auth">Patients Login</a>
               </li>
             </ul>
             </MDBCol>

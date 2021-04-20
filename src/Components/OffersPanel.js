@@ -42,9 +42,9 @@ const PanelPage = () => {
           height="170"
           to="/"
         />
-        <MDBBtn color="green">Step 3: we have no idea what this step is!</MDBBtn>
+        <MDBBtn color="green">Step 3: Enjoy your service at your home !</MDBBtn>
         <p>
-          English Jokes driving me crazy!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Dont  worry its allllmost over
+          Enjoy your choosen service at home.
         </p>
       </MDBCol>
     </MDBContainer>
