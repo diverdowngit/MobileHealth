@@ -49,19 +49,19 @@ const FooterPage = () => {
         <MDBRow>
 
     <MDBContainer className="text-center">
-      <a href="https://www.facebook.com/wbscodingschool" target="_blank" className="fb-ic mr-4 text-center">
+      <a href="https://www.facebook.com/wbscodingschool" target="_blank" rel="noreferrer"className="fb-ic mr-4 text-center">
         <MDBIcon fab icon="facebook-f" />
       </a>
-      <a href="https://twitter.com/wbscodingschool" target="_blank" className="tw-ic mr-3">
+      <a href="https://twitter.com/wbscodingschool" target="_blank"rel="noreferrer" className="tw-ic mr-3">
         <MDBIcon fab icon="twitter" />
       </a>
-      <a href="https://www.linkedin.com/school/wbs-coding-school" target="_blank" className="li-ic mr-3">
+      <a href="https://www.linkedin.com/school/wbs-coding-school" target="_blank"rel="noreferrer" className="li-ic mr-3">
         <MDBIcon fab icon="linkedin-in" />
       </a>
-      <a href="https://www.instagram.com/wbscodingschool/" target="_blank" className="ins-ic mr-3">
+      <a href="https://www.instagram.com/wbscodingschool/" target="_blank" rel="noreferrer" className="ins-ic mr-3">
         <MDBIcon fab icon="instagram" />
       </a>
-      <a href="https://www.youtube.com/channel/UCEjfjfdmXFn6rOCSUTZ3FYg" target="_blank" className="yt-ic mr-3">
+      <a href="https://www.youtube.com/channel/UCEjfjfdmXFn6rOCSUTZ3FYg" target="_blank" rel="noreferrer"className="yt-ic mr-3">
         <MDBIcon fab icon="youtube" />
       </a>
       <a href="https://github.com/ChristinThoma/Mobile_Health_FrontEnd" target="_blank" rel="noreferrer" className="git-ic mr-3">

@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import jwt from "jsonwebtoken"; //also used in Backend, can decode token
 import serverUrl from "../utils/serverUrl"
-const { REACT_APP_NAME, REACT_APP_BACKEND_API_HEROKU} = process.env
+const { REACT_APP_NAME} = process.env
 
 
 //add this url in front of axios calls 

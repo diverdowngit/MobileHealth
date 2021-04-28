@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import { Switch, Route, Redirect, useHistory } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import AppState from "./context/app/AppState";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
@@ -18,11 +18,11 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
 // import { login, logout, setAuthHeaders} from "./utils/auth";
 import UsersState from "./context/UsersState";
-import { createBrowserHistory } from 'history';
+
 
 
 export default function App() {
-  const createBrowserHistory = require('history').createBrowserHistory;
+ 
   // const [credentials, setCredentials] = useState();
 
   // const history = useHistory();

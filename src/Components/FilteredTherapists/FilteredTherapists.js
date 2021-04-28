@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+
 import {
   MDBCol,
   MDBCard,
@@ -10,7 +10,7 @@ import {
   MDBCardImage,
 } from "mdbreact";
 import TherapistsContext from "../../context/TherapistsContext";
-import BookingPage from "../BookingPage/BookingPage"
+
 
 const FilteredTherapists = () => {
 

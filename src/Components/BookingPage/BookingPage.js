@@ -3,7 +3,6 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBIcon,
   MDBBtn,
   MDBModal,
   MDBModalBody,
@@ -19,7 +18,7 @@ import TherapistsContext from '../../context/TherapistsContext';
 import { userContext } from "../../utils/auth";
 
 const BookingPage = ({ therapist }) => {
-  const { usersContext, setUsersContext} = useContext(UsersContext)
+  const { usersContext, } = useContext(UsersContext)
   const { therapistsContext, setTherapistsContext} = useContext(TherapistsContext)
   const [extendBooking, setextendBooking] = useState(false);
   const [inputData, setInputData] = useState({});
