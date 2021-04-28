@@ -8,16 +8,17 @@ export default function SearchCheckBox({ categories, handleChange }) {
        
         <h3>Select the Therapist that fits your needs</h3>
       </MDBFormInline>
-      <MDBFormInline className="mb-4">
+      <MDBFormInline className="  mb-4">
         {Object.keys(categories).map((category) => (
-          <MDBInput
+          <MDBInput 
             style={{ boxShadow: 'none' }}
             key={category}
             label={categories[category].displayName}
-            type="checkbox"
+            type="checkbox" class="custom-control-inline"
             name={category}
-            containerClass="mr-2"
+            containerClass=" mr-4"
             onChange={handleChange}
+            
           />
         ))}
       </MDBFormInline>

@@ -5,7 +5,7 @@ import image3 from "../images/offersPannel3.png";
 
 const PanelPage = () => {
   return (
-    <MDBContainer className="text-center d-flex align-items-start ">
+    <MDBContainer className="text-center d-flex-box align-items-start ">
       <MDBCol>
         <img
           className="image"
@@ -44,7 +44,7 @@ const PanelPage = () => {
         />
         <MDBBtn color="green">Step 3: Enjoy your service at your home !</MDBBtn>
         <p>
-          Enjoy your choosen service at home.
+          Enjoy your chosen service at home.
         </p>
       </MDBCol>
     </MDBContainer>

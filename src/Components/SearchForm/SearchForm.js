@@ -42,9 +42,9 @@ const SearchForm = () => {
       <MDBCardBody>
         <MDBRow>
           <MDBCol lg="5">
-            <MDBView className="boxs rounded z-depth-2 mb-lg-0 mb-4" hover waves>
+            <MDBView className="box rounded z-depth-2 mb-lg-0 mb-4" hover waves>
               <img
-                className="boxs img-fluid"
+                className="box img-fluid"
                 src="https://www.minimed.at/fileadmin/_processed_/0/7/csm_Physiotherapie_aeaf6ee751.jpg"
                 alt="img-fluid"
               />
@@ -56,6 +56,7 @@ const SearchForm = () => {
             </h2>
             <br />
             <SearchCheckBox
+     
               categories={categories}
               handleChange={handleChange}
             />
